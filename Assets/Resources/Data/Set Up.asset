@@ -16,7 +16,7 @@ MonoBehaviour:
     initialHealth: 50
     maxHealth: 100
     armor: 0
-    speed: 1.8
+    speed: 1
     mod: 0
   boardSetUp:
     width: 7
@@ -94,13 +94,13 @@ MonoBehaviour:
     energyConsumption: 0
     coolDown: 0
     placingEffects:
-    - rid: 6796066011534589957
+    - rid: 578545449467641866
   - name: "\u589E\u5E45\u5668"
     desc: 
     otherPositions: []
     prefab: {fileID: 6219216261471928466, guid: ddab373e8e7f09a4c82d8f5654d9c978, type: 3}
     signalEffects:
-    - rid: 6796066011534589958
+    - rid: 578545449467641867
     maxUses: -1
     energyConsumption: 0
     coolDown: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
     otherPositions: []
     prefab: {fileID: 7680782621330569741, guid: 71a7ea6be685de642aef0c89bab4fbd5, type: 3}
     signalEffects:
-    - rid: 6796066011534589959
+    - rid: 578545449467641868
     maxUses: -1
     energyConsumption: 0
     coolDown: 0
@@ -122,12 +122,12 @@ MonoBehaviour:
       y: 0
     prefab: {fileID: 1402701477217004034, guid: 17646af2c7a669e49bb57947bbd60d0a, type: 3}
     signalEffects:
-    - rid: 6796066011534589960
+    - rid: 578545449467641869
     maxUses: -1
     energyConsumption: 1
     coolDown: 0
     placingEffects:
-    - rid: 6796066011534589961
+    - rid: 578545449467641870
   - name: Module 1
     desc: 
     otherPositions:
@@ -163,23 +163,23 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 6796066011534589957
+    - rid: 578545449467641866
       type: {class: SignalActiveGenerationEffect, ns: InGame.Effects, asm: Assembly-CSharp}
       data:
-        m_coolDown: 1
+        m_coolDown: 4
         m_signalStrength: 2
         m_dir: 0
-    - rid: 6796066011534589958
+    - rid: 578545449467641867
       type: {class: EnergyAmplifyEffect, ns: InGame.Effects, asm: Assembly-CSharp}
       data:
         amplifiedAmount: 1
-    - rid: 6796066011534589959
+    - rid: 578545449467641868
       type: {class: SignalDirectionChangeEffect, ns: InGame.Effects, asm: Assembly-CSharp}
       data: 
-    - rid: 6796066011534589960
+    - rid: 578545449467641869
       type: {class: TowerShootEffect, ns: InGame.Effects, asm: Assembly-CSharp}
       data: 
-    - rid: 6796066011534589961
+    - rid: 578545449467641870
       type: {class: PlacingTowerEffect, ns: InGame.Effects, asm: Assembly-CSharp}
       data:
         setUp:
@@ -187,10 +187,10 @@ MonoBehaviour:
           damageMultipler: 1
           seekInterval: 0
           seekMode: 1
-          shootInterval: 0.1
+          shootInterval: 1
           bulletCount: 4
           bulletSetUp:
             sprite: {fileID: 21300000, guid: 494c2058d61db45a89aa442c3fa2acfb, type: 3}
             damage: 1
-            speed: 4
+            speed: 15
             range: 10
