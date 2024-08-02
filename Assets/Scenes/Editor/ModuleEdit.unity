@@ -571,12 +571,12 @@ MonoBehaviour:
     damageMultipler: 1
     seekInterval: 0
     seekMode: 1
-    shootInterval: 1
+    shootInterval: 0.05
     bulletCount: 4
     bulletSetUp:
       sprite: {fileID: 21300000, guid: 494c2058d61db45a89aa442c3fa2acfb, type: 3}
       damage: 1
-      speed: 15
+      speed: 4
       range: 10
 --- !u!1 &993809584 stripped
 GameObject:
@@ -984,7 +984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77dbacbde6fa46c9ac4ae22c53c854bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolDown: 4
+  coolDown: 1
   signalStrength: 2
   dir: 0
 --- !u!1660057539 &9223372036854775807
