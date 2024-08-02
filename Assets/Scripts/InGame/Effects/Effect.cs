@@ -205,8 +205,6 @@ namespace InGame.Effects
 
         public void UnTrigger(EffectBlackBoard blackBoard)
         {
-            if (!m_isTrigger) return;
-            
             foreach (var effect in m_effects)
             {
                 effect.UnTrigger(blackBoard);
