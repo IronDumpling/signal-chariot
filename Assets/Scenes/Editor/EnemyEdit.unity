@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - duration: 30
+  - duration: 60
     waveID: 0
 --- !u!1 &691453384
 GameObject:
@@ -355,7 +355,7 @@ MonoBehaviour:
   groups:
   - range:
       start: 0
-      end: 10
+      end: 60
     spawnGroupID: 0
 --- !u!1 &1029815682
 GameObject:
@@ -481,7 +481,7 @@ MonoBehaviour:
   enemies:
   - enemyID: 0
     enemyName: "\u666E\u901A\u602A"
-    count: 2
+    count: 3
     spawnLogic: 0
 --- !u!1001 &925897920459497451
 PrefabInstance:
