@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SetUps
 {
@@ -10,5 +11,9 @@ namespace SetUps
         public BoardSetUp boardSetUp;
         public BoardSetUp extraBoardSetUp;
         public List<ModuleSetUp> moduleLibrary;
+        public List<EnemySetUp> enemyLibrary;
+        public List<EnemyPlainGroupSpawnBlk> enemySpawnGroups;
+        public List<EnemyPlainWaveBlk> enemySpawnWaves;
+        public List<EnemyPlainLevelBlk> enemySpawnLevels;
     }
 }

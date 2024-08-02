@@ -13,12 +13,12 @@ namespace InGame.Effects
         
         public override void OnTrigger(EffectBlackBoard blackBoard)
         {
-            m_tower = GameManager.Instance.GetChariot().AddTower(setUp, m_module);
+            m_tower = GameManager.Instance.GetChariot().GetTowerManager().AddTower(setUp, m_module);
         }
 
         public override void OnUnTrigger(EffectBlackBoard blackBoard)
         {
-            GameManager.Instance.GetChariot().RemoveTower(m_tower);
+            GameManager.Instance.GetChariot().GetTowerManager().RemoveTower(m_tower);
         }
 
         public override Effect CreateCopy()

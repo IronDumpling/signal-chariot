@@ -12,7 +12,7 @@ namespace SetUps
         public Sprite sprite;
         public float damageMultipler;
 
-        #region Attack
+        #region Damage
         public float seekInterval;
         public SeekMode seekMode;
         public float shootInterval;

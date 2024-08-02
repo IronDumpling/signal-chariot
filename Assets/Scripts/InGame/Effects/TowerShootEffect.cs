@@ -6,7 +6,7 @@ namespace InGame.Effects
     {
         public override void OnTrigger(EffectBlackBoard blackBoard)
         {
-            GameManager.Instance.GetChariot().TowerEffect(m_module);
+            GameManager.Instance.GetChariot().GetTowerManager().TowerEffect(m_module);
         }
 
         public override Effect CreateCopy()

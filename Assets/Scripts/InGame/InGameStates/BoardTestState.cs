@@ -38,6 +38,7 @@ namespace InGame.InGameStates
         {
             Debug.Log("Exit BoardTest State");
             m_signalController.TestStop();
+            m_timeEffectManager.TestStop();
 
             BattleProgressUI.Instance.Show();
             BattleResultUI.Instance.Show();

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using InGame.Effects;
+using InGame.Effects.PlacingEffectRequirements;
 using InGame.Views;
 using SetUps;
 using UnityEngine;
@@ -338,13 +339,19 @@ namespace InGame.Boards.Modules
             {
                 placingEffects.Add(eff.CreateCopy());
             }
+
+            var placingReqs = new List<PlacingEffectRequirement>();
+            foreach (var req in setUp.requirements)
+            {
+                placingReqs.Add(req.CreateCopy());
+            }
             var newModule = new Module
             {
                 name = setUp.name,
                 desc = setUp.desc,
                 m_prefab = setUp.prefab,
                 m_signalEffects = SignalEffects.CreateSignalEffects(signalEffects, setUp.maxUses, setUp.energyConsumption, setUp.coolDown),
-                m_placingEffects = PlacingEffects.CreatePlacingEffects(placingEffects)
+                m_placingEffects = PlacingEffects.CreatePlacingEffects(placingEffects, placingReqs)
                 
             };
             

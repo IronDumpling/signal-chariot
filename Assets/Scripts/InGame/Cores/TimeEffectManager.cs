@@ -66,6 +66,12 @@ namespace InGame.Cores
             m_isOn = true;
             m_isTest = true;
         }
+
+        public void TestStop()
+        {
+            m_isOn = false;
+            m_isTest = false;
+        }
         
         public void Update(float deltaTime, float newTime)
         {

@@ -12,9 +12,10 @@ namespace InGame.BattleFields.Common
     {
         Mod,
         Armor,
+        Defence,
         Speed,
         BulletCount,
-        Attack,
+        Damage,
         Multiplier,
         Range,
         Interval,
@@ -29,27 +30,12 @@ namespace InGame.BattleFields.Common
         public float value
         {
             get => m_value;
-            private set
+            set
             {
                 if(value <= 0) m_value = 0;
                 else m_value = value;
                 onValueChanged.Invoke(m_value);
             }
-        }
-
-        public void Set(float val)
-        {
-            value = val;
-        }
-
-        public void Increase(float delta)
-        {
-            value += delta;
-        }
-
-        public void Decrease(float delta)
-        {
-            value -= delta;
         }
 
         public UnlimitedProperty(UnlimitedPropertyType type)
@@ -74,7 +60,7 @@ namespace InGame.BattleFields.Common
         public float current
         {
             get => m_current;
-            private set
+            set
             {
                 m_current = Mathf.Clamp(value, 0, m_max);
                 onValueChanged.Invoke(m_current, m_max);
@@ -85,41 +71,11 @@ namespace InGame.BattleFields.Common
         public float max
         {
             get => m_max;
-            private set
+            set
             {
                 m_max = Mathf.Min(0, value);
                 onValueChanged.Invoke(m_current, m_max);
             }
-        }
-
-        public void SetCurrent(float val)
-        {
-            current = val;
-        }
-
-        public void IncreaseCurrent(float delta)
-        {
-            current += delta;
-        }
-        
-        public void DecreaseCurrent(float delta)
-        {
-            current -= delta;
-        }
-
-        public void SetMax(float val)
-        {
-            max = val;
-        }
-
-        public void IncreaseMax(float delta)
-        {
-            max += delta;
-        }
-
-        public void DecreaseMax(float delta)
-        {
-            max -= delta;
         }
 
         public LimitedProperty(float max, LimitedPropertyType type)

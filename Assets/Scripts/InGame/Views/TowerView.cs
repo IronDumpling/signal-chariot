@@ -63,13 +63,17 @@ namespace InGame.Views
             StartCoroutine(RotateTowards());
         }
 
+        public void Shoot()
+        {
+            StartCoroutine(m_tower.ShootBullet());
+        }
+
         public IEnumerator RotateTowards()
         {
             Vector3 direction = m_target - transform.position;
             direction.z = 0;
             
-            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            Debug.Log("angle " + targetAngle);
+            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
             Tween rotateTween = transform.DORotate(new Vector3(0, 0, targetAngle), m_tower.seekInterval.value);
 
             yield return rotateTween.WaitForCompletion();

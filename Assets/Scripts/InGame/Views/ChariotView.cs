@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using Utils.Common;
-using InGame.InGameStates;
+
 using InGame.BattleFields.Chariots;
-using InGame.Cores;
+using InGame.BattleFields.Common;
 
 namespace InGame.Views
 {
@@ -29,7 +29,6 @@ namespace InGame.Views
         public void Die()
         {
             Destroy(gameObject);
-            GameManager.Instance.ChangeToBattleResultState(BattleResultType.Fail);
         }
         #endregion
 
@@ -48,7 +47,7 @@ namespace InGame.Views
                 x * Mathf.Sqrt(1 - y * y * 0.5f), 
                 y * Mathf.Sqrt(1 - x * x * 0.5f), 
                 0
-            ) * Time.deltaTime * m_chariot.speed.value;
+            ) * Time.deltaTime * m_chariot.Get(UnlimitedPropertyType.Speed);
         }
 
         // TODO: add and remove towerview
@@ -58,8 +57,7 @@ namespace InGame.Views
         #region Interaction
         public void TakeDamage(float dmg)
         {
-            m_chariot.health.DecreaseCurrent(dmg);
-            if(m_chariot.health.current <= 0) Die();
+            m_chariot.TakeDamage(dmg);
         }
         #endregion
     }

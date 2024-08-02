@@ -27,9 +27,9 @@ namespace InGame.UI
         private void Start()
         {
             Chariot chariot = GameManager.Instance.GetChariot();
-            chariot.RegisterLimitedPropertyEvent(LimitedPropertyType.Health, SetHealthUI);
-            chariot.RegisterUnlimitedPropertyEvent(UnlimitedPropertyType.Armor, SetArmorUI);
-            chariot.RegisterUnlimitedPropertyEvent(UnlimitedPropertyType.Mod, SetModUI);
+            chariot.RegisterPropertyEvent(LimitedPropertyType.Health, SetHealthUI);
+            chariot.RegisterPropertyEvent(UnlimitedPropertyType.Armor, SetArmorUI);
+            chariot.RegisterPropertyEvent(UnlimitedPropertyType.Mod, SetModUI);
         }
 
         private void SetHealthUI(float current, float max)

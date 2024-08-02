@@ -11,7 +11,10 @@ namespace SetUps
         #endregion
 
         public int armor = 0;
+        public float defence = 0;
+        
         public float speed = 1f;
+
         public int mod = 0;
     }
 }

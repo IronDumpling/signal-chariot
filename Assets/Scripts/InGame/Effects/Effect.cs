@@ -153,14 +153,15 @@ namespace InGame.Effects
     public class PlacingEffects
     {
         private List<Effect> m_effects;
-        private List<PlacingEffectRequirement> requirements;
+        private List<PlacingEffectRequirement> m_requirements;
+        private bool m_isTrigger = false;
 
-        public static PlacingEffects CreatePlacingEffects(List<Effect> effect)
+        public static PlacingEffects CreatePlacingEffects(List<Effect> effect, List<PlacingEffectRequirement> reqs)
         {
             return new PlacingEffects
             {
                 m_effects = new List<Effect>(effect),
-                requirements = new List<PlacingEffectRequirement>()
+                m_requirements = reqs
             };
         }
         
@@ -171,14 +172,31 @@ namespace InGame.Effects
             {
                 placingEffects.Add(eff.CreateCopy());
             }
+
+            var requirements = new List<PlacingEffectRequirement>();
+            foreach (var requirement in other.m_requirements)
+            {
+                requirements.Add(requirement.CreateCopy());
+            }
             return new PlacingEffects
             {
-                m_effects = placingEffects
+                m_effects = placingEffects,
+                m_requirements = requirements
             };
         }
         
         public void Trigger(EffectBlackBoard blackBoard)
         {
+            foreach (var req in m_requirements)
+            {
+                if (!req.CanTrigger(blackBoard))
+                {
+                    return;
+                }
+            }
+            
+            m_isTrigger = true;
+            
             foreach (var effect in m_effects)
             {
                 effect.Trigger(blackBoard);
@@ -187,10 +205,14 @@ namespace InGame.Effects
 
         public void UnTrigger(EffectBlackBoard blackBoard)
         {
+            if (!m_isTrigger) return;
+            
             foreach (var effect in m_effects)
             {
                 effect.UnTrigger(blackBoard);
             }
+
+            m_isTrigger = false;
         }
         
         public void SetModule(Module module)

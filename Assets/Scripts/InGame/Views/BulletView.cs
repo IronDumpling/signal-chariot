@@ -45,7 +45,7 @@ namespace InGame.Views
             Move();
         }
 
-        private void Die()
+        public void Die()
         {
             Destroy(gameObject);
         }
@@ -79,8 +79,7 @@ namespace InGame.Views
 
         public void DealDamage(IDamageable target, float dmg)
         {
-            target.TakeDamage(dmg);
-            Die();
+            m_bullet.DealDamage(target, dmg);
         }
         #endregion
     }

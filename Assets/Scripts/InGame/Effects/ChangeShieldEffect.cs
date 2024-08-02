@@ -1,4 +1,5 @@
-﻿using InGame.Cores;
+﻿using InGame.BattleFields.Common;
+using InGame.Cores;
 
 namespace InGame.Effects
 {
@@ -8,7 +9,12 @@ namespace InGame.Effects
         
         public override void OnTrigger(EffectBlackBoard blackBoard)
         {
-            GameManager.Instance.GetChariot().armor.Increase(delta);
+            GameManager.Instance.GetChariot().Increase(UnlimitedPropertyType.Armor, delta);
+        }
+
+        public override void OnUnTrigger(EffectBlackBoard blackBoard)
+        {
+            GameManager.Instance.GetChariot().Decrease(UnlimitedPropertyType.Armor, delta);
         }
 
         public override Effect CreateCopy()

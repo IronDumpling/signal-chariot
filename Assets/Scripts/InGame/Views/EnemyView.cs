@@ -6,6 +6,7 @@ using InGame.BattleFields.Enemies;
 
 using DG.Tweening;
 using Unity.VisualScripting;
+using InGame.BattleFields.Common;
 
 namespace InGame.Views
 {
@@ -25,9 +26,9 @@ namespace InGame.Views
             Move();
         }
 
-        private void Die()
+        public void Die()
         {
-
+            Destroy(gameObject);
         }
         #endregion
 
@@ -37,7 +38,7 @@ namespace InGame.Views
         {
             float distance = Vector3.Distance(this.transform.position, m_target);
             if(distance <= Constants.COLLIDE_OFFSET) return;
-            transform.DOMove(m_target, distance / m_enemy.speed.value)
+            transform.DOMove(m_target, distance / m_enemy.Get(UnlimitedPropertyType.Speed))
                     .SetEase(Ease.InOutQuad);
         }
 
@@ -47,13 +48,12 @@ namespace InGame.Views
         public void OnCollisionEnter(Collision other)
         {
             IDamageable target = other.gameObject.GetComponent<IDamageable>();
-            if(target != null) DealDamage(target, m_enemy.damage.value);
+            if(target != null) DealDamage(target, m_enemy.Get(UnlimitedPropertyType.Damage));
         }
 
         public void TakeDamage(float dmg)
         {
-            m_enemy.health.DecreaseCurrent(dmg);
-            if(m_enemy.health.current <= 0) Die();
+            m_enemy.TakeDamage(dmg);
         }
 
         public void DealDamage(IDamageable target, float dmg)

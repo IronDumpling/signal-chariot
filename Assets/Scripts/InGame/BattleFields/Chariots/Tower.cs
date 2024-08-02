@@ -8,6 +8,7 @@ using InGame.Views;
 using InGame.Boards.Modules;
 using InGame.BattleFields.Common;
 using Utils;
+using System.Collections;
 
 namespace InGame.BattleFields.Chariots
 {
@@ -15,6 +16,7 @@ namespace InGame.BattleFields.Chariots
     {
         None,
         Nearest,
+        Random,
     }
 
     public class Tower
@@ -28,9 +30,11 @@ namespace InGame.BattleFields.Chariots
         private UnlimitedProperty m_damageMultiplier;
         
         [Header("Bullet")]
+        private BulletManager m_bulletManager;
         private BulletSetUp m_bulletSetUp;
         private UnlimitedProperty m_bulletCount;
         private UnlimitedProperty m_shootInterval;
+        public UnlimitedProperty shootInterval { get { return m_shootInterval;}}
         private SeekMode m_seekMode;
         private UnlimitedProperty m_seekInterval;
         public UnlimitedProperty seekInterval { get { return m_seekInterval;}}
@@ -55,6 +59,8 @@ namespace InGame.BattleFields.Chariots
             m_seekInterval = seekInterval;
             m_module = module;              
             m_sprite = towerSetUp.sprite;
+
+            m_bulletManager = new();
             
             CreateView();
         }
@@ -78,20 +84,22 @@ namespace InGame.BattleFields.Chariots
         }
         #endregion
 
-        public async void Effect()
+        public BulletManager GetBulletManager() => m_bulletManager;
+
+        public void Effect()
         {
-            await ShootBullet();
+            m_towerView.Shoot();
         }
 
-        private async Task ShootBullet()
+        public IEnumerator ShootBullet()
         {
             Vector3 target = FindTarget();
+            m_towerView.SetTarget(target);
             
             for(int i = 0; i < m_bulletCount.value; i++)
             {
-                new Bullet(m_bulletSetUp, target, m_damageMultiplier.value);
-                float intervalInMS = m_shootInterval.value * 1000;
-                await Task.Delay((int)intervalInMS);
+                m_bulletManager.AddBullet(m_bulletSetUp, target, m_damageMultiplier.value);
+                yield return new WaitForSeconds(m_shootInterval.value);
             }
         }
 
@@ -102,6 +110,8 @@ namespace InGame.BattleFields.Chariots
             {
                 case SeekMode.Nearest:
                     target = new(10, 10, 0);
+                    break;
+                case SeekMode.Random:
                     break;
                 default:
                     break;

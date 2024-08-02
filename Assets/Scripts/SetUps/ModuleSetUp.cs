@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using InGame.Boards.Modules;
 using InGame.Effects;
+using InGame.Effects.PlacingEffectRequirements;
 using InGame.Views;
 using UnityEngine;
 
@@ -27,6 +28,9 @@ namespace SetUps
         
         [SerializeReference]
         public List<Effect> placingEffects;
+        
+        [SerializeReference]
+        public List<PlacingEffectRequirement> requirements;
 
         #endregion
     }

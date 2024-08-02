@@ -58,8 +58,8 @@ namespace Editors.Board
                 coolDown = signalEffectEdits.coolDown,
                 energyConsumption = signalEffectEdits.energyConsumption,
                 maxUses = signalEffectEdits.maxUses,
-                placingEffects = placingEffectEdits.CreateEffects()
-                
+                placingEffects = placingEffectEdits.CreateEffects(),
+                requirements = placingEffectEdits.CreateRequirements()
             };
         }
     }

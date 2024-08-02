@@ -45,6 +45,8 @@ namespace InGame.Cores
         [Header("Enemy")]
         private EnemyManager m_enemyManager;
 
+        private EnemyLib m_enemyLib;
+
         protected override void Init()
         {
             m_inputManager = new InputManager(m_playerInput);
@@ -53,8 +55,15 @@ namespace InGame.Cores
             InitChariot();
             InitBoard();
             InitCamera();
+            InitEnemy();
 
             ChangeToBoardWaitingState(); // initial state is board preparation
+        }
+
+        private void InitEnemy()
+        {
+            m_enemyLib = new EnemyLib(m_setUp.enemyLibrary);
+            m_enemyManager = new EnemyManager(m_setUp.enemySpawnLevels);
         }
 
         private void InitChariot()

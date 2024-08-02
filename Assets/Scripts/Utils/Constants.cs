@@ -47,7 +47,7 @@ namespace Utils
         public const float MODULE_DEPTH = -0.5f;
         public const float PLACING_MODULE_DEPTH = -1f;
         public const float SIGNAL_DEPTH = -1.5f;
-        public const float SIGNAL_MOVING_DURATION = 1f;
+        public const float SIGNAL_MOVING_DURATION = 0.25f;
 
         // Battlefield
         public const float SCENE_DEPTH = 1f;

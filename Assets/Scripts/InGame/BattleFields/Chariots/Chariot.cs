@@ -1,13 +1,15 @@
+using System;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.Events;
 
 using InGame.Views;
-using InGame.Boards.Modules;
+using InGame.Cores;
+using InGame.InGameStates;
 using InGame.BattleFields.Common;
 using SetUps;
 using Utils;
-using UnityEngine.Events;
 
 namespace InGame.BattleFields.Chariots
 {
@@ -19,11 +21,12 @@ namespace InGame.BattleFields.Chariots
         [Header("Properties")]       
         private LimitedProperty m_health;
         private UnlimitedProperty m_armor;
+        private UnlimitedProperty m_defence;
         private UnlimitedProperty m_speed;
         private UnlimitedProperty m_mod;
 
         [Header("Tower")]
-        private List<Tower> m_towers;
+        private TowerManager m_towerManager;
         
         public Chariot(ChariotSetUp setUp)
         {
@@ -38,6 +41,11 @@ namespace InGame.BattleFields.Chariots
                 UnlimitedPropertyType.Armor
             );
 
+            m_defence = new UnlimitedProperty(
+                setUp.defence,
+                UnlimitedPropertyType.Defence
+            );
+
             m_speed = new UnlimitedProperty(
                 setUp.speed,
                 UnlimitedPropertyType.Speed
@@ -48,9 +56,15 @@ namespace InGame.BattleFields.Chariots
                 UnlimitedPropertyType.Mod
             );
 
-            m_towers = new();
+            m_towerManager = new();
 
             CreateView();
+        }
+
+        private void Die()
+        {
+            m_chariotView.Die();
+            GameManager.Instance.ChangeToBattleResultState(BattleResultType.Fail);
         }
 
         #region View
@@ -68,43 +82,30 @@ namespace InGame.BattleFields.Chariots
         #endregion
 
         #region Properties
-        public LimitedProperty health { get { return m_health;}}
-        public UnlimitedProperty armor { get { return m_armor;}}
-        public UnlimitedProperty speed { get { return m_speed;}}
-        public UnlimitedProperty mod { get { return m_mod;}}
 
-        public void RegisterLimitedPropertyEvent(LimitedPropertyType type, 
-                                                UnityAction<float, float> call)
+        public float Get(LimitedPropertyType type, bool isCurrentValue)
         {
-            LimitedProperty property = GetLimitedProperty(type);
-            Debug.Assert(property != null, "LimitedProperty Type does not exist");
-            property.onValueChanged.AddListener(call);
-            property.onValueChanged.Invoke(property.current, property.max);
+            LimitedProperty result = m_health;
+            switch(type)
+            {
+                case LimitedPropertyType.Health:
+                    result = m_health;
+                    break;
+            }
+            
+            if(isCurrentValue) return result.current;
+            else return result.max;
         }
 
-        public void UnregisterLimitedPropertyEvent(LimitedPropertyType type, 
-                                                UnityAction<float, float> call)
+        public float Get(UnlimitedPropertyType type)
         {
-            LimitedProperty property = GetLimitedProperty(type);
-            Debug.Assert(property != null, "LimitedProperty Type does not exist");
-            property.onValueChanged.RemoveListener(call);
-        }
-
-        public void RegisterUnlimitedPropertyEvent(UnlimitedPropertyType type, 
-                                                UnityAction<float> call)
-        {
-            UnlimitedProperty property = GetUnlimitedProperty(type);
-            Debug.Assert(property != null, "UnlimitedProperty Type does not exist");
-            property.onValueChanged.AddListener(call);
-            property.onValueChanged.Invoke(property.value);
-        }
-
-        public void UnregisterUnlimitedPropertyEvent(UnlimitedPropertyType type, 
-                                                    UnityAction<float> call)
-        {
-            UnlimitedProperty property = GetUnlimitedProperty(type);
-            Debug.Assert(property != null, "UnlimitedProperty Type does not exist");
-            property.onValueChanged.RemoveListener(call);
+            return type switch
+            {
+                UnlimitedPropertyType.Armor => m_armor.value,
+                UnlimitedPropertyType.Mod => m_mod.value,
+                UnlimitedPropertyType.Speed => m_speed.value,
+                UnlimitedPropertyType.Defence => m_defence.value,
+            };
         }
 
         private LimitedProperty GetLimitedProperty(LimitedPropertyType type)
@@ -123,40 +124,109 @@ namespace InGame.BattleFields.Chariots
                 UnlimitedPropertyType.Armor => m_armor,
                 UnlimitedPropertyType.Mod => m_mod,
                 UnlimitedPropertyType.Speed => m_speed,
+                UnlimitedPropertyType.Defence => m_defence,
                 _ => null
             };
         }
-        #endregion
 
-        #region Towers
-        public List<Tower> GetTowers() => m_towers;
+        public void Set(LimitedPropertyType type, float val, bool isCurrentValue)
+        {
+            LimitedProperty property = GetLimitedProperty(type);
+            if(isCurrentValue) property.current = val;
+            else property.max = val;
+        }
+
+        public void Set(UnlimitedPropertyType type, float val)
+        {
+            UnlimitedProperty property = GetUnlimitedProperty(type);
+            property.value = val;
+        }
+
+        public void Increase(LimitedPropertyType type, float delta, bool isCurrentValue)
+        {
+            LimitedProperty property = GetLimitedProperty(type);
+            property.current += delta;
+            if(isCurrentValue) property.current += delta;
+            else property.max += delta;
+        }
         
-        public void CopyTowers(List<Tower> towers)
+        public void Increase(UnlimitedPropertyType type, float delta)
         {
-            m_towers = towers;
+            UnlimitedProperty property = GetUnlimitedProperty(type);
+            property.value += delta;
         }
 
-        public Tower AddTower(TowerSetUp towerSetUp, Module module)
+        public void Decrease(LimitedPropertyType type, float delta, bool isCurrentValue)
         {
-            Tower tower = new(towerSetUp, module);
-            m_towers.Add(tower);
-            return tower;
+            LimitedProperty property = GetLimitedProperty(type);
+            if(isCurrentValue) property.current -= delta;
+            else property.max -= delta;
         }
 
-        public void RemoveTower(Tower tower)
+        public void Decrease(UnlimitedPropertyType type, float delta)
         {
-            m_towers.Remove(tower);
-            tower.Die();
+            UnlimitedProperty property = GetUnlimitedProperty(type);
+            property.value -= delta;
         }
 
-        public void TowerEffect(Module module)
+        public void RegisterPropertyEvent(LimitedPropertyType type, 
+                                        UnityAction<float, float> call)
         {
-            foreach(Tower tower in m_towers)
-            {
-                if(module == tower.module)
-                    tower.Effect();
-            }
+            LimitedProperty property = GetLimitedProperty(type);
+            Debug.Assert(property != null, "LimitedProperty Type does not exist");
+            property.onValueChanged.AddListener(call);
+            property.onValueChanged.Invoke(property.current, property.max);
+        }
+
+        public void UnregisterPropertyEvent(LimitedPropertyType type, 
+                                            UnityAction<float, float> call)
+        {
+            LimitedProperty property = GetLimitedProperty(type);
+            Debug.Assert(property != null, "LimitedProperty Type does not exist");
+            property.onValueChanged.RemoveListener(call);
+        }
+
+        public void RegisterPropertyEvent(UnlimitedPropertyType type, 
+                                        UnityAction<float> call)
+        {
+            UnlimitedProperty property = GetUnlimitedProperty(type);
+            Debug.Assert(property != null, "UnlimitedProperty Type does not exist");
+            property.onValueChanged.AddListener(call);
+            property.onValueChanged.Invoke(property.value);
+        }
+
+        public void UnregisterPropertyEvent(UnlimitedPropertyType type, 
+                                            UnityAction<float> call)
+        {
+            UnlimitedProperty property = GetUnlimitedProperty(type);
+            Debug.Assert(property != null, "UnlimitedProperty Type does not exist");
+            property.onValueChanged.RemoveListener(call);
         }
         #endregion
+
+        #region Tower
+
+        public TowerManager GetTowerManager() => m_towerManager;
+
+        #endregion
+
+        #region Logic
+
+        public void TakeDamage(float dmg)
+        {
+            if(m_armor.value >= dmg){
+                m_armor.value -= dmg;
+            }else if(m_armor.value > 0){
+                dmg -= m_armor.value;
+                m_armor.value = 0;
+                m_health.current -= dmg;
+            }else{
+                m_health.current -= dmg;
+            }
+
+            if(m_health.current <= 0) Die();
+        }
+
+        #endregion 
     }
 }
