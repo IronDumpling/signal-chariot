@@ -386,7 +386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: name
-      value: Extra Shot
+      value: "\u8FDE\u7EED\u5F00\u706B"
       objectReference: {fileID: 0}
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: prefab
@@ -398,7 +398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4810080614412965423, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: m_Name
-      value: Extra Shot
+      value: "\u8FDE\u7EED\u5F00\u706B"
       objectReference: {fileID: 0}
     - target: {fileID: 6579473263901316917, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2830,7 +2830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: name
-      value: Extra Defense
+      value: "\u9632\u5FA1\u88C5\u7532"
       objectReference: {fileID: 0}
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: prefab
@@ -2842,7 +2842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4810080614412965423, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: m_Name
-      value: Extra Defense
+      value: "\u9632\u5FA1\u88C5\u7532"
       objectReference: {fileID: 0}
     - target: {fileID: 6117275396622674993, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: requirements.Array.size

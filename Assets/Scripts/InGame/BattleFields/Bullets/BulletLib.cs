@@ -33,6 +33,7 @@ namespace InGame.BattleFields.Bullets
                     m_lib.Add(type, new BulletSetUp[Constants.MAX_BULLET_LEVEL]);
                     m_lib[type][level-1] = setUp;
                 }
+                Debug.Log("Add " + type.ToString() + " " + level + " bullet!");
             }
         }
 

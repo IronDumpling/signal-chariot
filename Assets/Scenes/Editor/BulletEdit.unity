@@ -414,7 +414,7 @@ MonoBehaviour:
   level: 1
   sprite: {fileID: 21300000, guid: 494c2058d61db45a89aa442c3fa2acfb, type: 3}
   moveType: 4
-  size: 1.5
+  size: 1
   health: -1
   speed: 0
   lifeTime: 2
@@ -492,6 +492,249 @@ MonoBehaviour:
   health: -1
   speed: 100
   lifeTime: 4
+--- !u!1 &1185278262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1185278263}
+  - component: {fileID: 1185278266}
+  - component: {fileID: 1185278265}
+  - component: {fileID: 1185278264}
+  m_Layer: 0
+  m_Name: Laser2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1185278263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185278262}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2116755078}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1185278264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185278262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24856f4901f1f4497b0ec4981d563406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectType: 6
+  triggerType: 0
+  count: -1
+  damage: 0
+  duration: 0
+  interval: 0
+  radius: 0
+  objectsToSpawn: []
+--- !u!114 &1185278265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185278262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24856f4901f1f4497b0ec4981d563406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectType: 1
+  triggerType: 0
+  count: 0
+  damage: 5
+  duration: 0
+  interval: 0
+  radius: 5
+  objectsToSpawn: []
+--- !u!114 &1185278266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185278262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00875aa986de47c3afebb99dd6b6cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Laser2
+  type: 1
+  level: 2
+  sprite: {fileID: 21300000, guid: 7e9256ed26aff4806b936bb09538a8e5, type: 3}
+  moveType: 0
+  size: 3
+  health: -1
+  speed: 200
+  lifeTime: 4
+--- !u!1 &1558258704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1558258705}
+  - component: {fileID: 1558258707}
+  - component: {fileID: 1558258706}
+  m_Layer: 0
+  m_Name: Explosion2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1558258705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558258704}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2116755078}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1558258706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558258704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24856f4901f1f4497b0ec4981d563406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectType: 3
+  triggerType: 0
+  count: 0
+  damage: 3
+  duration: 0
+  interval: 0
+  radius: 5
+  objectsToSpawn: []
+--- !u!114 &1558258707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558258704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00875aa986de47c3afebb99dd6b6cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Explosion2
+  type: 3
+  level: 2
+  sprite: {fileID: 21300000, guid: 3b362b8a735364076a358feec9a74534, type: 3}
+  moveType: 2
+  size: 1.5
+  health: -1
+  speed: 0
+  lifeTime: 2
+--- !u!1 &1567478505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1567478506}
+  - component: {fileID: 1567478508}
+  - component: {fileID: 1567478507}
+  m_Layer: 0
+  m_Name: Landmine2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1567478506
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567478505}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2116755078}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1567478507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567478505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24856f4901f1f4497b0ec4981d563406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectType: 3
+  triggerType: 1
+  count: 0
+  damage: 3
+  duration: 0
+  interval: 0
+  radius: 5
+  objectsToSpawn: []
+--- !u!114 &1567478508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567478505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00875aa986de47c3afebb99dd6b6cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Landmine2
+  type: 2
+  level: 2
+  sprite: {fileID: 21300000, guid: 494c2058d61db45a89aa442c3fa2acfb, type: 3}
+  moveType: 4
+  size: 2
+  health: -1
+  speed: 0
+  lifeTime: 2
 --- !u!1 &1665733254
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,41 +826,10 @@ MonoBehaviour:
   level: 1
   sprite: {fileID: 21300000, guid: 7e9256ed26aff4806b936bb09538a8e5, type: 3}
   moveType: 0
-  size: 3
+  size: 2
   health: -1
   speed: 150
   lifeTime: 4
---- !u!1 &1953216936
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1953216937}
-  m_Layer: 0
-  m_Name: EquipmentLib
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1953216937
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1953216936}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.47, y: 4.99, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2116755077
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,8 +864,11 @@ Transform:
   - {fileID: 52488857}
   - {fileID: 712984692}
   - {fileID: 1665733255}
+  - {fileID: 1185278263}
   - {fileID: 563594144}
+  - {fileID: 1567478506}
   - {fileID: 14587002}
+  - {fileID: 1558258705}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2116755079
@@ -674,4 +889,3 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2116755078}
-  - {fileID: 1953216937}

@@ -25,7 +25,11 @@ namespace InGame.BattleFields.Bullets
         public BulletSetUp GenerateBulletSetUp(BulletType bulletType, int bulletLevel, WeaponBuff buff)
         {
             BulletSetUp setUp = GameManager.Instance.GetBulletLib().GetSetUp(bulletType, bulletLevel);
-            if(setUp == null) return null;
+            if(setUp == null)
+            {
+                Debug.LogError("No " + bulletType.ToString() + " " + bulletLevel + " bullet!");
+                return null;
+            }
             
             BulletSetUp buffedSetUp = new(setUp);
             buffedSetUp = AddNumericalBuffs(buffedSetUp, buff);
