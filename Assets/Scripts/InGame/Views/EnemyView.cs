@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 using Utils;
@@ -8,6 +9,8 @@ using InGame.BattleFields.Enemies;
 using InGame.BattleFields.Androids;
 using InGame.BattleFields.Common;
 using System.Collections;
+using Spine.Unity;
+using AnimationState = Spine.AnimationState;
 
 namespace InGame.Views
 {
@@ -22,7 +25,30 @@ namespace InGame.Views
         private RaycastHit[] m_hits;
         private float[] m_colliderSizes;
 
+        private SkeletonAnimation m_skeletonAnimation;
+
+        private SkeletonAnimation skeletonAnimation
+        {
+            get
+            {
+                if (m_skeletonAnimation == null) m_skeletonAnimation = GetComponentInChildren<SkeletonAnimation>();
+                return m_skeletonAnimation;
+            }
+        }
+        private AnimationState animationState
+        {
+            get
+            {
+                return skeletonAnimation.AnimationState;
+            }
+        }
+        private const string MoveAnimation = "Move", AttackAnimation = "Attack";
+
+        private float attackAnimationDuration => skeletonAnimation.Skeleton.Data.FindAnimation(AttackAnimation).Duration;
+
         #region Life Cycle
+        
+
         public void Init(Enemy enemy)
         {
             m_enemy = enemy;
@@ -129,8 +155,12 @@ namespace InGame.Views
                 case Constants.ENEMY_LAYER:
                     break;
                 default:
+                    bool isRight = false;
+                    if (other.gameObject.transform.position.x >= transform.position.x) isRight = true;
+                    else isRight = false;
+                    
                     m_dmgTarget = other.gameObject.GetComponent<IDamageable>();
-                    if(m_dmgTarget != null) StartCoroutine(Attack());
+                    if(m_dmgTarget != null) StartCoroutine(Attack(isRight));
                     break;
             }
         }
@@ -140,10 +170,22 @@ namespace InGame.Views
             m_enemy.TakeDamage(dmg);
         }
 
-        public IEnumerator Attack()
+        public IEnumerator Attack(bool isRight)
         {
             // TODO: enlarge collider size based on attack range
+            var originalScale = transform.localScale;
+            var modifiedScale = originalScale;
+            
+            if (!isRight) modifiedScale.x = -modifiedScale.x;
+            
+
+            transform.localScale = modifiedScale;
+            animationState.SetAnimation(0, AttackAnimation, false);
+            yield return new WaitForSeconds(attackAnimationDuration);
             m_dmgTarget.TakeDamage(m_enemy.Get(UnlimitedPropertyType.Damage));
+            animationState.SetAnimation(0, MoveAnimation, true);
+            
+            transform.localScale = originalScale;
             yield return new WaitForSeconds(m_enemy.Get(UnlimitedPropertyType.Interval));
         }
         #endregion
@@ -164,8 +206,16 @@ namespace InGame.Views
             Gizmos.DrawLine(transform.position, transform.position + Vector3.right * m_colliderSizes[1]);
         }
         
-        public void TurnOn() => m_isOn = true;
+        public void TurnOn()
+        { 
+            m_isOn = true;
+            animationState.SetAnimation(0, MoveAnimation, true);
+        } 
 
-        public void TurnOff() => m_isOn = false;
+        public void TurnOff()
+        { 
+            m_isOn = false;
+            animationState.SetEmptyAnimation(0, 0f);
+        }
     }
 }
