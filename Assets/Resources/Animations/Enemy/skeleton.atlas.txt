@@ -1,0 +1,62 @@
+
+skeleton.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+微信图片_20240912184929-modified
+  rotate: true
+  xy: 2, 66
+  size: 444, 384
+  orig: 646, 443
+  offset: 97, 40
+  index: -1
+微信图片_20240912184933-modified
+  rotate: false
+  xy: 574, 286
+  size: 139, 224
+  orig: 212, 322
+  offset: 33, 56
+  index: -1
+微信图片_20240912184936-modified
+  rotate: false
+  xy: 388, 6
+  size: 124, 84
+  orig: 167, 121
+  offset: 20, 30
+  index: -1
+微信图片_20240912184941-modified
+  rotate: true
+  xy: 640, 2
+  size: 140, 223
+  orig: 218, 289
+  offset: 49, 37
+  index: -1
+微信图片_20240912184945-modified
+  rotate: false
+  xy: 715, 286
+  size: 139, 224
+  orig: 249, 334
+  offset: 65, 40
+  index: -1
+微信图片_20240912184948-modified
+  rotate: false
+  xy: 514, 6
+  size: 124, 84
+  orig: 231, 216
+  offset: 55, 57
+  index: -1
+微信图片_20240912184954-modified
+  rotate: true
+  xy: 388, 92
+  size: 418, 184
+  orig: 569, 332
+  offset: 77, 74
+  index: -1
+微信图片_20240912185041-modified
+  rotate: true
+  xy: 574, 144
+  size: 140, 223
+  orig: 299, 311
+  offset: 72, 39
+  index: -1
