@@ -270,6 +270,80 @@ MonoBehaviour:
   health: -1
   speed: 100
   lifeTime: 4
+--- !u!1 &161680002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 161680003}
+  - component: {fileID: 161680005}
+  - component: {fileID: 161680004}
+  m_Layer: 0
+  m_Name: Explosion3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &161680003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161680002}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2116755078}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &161680004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161680002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24856f4901f1f4497b0ec4981d563406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectType: 3
+  triggerType: 0
+  count: 0
+  damage: 3
+  duration: 0
+  interval: 0
+  radius: 5
+  objectsToSpawn: []
+--- !u!114 &161680005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161680002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00875aa986de47c3afebb99dd6b6cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Explosion3
+  type: 3
+  level: 3
+  sprite: {fileID: 21300000, guid: 3b362b8a735364076a358feec9a74534, type: 3}
+  moveType: 2
+  size: 1.5
+  health: -1
+  speed: 0
+  lifeTime: 2
 --- !u!1 &450031692
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,6 +418,80 @@ MonoBehaviour:
   health: -1
   speed: 100
   lifeTime: 4
+--- !u!1 &490109986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 490109987}
+  - component: {fileID: 490109989}
+  - component: {fileID: 490109988}
+  m_Layer: 0
+  m_Name: Landmine3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &490109987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490109986}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2116755078}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &490109988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490109986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24856f4901f1f4497b0ec4981d563406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectType: 3
+  triggerType: 1
+  count: 0
+  damage: 3
+  duration: 0
+  interval: 0
+  radius: 5
+  objectsToSpawn: []
+--- !u!114 &490109989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490109986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00875aa986de47c3afebb99dd6b6cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Landmine3
+  type: 2
+  level: 3
+  sprite: {fileID: 21300000, guid: 494c2058d61db45a89aa442c3fa2acfb, type: 3}
+  moveType: 4
+  size: 2
+  health: -1
+  speed: 0
+  lifeTime: 2
 --- !u!1 &563594143
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,6 +978,101 @@ MonoBehaviour:
   health: -1
   speed: 150
   lifeTime: 4
+--- !u!1 &1917499023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1917499024}
+  - component: {fileID: 1917499027}
+  - component: {fileID: 1917499026}
+  - component: {fileID: 1917499025}
+  m_Layer: 0
+  m_Name: Laser3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1917499024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917499023}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2116755078}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1917499025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917499023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24856f4901f1f4497b0ec4981d563406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectType: 6
+  triggerType: 0
+  count: -1
+  damage: 0
+  duration: 0
+  interval: 0
+  radius: 0
+  objectsToSpawn: []
+--- !u!114 &1917499026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917499023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24856f4901f1f4497b0ec4981d563406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectType: 1
+  triggerType: 0
+  count: 0
+  damage: 5
+  duration: 0
+  interval: 0
+  radius: 5
+  objectsToSpawn: []
+--- !u!114 &1917499027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917499023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00875aa986de47c3afebb99dd6b6cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Laser3
+  type: 1
+  level: 3
+  sprite: {fileID: 21300000, guid: 7e9256ed26aff4806b936bb09538a8e5, type: 3}
+  moveType: 0
+  size: 3
+  health: -1
+  speed: 200
+  lifeTime: 4
 --- !u!1 &2116755077
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,10 +1108,13 @@ Transform:
   - {fileID: 712984692}
   - {fileID: 1665733255}
   - {fileID: 1185278263}
+  - {fileID: 1917499024}
   - {fileID: 563594144}
   - {fileID: 1567478506}
+  - {fileID: 490109987}
   - {fileID: 14587002}
   - {fileID: 1558258705}
+  - {fileID: 161680003}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2116755079

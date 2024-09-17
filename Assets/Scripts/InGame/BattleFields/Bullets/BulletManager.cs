@@ -7,6 +7,7 @@ using SetUps;
 using InGame.BattleFields.Androids;
 using InGame.Boards.Modules.ModuleBuffs;
 using InGame.Cores;
+using InGame.BattleEffects;
 
 namespace InGame.BattleFields.Bullets
 {
@@ -62,17 +63,11 @@ namespace InGame.BattleFields.Bullets
         private BulletSetUp AddEffectiveBuffs(BulletSetUp bulletSetUp, WeaponBuff buff)
         {            
             if(buff.bouncingBuff > 0)
-            {
-
-            }
+                bulletSetUp.collisionEffects.Add(new BouncingEffect(buff.bouncingBuff));
             if(buff.penetrationBuff > 0)
-            {
-
-            }
+                bulletSetUp.collisionEffects.Add(new PenetrationEffect(buff.penetrationBuff));
             if(buff.splittingBuff > 0)
-            {
-                
-            }
+                bulletSetUp.collisionEffects.Add(new SplittingEffect(buff.splittingBuff));
             return bulletSetUp;
         }
 
@@ -113,9 +108,7 @@ namespace InGame.BattleFields.Bullets
             foreach(List<Bullet> batch in m_bullets)
             {
                 foreach(Bullet bullet in batch)
-                {
                     bullet.Die();
-                }
             }
             m_bullets.Clear();
         }

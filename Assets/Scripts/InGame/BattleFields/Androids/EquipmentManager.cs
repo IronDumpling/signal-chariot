@@ -40,9 +40,7 @@ namespace InGame.BattleFields.Androids
         public void ClearEquipment()
         {
             foreach(Equipment equipment in m_equipments)
-            {
                 equipment.Die();
-            }
             m_equipments.Clear();
         }
 

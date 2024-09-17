@@ -169,6 +169,14 @@ MonoBehaviour:
   waves:
   - waveID: 0
     moduleRewards:
+    - moduleID: 2
+      moduleName: "\u8F6C\u5411\u5668"
+    - moduleID: 1
+      moduleName: "\u589E\u5E45\u5668"
+    - moduleID: 13
+      moduleName: "\u5145\u80FD\u62A4\u7532"
+  - waveID: 0
+    moduleRewards:
     - moduleID: 1
       moduleName: "\u589E\u5E45\u5668"
     - moduleID: 7
@@ -204,7 +212,7 @@ MonoBehaviour:
     - moduleID: 7
       moduleName: "\u5206\u88C2\u67AA\u53E3"
     - moduleID: 4
-      moduleName: Extra Defense
+      moduleName: "\u9632\u5FA1\u88C5\u7532"
     - moduleID: 12
       moduleName: "\u5145\u80FD\u70AE"
   - waveID: 3

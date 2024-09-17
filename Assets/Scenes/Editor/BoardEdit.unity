@@ -174,27 +174,15 @@ MonoBehaviour:
   modules:
   - pos:
       x: 0
-      y: 0
-    moduleID: 2
-    moduleName: "\u8F6C\u5411\u5668"
-    orientation: 0
-  - pos:
-      x: 0
       y: 1
     moduleID: 3
     moduleName: "\u7535\u673A\u70AE"
     orientation: 0
   - pos:
-      x: 1
-      y: 0
-    moduleID: 13
-    moduleName: "\u5145\u80FD\u62A4\u7532"
-    orientation: 0
-  - pos:
       x: 2
       y: 0
-    moduleID: 12
-    moduleName: "\u5145\u80FD\u70AE"
+    moduleID: 11
+    moduleName: "\u6FC0\u5149\u4FE1\u53F7"
     orientation: 0
   signalPrefab: {fileID: 7786143621109699157, guid: e7f648ad21042b64ca742ba22438c585, type: 3}
   slotPrefab: {fileID: 6622818502655049371, guid: 80c85fcaea6536748bb67591b4fc60b2, type: 3}
