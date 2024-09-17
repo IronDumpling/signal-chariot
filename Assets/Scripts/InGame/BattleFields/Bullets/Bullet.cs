@@ -19,13 +19,10 @@ namespace InGame.BattleFields.Bullets
     {   
         [Header("View")]
         private BulletView m_bulletView;
-        public BulletView bulletView {get { return m_bulletView;}}
 
         [Header("Generator")]
-        private Equipment m_equipment;
-        public Equipment equipment {get { return m_equipment;}}
+        private Transform m_origin;
         private int[] m_bulletIdx;
-        public int[] bulletIdx {get { return m_bulletIdx;}}
 
         [Header("Properties")]
         private Sprite m_sprite;
@@ -39,6 +36,9 @@ namespace InGame.BattleFields.Bullets
         private List<Effect> m_collisionEffects;
         private List<Effect> m_destructionEffects;
 
+        public BulletView bulletView {get { return m_bulletView;}}
+        public Transform origin {get { return m_origin;}}
+        public int[] bulletIdx {get { return m_bulletIdx;}}
         public Sprite sprite{ get { return m_sprite;}}
         public UnlimitedProperty size{ get { return m_size;}}
         public UnlimitedProperty speed { get { return m_speed;}}
@@ -48,9 +48,9 @@ namespace InGame.BattleFields.Bullets
         public List<Effect> collisionEffects { get{ return m_collisionEffects;}}
         public List<Effect> destructionEffects { get { return m_destructionEffects;}}
 
-        public Bullet(BulletSetUp bulletSetUp, Equipment equipment, int[] bulletIdx)
+        public Bullet(BulletSetUp bulletSetUp, Transform origin, int[] bulletIdx)
         {
-            m_equipment = equipment;
+            m_origin = origin;
             m_bulletIdx = bulletIdx;
             
             UnlimitedProperty dmg = new(bulletSetUp.damage, UnlimitedPropertyType.Damage);
@@ -77,8 +77,8 @@ namespace InGame.BattleFields.Bullets
             GameObject bulletPref = Resources.Load<GameObject>(Constants.GO_BULLET_PATH);
             GameObject bulletGO = GameObject.Instantiate(bulletPref);
             
-            float x = m_equipment.equipmentView.transform.position.x;
-            float y = m_equipment.equipmentView.transform.position.y;
+            float x = m_origin.position.x;
+            float y = m_origin.position.y;
 
             bulletGO.transform.position = new(x, y, Constants.BULLET_DEPTH);
 

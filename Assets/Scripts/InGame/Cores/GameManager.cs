@@ -35,12 +35,13 @@ namespace InGame.Cores
         private AndroidView m_androidView;
         private ModManager m_modManager;
         private BulletLib m_bulletLib;
+        private BulletManager m_bulletManager;
 
         [Header("Board")]
         private GeneralBoard m_generalBoard;
         private ModuleLib m_moduleLib;
         private GeneralSignalController m_generalSignalController;
-        private ModuleInfoDisplayManager m_moduleDescriptionDisplayManager;
+        private ModuleInfoDisplayManager m_moduleInfoDisplayManager;
 
         [Header("Enemy")]
         private EnemySpawnLib m_enemySpawnLib;
@@ -85,6 +86,8 @@ namespace InGame.Cores
 
             m_bulletLib = new();
             m_bulletLib.Init(m_setUp.bulletLibrary);
+
+            m_bulletManager = new();
         }
 
         private void InitBoard()
@@ -104,7 +107,7 @@ namespace InGame.Cores
             m_generalSignalController = new GeneralSignalController(board, boardView);
             m_generalBoard = GeneralBoard.CreateGeneralBoard(board, extraBoard, boardView);
 
-            m_moduleDescriptionDisplayManager = new ModuleInfoDisplayManager();
+            m_moduleInfoDisplayManager = new ModuleInfoDisplayManager();
         }
 
         private void InitCamera()
@@ -150,11 +153,11 @@ namespace InGame.Cores
         public EnemySpawnController GetEnemySpawnController() => m_enemySpawnController;
         public InGameStateType GetCurrentInGameState() => WorldState.instance.currentState.type;
         public ModManager GetModManager() => m_modManager;
-
+        public BulletManager GetBulletManager() => m_bulletManager;
         public EnemyLib GetEnemyLib() => m_enemyLib;
 
         public ModuleInfoDisplayManager GetModuleInfoDisplayManager() =>
-            m_moduleDescriptionDisplayManager;
+            m_moduleInfoDisplayManager;
         #endregion
 
         #region World State Machine

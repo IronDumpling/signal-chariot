@@ -5,6 +5,7 @@ using Utils.Common;
 
 using InGame.Cores;
 using InGame.BattleFields.Enemies;
+using InGame.Views;
 
 
 namespace InGame.BattleFields.Bullets
@@ -38,7 +39,7 @@ namespace InGame.BattleFields.Bullets
             this.m_bulletTransform = bullet.bulletView.transform;
             this.m_batchIdx = bullet.bulletIdx[0];
             this.m_bulletIdx = bullet.bulletIdx[1];
-            this.m_bulletManager = bullet.equipment.bulletManager;
+            this.m_bulletManager = GameManager.Instance.GetBulletManager();
             if(m_bulletIdx == 0) this.SetBatchInfo();
         }
 
@@ -62,7 +63,8 @@ namespace InGame.BattleFields.Bullets
             if(closest != null) target = closest.GetView().transform.position;
             else target = Utilities.RandomPosition();
 
-            m_bullet.equipment.equipmentView.SetTarget(target);
+            if(m_bullet.origin.gameObject.TryGetComponent<EquipmentView>(out var equipmentView)) 
+                equipmentView.SetTarget(target);
 
             Vector3 direction = target - m_bulletTransform.position;
             direction.z = Constants.BULLET_DEPTH;
@@ -112,7 +114,8 @@ namespace InGame.BattleFields.Bullets
             if(random != null) target = random.GetView().transform.position;
             else target = Utilities.RandomPosition();
 
-            m_bullet.equipment.equipmentView.SetTarget(target);
+            if(m_bullet.origin.gameObject.TryGetComponent<EquipmentView>(out var equipmentView)) 
+                equipmentView.SetTarget(target);
             
             target.z = Constants.BULLET_DEPTH;
             m_bulletManager.SetBatchInfo(target, m_batchIdx);
@@ -162,7 +165,8 @@ namespace InGame.BattleFields.Bullets
                 Constants.BULLET_DEPTH
             );
             
-            m_bullet.equipment.equipmentView.SetTarget(m_target.position);
+            if(m_bullet.origin.gameObject.TryGetComponent<EquipmentView>(out var equipmentView)) 
+                equipmentView.SetTarget(m_target.position);
         }
 
         public void Move()
@@ -194,7 +198,8 @@ namespace InGame.BattleFields.Bullets
             if(random != null) target = random.GetView().transform.position;
             else target = Utilities.RandomPosition();  
             
-            m_bullet.equipment.equipmentView.SetTarget(target);
+            if(m_bullet.origin.gameObject.TryGetComponent<EquipmentView>(out var equipmentView)) 
+                equipmentView.SetTarget(target);
             
             target.z = Constants.BULLET_DEPTH;
             m_bulletManager.SetBatchInfo(target, m_batchIdx);

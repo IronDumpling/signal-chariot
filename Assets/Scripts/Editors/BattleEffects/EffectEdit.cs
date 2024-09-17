@@ -38,7 +38,7 @@ namespace Editors.BattleEffects
                 EffectType.SpawnEffect => new SpawnEffect(objectsToSpawn.ToArray()),
                 EffectType.BouncingEffect => new BouncingEffect(count),
                 EffectType.PenetrationEffect => new PenetrationEffect(count),
-                EffectType.SplittingEffect => new SplittingEffect(count),
+                EffectType.SplittingEffect => new SplittingEffect(count, 1),
                 _ => null,
             };
         }

@@ -27,8 +27,6 @@ namespace InGame.BattleFields.Androids
         // public UnlimitedProperty damageMultiplier { get { return m_damageMultiplier;}}
         
         [Header("Bullet")]
-        private BulletManager m_bulletManager;
-        public BulletManager bulletManager { get { return m_bulletManager;}}
         private UnlimitedProperty m_bulletCount;
         private UnlimitedProperty m_shootCount;
         private UnlimitedProperty m_shootInterval;
@@ -49,13 +47,10 @@ namespace InGame.BattleFields.Androids
             UnlimitedProperty skItv = new(equipmentSetUp.seekInterval, UnlimitedPropertyType.Speed);
             // UnlimitedProperty dmgMtp = new(equipmentSetUp.damageMultipler, UnlimitedPropertyType.Multiplier);
 
-            m_bulletManager = new();
-
             m_bulletCount = bltCnt;
             m_shootCount = shtCnt;
             m_shootInterval = shtItv;
             m_seekInterval = skItv;
-
             // m_damageMultiplier = dmgMtp;
 
             m_module = module;              
@@ -93,7 +88,7 @@ namespace InGame.BattleFields.Androids
 
         public IEnumerator ShootBullet(WeaponBuff buff, BulletType type, int level)
         {
-            BulletSetUp bulletSetUp = m_bulletManager.GenerateBulletSetUp(type, level, buff);
+            BulletSetUp bulletSetUp = GameManager.Instance.GetBulletManager().GenerateBulletSetUp(type, level, buff);
             if(bulletSetUp == null) yield break;
             
             float shootCount = m_shootCount.value + buff.numShotsFlatBuff;
@@ -101,7 +96,7 @@ namespace InGame.BattleFields.Androids
 
             for(int i = 0; i < shootCount; i++)
             {
-                m_bulletManager.AddBulletBatch(bulletCount, bulletSetUp, this);
+                GameManager.Instance.GetBulletManager().AddBulletBatch(bulletCount, bulletSetUp, this.equipmentView.transform);
                 yield return new WaitForSeconds(m_shootInterval.value);
             }
         }

@@ -67,11 +67,12 @@ namespace InGame.BattleFields.Bullets
             if(buff.penetrationBuff > 0)
                 bulletSetUp.collisionEffects.Add(new PenetrationEffect(buff.penetrationBuff));
             if(buff.splittingBuff > 0)
-                bulletSetUp.collisionEffects.Add(new SplittingEffect(buff.splittingBuff));
+                // TODO penetration effect == -1 -> splitting effect == -1
+                bulletSetUp.collisionEffects.Add(new SplittingEffect(buff.splittingBuff, bulletSetUp, 1));
             return bulletSetUp;
         }
 
-        public List<Bullet> AddBulletBatch(float batchSize, BulletSetUp setup, Equipment equipment)
+        public List<Bullet> AddBulletBatch(float batchSize, BulletSetUp setup, Transform origin)
         {
             List<Bullet> batch = new();
             m_bullets.Add(batch);
@@ -81,7 +82,7 @@ namespace InGame.BattleFields.Bullets
 
             for(int i = 0; i < batchSize; i++)
             {
-                Bullet bullet = new(setup, equipment, new int[2]{batchIdx, i});
+                Bullet bullet = new(setup, origin, new int[2]{batchIdx, i});
                 batch.Add(bullet);
             }
             
