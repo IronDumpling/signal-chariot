@@ -106,10 +106,9 @@ namespace InGame.BattleFields.Bullets
         public void ClearBullet()
         {
             foreach(List<Bullet> batch in m_bullets)
-            {
                 foreach(Bullet bullet in batch)
                     bullet.Die();
-            }
+            
             m_bullets.Clear();
         }
     }
