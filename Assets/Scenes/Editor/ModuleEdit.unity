@@ -473,13 +473,14 @@ MonoBehaviour:
   range: 1
   buff:
     bouncingBuff: 0
-    splittingBuff: 0
+    splittingCountBuff: 0
+    splittingSizeBuff: 0
     penetrationBuff: 0
     numShotsFlatBuff: 2
     numBulletsPerShotFlatBuff: 0
-    speedPercentageBuff: 0
     damagePercentageBuff: 0
     flatDamageBuff: 0
+    speedPercentageBuff: 0
     bulletSizePercentageBuff: 0
     lifeTimePercentageBuff: 0
 --- !u!1001 &535214244
@@ -718,13 +719,14 @@ MonoBehaviour:
   range: 1
   buff:
     bouncingBuff: 0
-    splittingBuff: 0
+    splittingCountBuff: 0
+    splittingSizeBuff: 0
     penetrationBuff: 0
     numShotsFlatBuff: 0
     numBulletsPerShotFlatBuff: 0
-    speedPercentageBuff: -25
     damagePercentageBuff: 0
     flatDamageBuff: 0
+    speedPercentageBuff: -25
     bulletSizePercentageBuff: 100
     lifeTimePercentageBuff: 50
 --- !u!1 &619894194 stripped
@@ -2525,13 +2527,14 @@ MonoBehaviour:
   range: 0
   buff:
     bouncingBuff: 0
-    splittingBuff: 0
+    splittingCountBuff: 0
+    splittingSizeBuff: 0
     penetrationBuff: 0
     numShotsFlatBuff: 0
     numBulletsPerShotFlatBuff: 2
-    speedPercentageBuff: 0
     damagePercentageBuff: 0
     flatDamageBuff: 0
+    speedPercentageBuff: 0
     bulletSizePercentageBuff: 0
     lifeTimePercentageBuff: 0
 --- !u!1 &1734676024
@@ -2803,13 +2806,14 @@ MonoBehaviour:
   range: 1
   buff:
     bouncingBuff: 0
-    splittingBuff: 0
+    splittingCountBuff: 1
+    splittingSizeBuff: 3
     penetrationBuff: 0
     numShotsFlatBuff: 0
     numBulletsPerShotFlatBuff: 0
-    speedPercentageBuff: 0
-    damagePercentageBuff: 100
+    damagePercentageBuff: 50
     flatDamageBuff: 0
+    speedPercentageBuff: 0
     bulletSizePercentageBuff: 0
     lifeTimePercentageBuff: 0
 --- !u!1001 &1911935689

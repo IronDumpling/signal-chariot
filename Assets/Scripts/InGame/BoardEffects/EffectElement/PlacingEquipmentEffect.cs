@@ -13,13 +13,11 @@ namespace InGame.Effects.EffectElement
         
         public override void OnTrigger(EffectBlackBoard blackBoard)
         {
-            Debug.Log("Add");
             m_equipment = GameManager.Instance.GetAndroid().GetEquipmentManager().AddEquipment(setUp, m_module);
         }
 
         public override void OnUnTrigger(EffectBlackBoard blackBoard)
         {
-            Debug.Log("Remove");
             GameManager.Instance.GetAndroid().GetEquipmentManager().RemoveEquipment(m_equipment);
         }
 

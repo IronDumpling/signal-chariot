@@ -66,9 +66,8 @@ namespace InGame.BattleFields.Bullets
                 bulletSetUp.collisionEffects.Add(new BouncingEffect(buff.bouncingBuff));
             if(buff.penetrationBuff > 0)
                 bulletSetUp.collisionEffects.Add(new PenetrationEffect(buff.penetrationBuff));
-            if(buff.splittingBuff > 0)
-                // TODO penetration effect == -1 -> splitting effect == -1
-                bulletSetUp.collisionEffects.Add(new SplittingEffect(buff.splittingBuff, bulletSetUp, 1));
+            if(buff.splittingCountBuff > 0)
+                bulletSetUp.collisionEffects.Add(new SplittingEffect(buff.splittingSizeBuff, bulletSetUp, buff.splittingCountBuff));
             return bulletSetUp;
         }
 

@@ -230,14 +230,50 @@ namespace InGame.BattleFields.Bullets
 
     public class CircleRoundMoveStrategy : MoveStrategy, IMovable
     {
+        private Vector3 m_velocity;
+
         public CircleRoundMoveStrategy(Bullet bullet) : base(bullet)
         {
-            
+            this.SetDirection();    
         }
 
+        protected override void SetBatchInfo()
+        {
+            Enemy closest = GameManager.Instance.GetEnemySpawnController().
+                            GetClosestEnemy(m_bulletTransform.position);
+            Vector3 target;
+            if(closest != null) target = closest.GetView().transform.position;
+            else target = Utilities.RandomPosition();
+            
+            if(m_bullet.origin.gameObject.TryGetComponent<EquipmentView>(out var equipmentView)) 
+                equipmentView.SetTarget(target);
+            
+            Vector3 direction = target - m_bulletTransform.position;
+            direction.z = Constants.BULLET_DEPTH;
+            m_bulletManager.SetBatchInfo(direction, m_batchIdx);
+        }
+        private void SetDirection()
+        {
+            Vector3 direction = m_bulletManager.GetBatchInfo(m_batchIdx);
+            int batchSize = m_bulletManager.GetBatchSize(m_batchIdx);
+
+            float angleBetween = (batchSize > 0) ? 360f/batchSize : 0;
+            float currentAngle = m_bulletIdx * angleBetween;
+            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            currentAngle = (targetAngle + currentAngle) * Mathf.Deg2Rad;
+            
+            
+            Vector3 currDirection = new(Mathf.Cos(currentAngle), Mathf.Sin(currentAngle), direction.z);
+
+            Vector3 upwardDirection = currDirection;
+            upwardDirection.z = 0;
+            m_bulletTransform.rotation = Quaternion.LookRotation(Vector3.forward, upwardDirection);
+            m_velocity = Constants.SPEED_MULTIPLIER * m_bullet.speed.value * 
+                        Time.deltaTime * currDirection.normalized;
+        }
         public void Move()
         {
-            // don't move at all
+            m_bulletTransform.Translate(m_velocity, Space.World);
         }
     }
 

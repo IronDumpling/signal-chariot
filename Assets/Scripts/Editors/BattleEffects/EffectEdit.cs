@@ -23,6 +23,9 @@ namespace Editors.BattleEffects
         public float duration;
         public float interval;
         public float radius;
+
+        [Header("Count Effects")]
+        public int splitSize;
        
         [Header("Spawn & Destroy Effects")]
         public List<GameObject> objectsToSpawn;
@@ -38,7 +41,7 @@ namespace Editors.BattleEffects
                 EffectType.SpawnEffect => new SpawnEffect(objectsToSpawn.ToArray()),
                 EffectType.BouncingEffect => new BouncingEffect(count),
                 EffectType.PenetrationEffect => new PenetrationEffect(count),
-                EffectType.SplittingEffect => new SplittingEffect(count, 1),
+                EffectType.SplittingEffect => new SplittingEffect(splitSize, count),
                 _ => null,
             };
         }
@@ -60,6 +63,9 @@ namespace Editors.BattleEffects
         public SerializedProperty interval;
         public SerializedProperty radius;
 
+        // count
+        public SerializedProperty splitSize;
+
         // spawn
         public SerializedProperty objectsToSpawn;
 
@@ -74,6 +80,8 @@ namespace Editors.BattleEffects
             duration = effectEdit.FindProperty("duration");
             interval = effectEdit.FindProperty("interval");
             radius = effectEdit.FindProperty("radius");
+
+            splitSize = effectEdit.FindProperty("splitSize");
 
             objectsToSpawn = effectEdit.FindProperty("objectsToSpawn");
         }
@@ -118,7 +126,11 @@ namespace Editors.BattleEffects
 
                 case EffectType.BouncingEffect:
                 case EffectType.PenetrationEffect:
+                    EditorGUILayout.PropertyField(count);
+                    break;
+                
                 case EffectType.SplittingEffect:
+                    EditorGUILayout.PropertyField(splitSize);
                     EditorGUILayout.PropertyField(count);
                     break;
             }
