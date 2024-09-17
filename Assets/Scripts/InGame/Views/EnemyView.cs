@@ -35,13 +35,7 @@ namespace InGame.Views
                 return m_skeletonAnimation;
             }
         }
-        private AnimationState animationState
-        {
-            get
-            {
-                return skeletonAnimation.AnimationState;
-            }
-        }
+        private AnimationState animationState => skeletonAnimation?.AnimationState;
         private const string MoveAnimation = "Move", AttackAnimation = "Attack";
 
         private float attackAnimationDuration => skeletonAnimation.Skeleton.Data.FindAnimation(AttackAnimation).Duration;
@@ -168,7 +162,7 @@ namespace InGame.Views
 
         public void TakeDamage(float dmg)
         {
-            m_enemy.TakeDamage(dmg);
+            m_enemy?.TakeDamage(dmg);
         }
 
         public IEnumerator Attack(bool isRight)
@@ -182,14 +176,14 @@ namespace InGame.Views
             
 
             transform.localScale = modifiedScale;
-            animationState.SetAnimation(0, AttackAnimation, false);
+            animationState?.SetAnimation(0, AttackAnimation, false);
             yield return new WaitForSeconds(attackAnimationDuration);
             
             // Die before attacking
             if (m_enemy == null) yield break;
             
             target.TakeDamage(m_enemy.Get(UnlimitedPropertyType.Damage));
-            animationState.SetAnimation(0, MoveAnimation, true);
+            animationState?.SetAnimation(0, MoveAnimation, true);
             
             transform.localScale = originalScale;
             yield return new WaitForSeconds(m_enemy.Get(UnlimitedPropertyType.Interval));
@@ -215,13 +209,13 @@ namespace InGame.Views
         public void TurnOn()
         { 
             m_isOn = true;
-            animationState.SetAnimation(0, MoveAnimation, true);
+            animationState?.SetAnimation(0, MoveAnimation, true);
         } 
 
         public void TurnOff()
         { 
             m_isOn = false;
-            animationState.SetEmptyAnimation(0, 0f);
+            animationState?.SetEmptyAnimation(0, 0f);
         }
     }
 }
