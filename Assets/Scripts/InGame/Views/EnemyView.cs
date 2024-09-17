@@ -193,7 +193,6 @@ namespace InGame.Views
             
             transform.localScale = originalScale;
             yield return new WaitForSeconds(m_enemy.Get(UnlimitedPropertyType.Interval));
-
         }
         #endregion
 

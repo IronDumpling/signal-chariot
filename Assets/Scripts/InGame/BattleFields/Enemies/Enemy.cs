@@ -220,7 +220,7 @@ namespace InGame.BattleFields.Enemies
             {
                 float x = position.x + Random.Range(-1, 1);
                 float y = position.y + Random.Range(-1, 1);
-                GameManager.Instance.GetModManager().CreateMod(m_modQuantity, new Vector2(x, y));
+                GameManager.Instance.GetModManager().CreateMod(m_modQuality, new Vector2(x, y));
             }
         }
         #endregion
