@@ -486,7 +486,7 @@ MonoBehaviour:
   name: Landmine3
   type: 2
   level: 3
-  sprite: {fileID: 21300000, guid: 494c2058d61db45a89aa442c3fa2acfb, type: 3}
+  sprite: {fileID: 21300000, guid: 785224b9bd6e24379b19c8797301e0de, type: 3}
   moveType: 4
   size: 2
   health: -1
@@ -560,7 +560,7 @@ MonoBehaviour:
   name: Landmine1
   type: 2
   level: 1
-  sprite: {fileID: 21300000, guid: 494c2058d61db45a89aa442c3fa2acfb, type: 3}
+  sprite: {fileID: 21300000, guid: 785224b9bd6e24379b19c8797301e0de, type: 3}
   moveType: 4
   size: 1
   health: -1
@@ -877,7 +877,7 @@ MonoBehaviour:
   name: Landmine2
   type: 2
   level: 2
-  sprite: {fileID: 21300000, guid: 494c2058d61db45a89aa442c3fa2acfb, type: 3}
+  sprite: {fileID: 21300000, guid: 785224b9bd6e24379b19c8797301e0de, type: 3}
   moveType: 4
   size: 2
   health: -1
