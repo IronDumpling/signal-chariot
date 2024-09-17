@@ -116,7 +116,13 @@ namespace InGame.BattleFields.Bullets
 
         public void Die()
         {
-            m_bulletView.Die();
+            bool ableToDie = true;
+            foreach(Effect effect in m_collisionEffects)
+            {
+                if (effect is CountEffect countEffect)
+                    ableToDie = ableToDie && countEffect.AbleToDie();
+            }
+            if(ableToDie) m_bulletView.Die();
         }
 
         public void DealDamage(IDamageable target, float dmg)

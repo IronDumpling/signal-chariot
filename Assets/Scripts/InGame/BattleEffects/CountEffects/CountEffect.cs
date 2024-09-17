@@ -18,5 +18,10 @@ namespace InGame.BattleEffects
         {
             return new CountEffect();
         }
+
+        public bool AbleToDie()
+        {
+            return !IsActive;
+        }
     }
 }

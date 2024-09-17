@@ -99,9 +99,9 @@ namespace InGame.Views
                 default:
                     foreach(var effect in m_bullet.collisionEffects)
                         effect.Trigger(other.gameObject);
+                    m_bullet.Die();
                     break;
             }
-            // 判断是否需要死亡
         }
         #endregion
     }

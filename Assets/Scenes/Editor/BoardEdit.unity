@@ -168,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 9
   height: 2
-  originPosition: {x: -1.5, y: -4.9, z: 0}
+  originPosition: {x: -2.3, y: -4.9, z: 0}
   cellSize: 1
   openSlots: []
   modules:
