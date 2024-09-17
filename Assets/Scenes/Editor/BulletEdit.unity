@@ -318,7 +318,7 @@ MonoBehaviour:
   effectType: 3
   triggerType: 0
   count: 0
-  damage: 3
+  damage: 5
   duration: 0
   interval: 0
   radius: 5
@@ -466,10 +466,10 @@ MonoBehaviour:
   effectType: 3
   triggerType: 1
   count: 0
-  damage: 3
+  damage: 5
   duration: 0
   interval: 0
-  radius: 5
+  radius: 4
   objectsToSpawn: []
 --- !u!114 &490109989
 MonoBehaviour:
@@ -709,7 +709,7 @@ MonoBehaviour:
   effectType: 1
   triggerType: 0
   count: 0
-  damage: 5
+  damage: 3
   duration: 0
   interval: 0
   radius: 5
@@ -783,10 +783,10 @@ MonoBehaviour:
   effectType: 3
   triggerType: 0
   count: 0
-  damage: 3
+  damage: 2
   duration: 0
   interval: 0
-  radius: 5
+  radius: 4
   objectsToSpawn: []
 --- !u!114 &1558258707
 MonoBehaviour:
@@ -857,10 +857,10 @@ MonoBehaviour:
   effectType: 3
   triggerType: 1
   count: 0
-  damage: 3
+  damage: 4
   duration: 0
   interval: 0
-  radius: 5
+  radius: 3
   objectsToSpawn: []
 --- !u!114 &1567478508
 MonoBehaviour:
