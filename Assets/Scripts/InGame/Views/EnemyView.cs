@@ -73,6 +73,7 @@ namespace InGame.Views
 
         public void Die()
         {
+            m_enemy = null;
             Destroy(gameObject);
         }
         #endregion
@@ -172,6 +173,7 @@ namespace InGame.Views
 
         public IEnumerator Attack(bool isRight)
         {
+            var target = m_dmgTarget;
             // TODO: enlarge collider size based on attack range
             var originalScale = transform.localScale;
             var modifiedScale = originalScale;
@@ -182,11 +184,16 @@ namespace InGame.Views
             transform.localScale = modifiedScale;
             animationState.SetAnimation(0, AttackAnimation, false);
             yield return new WaitForSeconds(attackAnimationDuration);
-            m_dmgTarget.TakeDamage(m_enemy.Get(UnlimitedPropertyType.Damage));
+            
+            // Die before attacking
+            if (m_enemy == null) yield break;
+            
+            target.TakeDamage(m_enemy.Get(UnlimitedPropertyType.Damage));
             animationState.SetAnimation(0, MoveAnimation, true);
             
             transform.localScale = originalScale;
             yield return new WaitForSeconds(m_enemy.Get(UnlimitedPropertyType.Interval));
+
         }
         #endregion
 
