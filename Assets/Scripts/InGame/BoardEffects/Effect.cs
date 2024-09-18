@@ -112,6 +112,16 @@ namespace InGame.Effects
         private EnergyConsumptionMethod m_consumptionMethod = EnergyConsumptionMethod.Fixed;
         private int m_energyConsumption;
         private int m_storedEnergy = 0;
+
+        private int storedEnergy
+        {
+            get => m_storedEnergy;
+            set
+            {
+                m_storedEnergy = value;
+                m_module.DisplayProgressBar(m_storedEnergy, m_energyConsumption);
+            }
+        }
         private int m_maxStoredPerTrigger = 0;
         
         private Time m_coolDown;
@@ -214,11 +224,12 @@ namespace InGame.Effects
             {
                 int consumeEnergy = Mathf.Min(m_maxStoredPerTrigger, signal.energy);
                 signal.ConsumeEnergy(consumeEnergy);
-                m_storedEnergy += consumeEnergy;
-                if (m_storedEnergy < m_energyConsumption) return;
+                storedEnergy += consumeEnergy;
+                
+                if (storedEnergy < m_energyConsumption) return;
                 
                 energyUsed = m_energyConsumption;
-                m_storedEnergy -= energyUsed;
+                storedEnergy -= energyUsed;
             }
             else if (m_consumptionMethod == EnergyConsumptionMethod.All)
             {
@@ -246,6 +257,7 @@ namespace InGame.Effects
 
         public void Reset()
         {
+            storedEnergy = 0;
             foreach (var effect in m_effects)
             {
                 effect.Reset();

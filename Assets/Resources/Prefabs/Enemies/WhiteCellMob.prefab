@@ -106,6 +106,14 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4264101587030133115, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558631843231036269, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5585643236584868594, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
       propertyPath: m_Name
       value: WhiteCellMob
@@ -120,6 +128,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7178913406886956957, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
       propertyPath: m_SizeDelta.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8401036413372163763, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
+      propertyPath: m_FillAmount
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9032931514692866929, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}

@@ -451,6 +451,7 @@ namespace InGame.Boards.Modules
             m_moduleView?.SelfDestroy();
         }
         #endregion
+        
         #region static method
         public static Orientation RotateClockwise(Orientation current)
         {
@@ -596,6 +597,13 @@ namespace InGame.Boards.Modules
             return m_moduleView;
         }
         
+        #endregion
+        
+        #region ViewFunctionRedirection
+        public void DisplayProgressBar(float current, float max)
+        {
+            m_moduleView?.DisplayUI(current, max);
+        }
         #endregion
 
         public static BoardPosition OrientationToBoardPositionOffset(Orientation orientation)

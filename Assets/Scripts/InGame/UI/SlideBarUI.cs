@@ -23,20 +23,30 @@ namespace InGame.UI
 
             register.RegisterPropertyEvent(type, SetBarUI);
         }
+        
+        public SlideBarUI(GameObject obj)
+        {
+            GameObject canvas = obj.transform.Find("Canvas").gameObject;
+            m_slideBar = canvas.transform.Find("SlideBar").gameObject;
 
-        private void SetBarUI(float value, float max)
+            m_max = m_slideBar.transform.Find("max").GetComponent<Image>();
+            m_value = m_slideBar.transform.Find("value").GetComponent<Image>();
+            
+        }
+
+        public void SetBarUI(float value, float max)
         {
             m_value.fillAmount = value / max;
         }
 
         public void Hide()
         {
-            throw new System.NotImplementedException();
+            m_slideBar.SetActive(false);
         }
 
         public void Show()
         {
-            throw new System.NotImplementedException();
+            m_slideBar.SetActive(true);
         }
     }
 }

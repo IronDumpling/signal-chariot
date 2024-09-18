@@ -14,8 +14,17 @@ namespace InGame.Effects.EffectElement
         public float heatCostPerShot;
         public int electricCapacity;
         public int electricChargeGainPerTrigger;
-        
+
         private int m_currentElectricCharge = 0;
+        private int currentElectricCharge
+        {
+            get => m_currentElectricCharge;
+            set
+            {
+                m_currentElectricCharge = value;
+                m_module.DisplayProgressBar(m_currentElectricCharge, electricCapacity);
+            }
+        }
         private float m_currentHeat = 0;
         private bool m_isOverHeated = false;
         private float m_lastRecordedTime = -1f;
@@ -54,16 +63,15 @@ namespace InGame.Effects.EffectElement
 
         private void IncreaseElectricCharge(int delta)
         {
-            m_currentElectricCharge += delta;
-            m_currentElectricCharge = Mathf.Clamp(m_currentElectricCharge, 0, electricCapacity);
+            currentElectricCharge = Mathf.Clamp(currentElectricCharge + delta, 0, electricCapacity);
         }
 
         private void ClearElectricCharge()
         {
-            m_currentElectricCharge = 0;
+            currentElectricCharge = 0;
         }
 
-        private int GetCurrentElectricCharge() => m_currentElectricCharge;
+        private int GetCurrentElectricCharge() => currentElectricCharge;
         
 
         public override void OnTrigger(EffectBlackBoard blackBoard)
@@ -98,6 +106,7 @@ namespace InGame.Effects.EffectElement
             m_currentHeat = 0f;
             m_isOverHeated = false;
             m_lastRecordedTime = -1f;
+            currentElectricCharge = 0;
         }
 
         public override void OnAddBuff(ModuleBuff buff)
@@ -117,7 +126,6 @@ namespace InGame.Effects.EffectElement
         public override void ClearBuffs()
         {
             m_buff.SetDefault();
-            Debug.Log(m_buff);
         }
 
         public override Effect CreateCopy()

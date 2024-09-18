@@ -25,6 +25,9 @@ namespace InGame.Effects.EffectElement
             {
                 ShootBullets();
             }
+
+            m_module.DisplayProgressBar(m_bullets.Count, magazineCapacity + m_magazineBuff.magazineCapacityBuff);
+
         }
 
         private void ShootBullets()
