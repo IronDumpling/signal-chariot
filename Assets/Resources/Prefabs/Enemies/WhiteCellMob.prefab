@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2685574580554920935, guid: 3900bda5bb621cb438db10041a8343a6, type: 3}
       propertyPath: m_Name
-      value: NormalMobVisual
+      value: Visual
       objectReference: {fileID: 0}
     - target: {fileID: 2685574580554920935, guid: 3900bda5bb621cb438db10041a8343a6, type: 3}
       propertyPath: m_Layer
@@ -23,6 +23,10 @@ PrefabInstance:
     - target: {fileID: 4142524209281210431, guid: 3900bda5bb621cb438db10041a8343a6, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520249560863534462, guid: 3900bda5bb621cb438db10041a8343a6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4520249560863534462, guid: 3900bda5bb621cb438db10041a8343a6, type: 3}
       propertyPath: m_LocalPosition.x

@@ -17,6 +17,17 @@ namespace InGame.Views
     public class EnemyView : MonoBehaviour, IDamageable
     {
         private Enemy m_enemy;
+        private Transform m_visual;
+
+        private Transform visual
+        {
+            get
+            {
+                if (m_visual == null) m_visual = transform.Find("Visual");
+                return m_visual;
+            }
+        }
+        
         private Vector3 m_target = Vector3.zero;
         private Vector3 m_direction = Vector3.zero;
         private Vector3 m_obstacleDirection = Vector3.zero;
@@ -169,13 +180,13 @@ namespace InGame.Views
         {
             var target = m_dmgTarget;
             // TODO: enlarge collider size based on attack range
-            var originalScale = transform.localScale;
+            var originalScale = visual.localScale;
             var modifiedScale = originalScale;
             
             if (!isRight) modifiedScale.x = -modifiedScale.x;
             
 
-            transform.localScale = modifiedScale;
+            visual.localScale = modifiedScale;
             animationState?.SetAnimation(0, AttackAnimation, false);
             yield return new WaitForSeconds(attackAnimationDuration);
             
@@ -185,7 +196,7 @@ namespace InGame.Views
             target.TakeDamage(m_enemy.Get(UnlimitedPropertyType.Damage));
             animationState?.SetAnimation(0, MoveAnimation, true);
             
-            transform.localScale = originalScale;
+            visual.localScale = originalScale;
             yield return new WaitForSeconds(m_enemy.Get(UnlimitedPropertyType.Interval));
         }
         #endregion
