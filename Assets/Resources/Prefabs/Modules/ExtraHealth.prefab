@@ -78,6 +78,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExtraHealth
       objectReference: {fileID: 0}
+    - target: {fileID: 2984023844389072008, guid: 1736ed262d4c17445b4665d042388a63, type: 3}
+      propertyPath: m_FillAmount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6567514327051405123, guid: 1736ed262d4c17445b4665d042388a63, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -116,6 +120,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6567514327051405123, guid: 1736ed262d4c17445b4665d042388a63, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409048341640381248, guid: 1736ed262d4c17445b4665d042388a63, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

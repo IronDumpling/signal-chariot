@@ -63,6 +63,7 @@ namespace InGame.InGameStates
         {
             Debug.Log("Exit BoardTest State");
             
+            GameManager.Instance.GetGeneralBoard().Reset();
             m_signalController.Stop();
             m_timeEffectManager.Stop();
 

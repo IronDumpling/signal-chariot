@@ -22,7 +22,7 @@ namespace InGame.InGameStates
             // Todo: put this in preparing big state
             GameManager.Instance.GetGeneralBoard().RemoveAllExtraBoardModules();
             
-            GameManager.Instance.GetGeneralBoard().Reset();
+            
             #region Camera
             var boardView = GameManager.Instance.GetBoardView();
             boardView.GetActiveBoardCornerPos(out var minPos, out var maxPos);
@@ -64,8 +64,10 @@ namespace InGame.InGameStates
         public override void Exit()
         {
             Debug.Log("Exit battle");
+            GameManager.Instance.GetGeneralBoard().Reset();
             
             GameManager.Instance.GetInputManager().UnregisterMoveEvent(OnMoveKeyPressed);
+            
             
             var timeEffectManager = GameManager.Instance.GetTimeEffectManager();
             var signalController = GameManager.Instance.GetSignalController();

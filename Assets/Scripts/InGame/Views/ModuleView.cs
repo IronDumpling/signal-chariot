@@ -1,5 +1,6 @@
 ﻿using System;
 using InGame.Boards.Modules;
+using InGame.UI;
 using UnityEngine;
 using Utils.Common;
 
@@ -10,9 +11,12 @@ namespace InGame.Views
         private Module m_module;
         private Animator m_animator;
         private GameObject m_range;
+        private SlideBarUI m_slideBarUI;
+        
         public void Awake()
         {
             m_animator = GetComponent<Animator>();
+            m_slideBarUI = new SlideBarUI(gameObject);
             m_range = transform.Find("Range")?.gameObject;
             HideRange();
         }
@@ -63,6 +67,20 @@ namespace InGame.Views
         public void HideRange()
         {
             m_range?.SetActive(false);
+        }
+        
+        // To DO: If there are multiple bar, we might need to have a bar manager
+        public void DisplayUI(float current, float max)
+        {
+            if (max == 0f || current == 0f)
+            {
+                m_slideBarUI.Hide();
+            }
+            else
+            {
+                m_slideBarUI.Show();
+                m_slideBarUI.SetBarUI(current, max);
+            }
         }
     }
 }

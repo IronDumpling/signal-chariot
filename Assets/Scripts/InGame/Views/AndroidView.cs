@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 using Utils;
@@ -5,6 +6,9 @@ using Utils.Common;
 
 using InGame.BattleFields.Androids;
 using InGame.BattleFields.Common;
+using Spine.Unity;
+using UnityEngine.PlayerLoop;
+using AnimationState = Spine.AnimationState;
 
 namespace InGame.Views
 {
@@ -15,6 +19,52 @@ namespace InGame.Views
         private Android m_android;
         private RaycastHit[] m_hits;
         private float[] m_colliderSizes;
+        private SkeletonAnimation m_skeletonAnimation;
+
+        private SkeletonAnimation skeletonAnimation
+        {
+            get
+            {
+                if (m_skeletonAnimation == null) m_skeletonAnimation = GetComponentInChildren<SkeletonAnimation>();
+                return m_skeletonAnimation;
+            }
+        }
+        private AnimationState animationState => skeletonAnimation.AnimationState;
+        private const string MoveAnimation = "Walk", IdleAnimation = "Stay", TakeDamageAnimation = "BeAttacked";
+        private float GetAnimationDuration(string animationName) => 
+            skeletonAnimation.Skeleton.Data.FindAnimation(animationName).Duration;
+        
+        private List<string> m_currentAnimations = new List<string>(2);
+
+        #region Animation
+
+        private void PlayAnimation(int trackIdx, string animationName, bool loop)
+        {   
+            while(m_currentAnimations.Count - 1 < trackIdx) m_currentAnimations.Add("");
+            if (m_currentAnimations[trackIdx] == animationName) return;
+            
+            if (loop)
+                m_currentAnimations[trackIdx] = animationName;
+            animationState.SetAnimation(trackIdx, animationName, loop);
+        }
+
+        private void UpdateMoveAnimation()
+        {
+            var scale = transform.localScale;
+            scale.x = m_moveDirection.x switch
+            {
+                < 0 => -Mathf.Abs(scale.x),
+                > 0 => Mathf.Abs(scale.x),
+                _ => scale.x
+            };
+
+            transform.localScale = scale;
+
+            if (m_moveDirection == Vector3.zero) PlayAnimation(0, IdleAnimation, true);
+            else PlayAnimation(0, MoveAnimation, true);
+        }
+
+        #endregion
         
         #region Life Cycle
         public void Init(Android android)
@@ -36,11 +86,14 @@ namespace InGame.Views
         {
             GenerateRay();
             Move();
+            UpdateMoveAnimation();
         }
 
         public void Die()
         {
-            Destroy(gameObject);
+            m_android = null;
+            if(gameObject != null)
+                Destroy(gameObject);
         }
         #endregion
 
@@ -85,6 +138,8 @@ namespace InGame.Views
         #region Interaction
         public void TakeDamage(float dmg)
         {
+            if (m_android == null) return;
+            PlayAnimation(1, TakeDamageAnimation, false);
             m_android.TakeDamage(dmg);
         }
 

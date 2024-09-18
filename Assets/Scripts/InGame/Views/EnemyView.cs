@@ -17,6 +17,17 @@ namespace InGame.Views
     public class EnemyView : MonoBehaviour, IDamageable
     {
         private Enemy m_enemy;
+        private Transform m_visual;
+
+        private Transform visual
+        {
+            get
+            {
+                if (m_visual == null) m_visual = transform.Find("Visual");
+                return m_visual;
+            }
+        }
+        
         private Vector3 m_target = Vector3.zero;
         private Vector3 m_direction = Vector3.zero;
         private Vector3 m_obstacleDirection = Vector3.zero;
@@ -35,13 +46,7 @@ namespace InGame.Views
                 return m_skeletonAnimation;
             }
         }
-        private AnimationState animationState
-        {
-            get
-            {
-                return skeletonAnimation.AnimationState;
-            }
-        }
+        private AnimationState animationState => skeletonAnimation?.AnimationState;
         private const string MoveAnimation = "Move", AttackAnimation = "Attack";
 
         private float attackAnimationDuration => skeletonAnimation.Skeleton.Data.FindAnimation(AttackAnimation).Duration;
@@ -168,30 +173,30 @@ namespace InGame.Views
 
         public void TakeDamage(float dmg)
         {
-            m_enemy.TakeDamage(dmg);
+            m_enemy?.TakeDamage(dmg);
         }
 
         public IEnumerator Attack(bool isRight)
         {
             var target = m_dmgTarget;
             // TODO: enlarge collider size based on attack range
-            var originalScale = transform.localScale;
+            var originalScale = visual.localScale;
             var modifiedScale = originalScale;
             
             if (!isRight) modifiedScale.x = -modifiedScale.x;
             
 
-            transform.localScale = modifiedScale;
-            animationState.SetAnimation(0, AttackAnimation, false);
+            visual.localScale = modifiedScale;
+            animationState?.SetAnimation(0, AttackAnimation, false);
             yield return new WaitForSeconds(attackAnimationDuration);
             
             // Die before attacking
             if (m_enemy == null) yield break;
             
             target.TakeDamage(m_enemy.Get(UnlimitedPropertyType.Damage));
-            animationState.SetAnimation(0, MoveAnimation, true);
+            animationState?.SetAnimation(0, MoveAnimation, true);
             
-            transform.localScale = originalScale;
+            visual.localScale = originalScale;
             yield return new WaitForSeconds(m_enemy.Get(UnlimitedPropertyType.Interval));
         }
         #endregion
@@ -215,13 +220,13 @@ namespace InGame.Views
         public void TurnOn()
         { 
             m_isOn = true;
-            animationState.SetAnimation(0, MoveAnimation, true);
+            animationState?.SetAnimation(0, MoveAnimation, true);
         } 
 
         public void TurnOff()
         { 
             m_isOn = false;
-            animationState.SetEmptyAnimation(0, 0f);
+            animationState?.SetEmptyAnimation(0, 0f);
         }
     }
 }
