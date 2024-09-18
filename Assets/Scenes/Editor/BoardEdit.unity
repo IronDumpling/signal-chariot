@@ -178,6 +178,12 @@ MonoBehaviour:
     moduleID: 3
     moduleName: "\u7535\u673A\u70AE"
     orientation: 0
+  - pos:
+      x: 2
+      y: 1
+    moduleID: 6
+    moduleName: "\u78B3\u5143\u7D20"
+    orientation: 0
   signalPrefab: {fileID: 7786143621109699157, guid: e7f648ad21042b64ca742ba22438c585, type: 3}
   slotPrefab: {fileID: 6622818502655049371, guid: 80c85fcaea6536748bb67591b4fc60b2, type: 3}
   horizontalBorderPrefab: {fileID: 5301742505494614779, guid: bcf6e11ec71a8824abb63c5b40fe37fc, type: 3}

@@ -72,16 +72,20 @@ namespace InGame.BattleFields.Bullets
 
         public List<Bullet> AddBulletBatch(float batchSize, BulletSetUp setup, Transform origin)
         {
+            Debug.Log("add bullet batch 1");
             List<Bullet> batch = new();
             m_bullets.Add(batch);
             m_targets.Add(Vector3.zero);
+            Debug.Log("add bullet batch 2");
 
             int batchIdx = m_bullets.Count-1;
 
             for(int i = 0; i < batchSize; i++)
             {
+                Debug.Log("add bullet batch 3: " + batchIdx + " " + i);
                 Bullet bullet = new(setup, origin, new int[2]{batchIdx, i});
                 batch.Add(bullet);
+                Debug.Log("add bullet batch 4: " + batchIdx + " " + i);
             }
             
             return batch;
