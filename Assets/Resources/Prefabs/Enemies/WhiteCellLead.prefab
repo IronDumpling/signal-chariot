@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2685574580554920935, guid: 465542c001f964cef8a91c3cb3548f02, type: 3}
       propertyPath: m_Name
-      value: WhiteCellLeadVisual
+      value: Visual
       objectReference: {fileID: 0}
     - target: {fileID: 2685574580554920935, guid: 465542c001f964cef8a91c3cb3548f02, type: 3}
       propertyPath: m_Layer
