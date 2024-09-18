@@ -49,7 +49,15 @@ namespace InGame.Views
         private AnimationState animationState => skeletonAnimation?.AnimationState;
         private const string MoveAnimation = "Move", AttackAnimation = "Attack";
 
-        private float attackAnimationDuration => skeletonAnimation.Skeleton.Data.FindAnimation(AttackAnimation).Duration;
+        private float attackAnimationDuration
+        {
+            get
+            {
+                if (skeletonAnimation == null) return 0;
+                else return skeletonAnimation.Skeleton.Data.FindAnimation(AttackAnimation).Duration;
+            }
+            
+        }
 
         #region Life Cycle
         
