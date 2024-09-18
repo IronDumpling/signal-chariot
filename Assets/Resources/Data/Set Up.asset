@@ -215,7 +215,7 @@ MonoBehaviour:
       moduleName: "\u4FE1\u53F7\u6E90"
       orientation: 0
     slotPrefab: {fileID: 6622818502655049371, guid: 80c85fcaea6536748bb67591b4fc60b2, type: 3}
-    signalPrefab: {fileID: 0}
+    signalPrefab: {fileID: 7786143621109699157, guid: e7f648ad21042b64ca742ba22438c585, type: 3}
     horizontalBorderPrefab: {fileID: 5301742505494614779, guid: bcf6e11ec71a8824abb63c5b40fe37fc, type: 3}
     verticalBorderPrefab: {fileID: 7963412977830916438, guid: 5a56758ef5e6eb94c9f6af23bbebbe0a, type: 3}
   extraBoardSetUp:
@@ -231,14 +231,8 @@ MonoBehaviour:
       moduleID: 3
       moduleName: "\u7535\u673A\u70AE"
       orientation: 0
-    - pos:
-        x: 3
-        y: 1
-      moduleID: 2
-      moduleName: "\u8F6C\u5411\u5668"
-      orientation: 0
     slotPrefab: {fileID: 6622818502655049371, guid: 80c85fcaea6536748bb67591b4fc60b2, type: 3}
-    signalPrefab: {fileID: 0}
+    signalPrefab: {fileID: 7786143621109699157, guid: e7f648ad21042b64ca742ba22438c585, type: 3}
     horizontalBorderPrefab: {fileID: 5301742505494614779, guid: bcf6e11ec71a8824abb63c5b40fe37fc, type: 3}
     verticalBorderPrefab: {fileID: 7963412977830916438, guid: 5a56758ef5e6eb94c9f6af23bbebbe0a, type: 3}
   moduleLibrary:
@@ -881,7 +875,7 @@ MonoBehaviour:
     enemySpawnLevels:
     - waves:
       - waveID: 0
-        moduleRewards: 01000000
+        moduleRewards: 0100000002000000
       - waveID: 1
         moduleRewards: 0d00000002000000
       - waveID: 2
