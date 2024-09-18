@@ -4,7 +4,6 @@ using UnityEngine;
 
 using SetUps;
 
-using InGame.BattleFields.Androids;
 using InGame.Boards.Modules.ModuleBuffs;
 using InGame.Cores;
 using InGame.BattleEffects;

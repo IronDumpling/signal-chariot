@@ -25,13 +25,13 @@ namespace InGame.BattleEffects
         public override void Trigger(GameObject go)
         {
             base.Trigger(go);
-            // foreach(Effect effect in m_bulletSetUp.collisionEffects)
-            // {
-                // if(effect is SplittingEffect splitting)
-                    // splitting.m_count = (splitting.m_count > 0) ? splitting.m_count - 1 : splitting.m_count;
-            // }
+            foreach(Effect effect in m_bulletSetUp.collisionEffects)
+            {
+                if(effect is SplittingEffect splitting)
+                    splitting.m_count = (splitting.m_count > 0) ? splitting.m_count - 1 : splitting.m_count;
+            }
 
-            // m_bulletSetUp.moveType = MoveType.CircleRound;
+            m_bulletSetUp.moveType = MoveType.CircleRound;
             // GameManager.Instance.GetBulletManager().AddBulletBatch(m_batchSize, m_bulletSetUp, go.transform);
         }
     }

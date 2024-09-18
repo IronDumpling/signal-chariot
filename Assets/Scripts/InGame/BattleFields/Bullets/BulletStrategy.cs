@@ -262,7 +262,6 @@ namespace InGame.BattleFields.Bullets
             float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             currentAngle = (targetAngle + currentAngle) * Mathf.Deg2Rad;
             
-            
             Vector3 currDirection = new(Mathf.Cos(currentAngle), Mathf.Sin(currentAngle), direction.z);
 
             Vector3 upwardDirection = currDirection;

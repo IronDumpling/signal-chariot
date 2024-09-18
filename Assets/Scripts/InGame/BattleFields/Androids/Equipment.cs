@@ -96,7 +96,8 @@ namespace InGame.BattleFields.Androids
 
             for(int i = 0; i < shootCount; i++)
             {
-                GameManager.Instance.GetBulletManager().AddBulletBatch(bulletCount, bulletSetUp, this.equipmentView.transform);
+                GameManager.Instance.GetBulletManager().AddBulletBatch(bulletCount, bulletSetUp, 
+                                                                    this.equipmentView.transform);
                 yield return new WaitForSeconds(m_shootInterval.value);
             }
         }
