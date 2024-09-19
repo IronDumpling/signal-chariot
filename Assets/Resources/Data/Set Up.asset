@@ -18,7 +18,7 @@ MonoBehaviour:
     defense: 0
     armor: 0
     maxArmor: 10
-    speed: 30
+    speed: 28
     initialMod: 0
     maxMod: 500
     initialCrystal: 0
@@ -829,22 +829,20 @@ MonoBehaviour:
     modQuality: 0
     enemyPrefab: {fileID: 384623106758148936, guid: 30739d031fe43c04d8e7bdb9fcad132d, type: 3}
   - name: "\u98DE\u884C\u602A"
-    maxHealth: 10
+    maxHealth: 2
     defense: 0
     attack: 1
     attackDuration: 2
-    attackRadius: 5
-    speed: 10
+    attackRadius: 0.2
+    speed: 30
     modQuantity: 2
-    modQuality: 0
+    modQuality: 2
     enemyPrefab: {fileID: 5104043474086354549, guid: 25719e8c70554794393e64695b034e5e, type: 3}
   enemySpawnSetUp:
     enemySpawnGroups:
     - enemiesPool:
       - enemyID: 0
         enemyName: "\u767D\u8840\u7403"
-      - enemyID: 3
-        enemyName: "\u98DE\u884C\u602A"
       eachSpawnCount: 4
       spawnInterval: 5
       minEnemies: 1
@@ -858,12 +856,24 @@ MonoBehaviour:
       minEnemies: 1
       maxEnemies: 5
       locationSpawnLogic: 0
+    - enemiesPool:
+      - enemyID: 3
+        enemyName: "\u98DE\u884C\u602A"
+      eachSpawnCount: 5
+      spawnInterval: 10
+      minEnemies: 1
+      maxEnemies: 10
+      locationSpawnLogic: 0
     enemySpawnWaves:
     - groups:
       - range:
           start: 0
           end: 30
         spawnGroupID: 0
+      - range:
+          start: 0
+          end: 30
+        spawnGroupID: 2
       duration: 30
       groupsMustBeat: 
     - groups:
