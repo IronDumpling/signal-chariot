@@ -232,24 +232,6 @@ MonoBehaviour:
       moduleID: 3
       moduleName: "\u7535\u673A\u70AE"
       orientation: 0
-    - pos:
-        x: 2
-        y: 1
-      moduleID: 6
-      moduleName: "\u78B3\u5143\u7D20"
-      orientation: 0
-    - pos:
-        x: 4
-        y: 0
-      moduleID: 6
-      moduleName: "\u78B3\u5143\u7D20"
-      orientation: 0
-    - pos:
-        x: 5
-        y: 0
-      moduleID: 7
-      moduleName: "\u5206\u88C2\u67AA\u53E3"
-      orientation: 0
     slotPrefab: {fileID: 6622818502655049371, guid: 80c85fcaea6536748bb67591b4fc60b2, type: 3}
     signalPrefab: {fileID: 7786143621109699157, guid: e7f648ad21042b64ca742ba22438c585, type: 3}
     horizontalBorderPrefab: {fileID: 5301742505494614779, guid: bcf6e11ec71a8824abb63c5b40fe37fc, type: 3}
@@ -1043,6 +1025,43 @@ MonoBehaviour:
         moduleRewards: 010000001000000002000000
       - waveID: 8
         moduleRewards: 0800000011000000
+  audioLibrary:
+  - soundName: Board Expansion
+    clip: {fileID: 8300000, guid: 260f6db3b6a884c95b9300f3a99111b9, type: 3}
+    volume: 0.8
+    pitch: 1
+  - soundName: Weapon Fire
+    clip: {fileID: 8300000, guid: 0df3fc5abe6ee464c9fcf481e1df5b95, type: 3}
+    volume: 0.8
+    pitch: 1
+  - soundName: Module Select
+    clip: {fileID: 8300000, guid: ee9fac2c4c59e4cbcbcac24575ce86ae, type: 3}
+    volume: 0.8
+    pitch: 1
+  - soundName: Module Drop
+    clip: {fileID: 8300000, guid: 24e561083e800475088f1329e3c5d7d1, type: 3}
+    volume: 0.8
+    pitch: 1
+  - soundName: Module Rotate
+    clip: {fileID: 8300000, guid: e1344bd76c430403cb33bc4e5596dbee, type: 3}
+    volume: 0.8
+    pitch: 1
+  - soundName: Explosion
+    clip: {fileID: 8300000, guid: 62197f3b5bc904f5582ca73bfc9ab0a1, type: 3}
+    volume: 0.8
+    pitch: 1
+  - soundName: Android Take Damage
+    clip: {fileID: 8300000, guid: 9fd2b6735ae054a438ee005aa152e214, type: 3}
+    volume: 0.8
+    pitch: 1
+  - soundName: Enemy Take Damage
+    clip: {fileID: 8300000, guid: 6b1986c64bef84830868120c7c146423, type: 3}
+    volume: 0.8
+    pitch: 1
+  - soundName: Mod Pick Up
+    clip: {fileID: 8300000, guid: 39a149923699841bfab4a0fa2ac2bcfa, type: 3}
+    volume: 0.8
+    pitch: 1
   references:
     version: 2
     RefIds:

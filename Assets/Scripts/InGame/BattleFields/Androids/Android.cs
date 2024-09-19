@@ -261,7 +261,10 @@ namespace InGame.BattleFields.Androids
             {
                 m_health.current -= delta - armor;
                 m_armor.current = 0;
-            }                        
+            }
+            
+            float intensity = (m_health.max - m_health.current)/m_health.max;
+            GameManager.Instance.GetCameraManager().SetRedMaskIntensity(intensity);
         }
 
         #endregion

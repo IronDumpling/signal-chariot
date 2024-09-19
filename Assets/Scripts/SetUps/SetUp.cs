@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace SetUps
 {
@@ -22,6 +21,10 @@ namespace SetUps
         #region Enemy
         public List<EnemySetUp> enemyLibrary;
         public EnemySpawnSetUp enemySpawnSetUp;
+        #endregion
+
+        #region Audio
+        public List<AudioSetUp> audioLibrary;
         #endregion
     }
 }

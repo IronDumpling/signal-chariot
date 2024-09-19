@@ -5,6 +5,7 @@ using UI;
 using InGame.Views;
 using UnityEngine;
 using Utils;
+using Audios;
 
 namespace InGame.InGameStates
 {
@@ -80,7 +81,8 @@ namespace InGame.InGameStates
             if (board.GetSlotStatus(x, y) == SlotStatus.Occupied)
             {
                 var module = board.RemoveModule(x, y);
-
+                Debug.Log("Click!");
+                AudioManager.Instance.PlaySound("Module Select");
                 GameManager.Instance.ChangeToModulePlacingState(module);
             }
         }

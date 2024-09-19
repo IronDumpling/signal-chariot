@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
 using Cinemachine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 namespace InGame.Cores
 {
@@ -28,6 +30,10 @@ namespace InGame.Cores
         [Header("VCam Settings")]
         [SerializeField]
         private CinemachineVirtualCamera m_battleVirtualCamera;
+
+        [Header("Postprocessing")]
+        [SerializeField]
+        private Volume m_redMask;
 
         public void Init()
         {
@@ -78,6 +84,13 @@ namespace InGame.Cores
             if(confiner == null || bounds == null) return;
             confiner.m_BoundingShape2D = bounds;
             confiner.InvalidatePathCache();
+        }
+
+        public void SetRedMaskIntensity(float intensity)
+        {
+            if(!m_redMask.profile.TryGet(out Vignette vignette)) return;
+            const float maxIntensity = 0.9f;
+            vignette.intensity.value = Mathf.Lerp(0, maxIntensity, intensity);
         }
         #endregion
     }
