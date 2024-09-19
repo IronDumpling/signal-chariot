@@ -11,7 +11,7 @@ namespace InGame.BattleEffects
         [SerializeField]
         private int m_damage;
 
-        public RangeOnceDamageEffect(float radius, int damage) : base(1)
+        public RangeOnceDamageEffect(float radius, int damage) : base(-1)
         {
             this.m_radius = radius;
             this.m_damage = damage;

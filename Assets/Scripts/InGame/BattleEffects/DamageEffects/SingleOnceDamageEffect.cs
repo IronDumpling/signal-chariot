@@ -8,7 +8,7 @@ namespace InGame.BattleEffects
         [SerializeField]
         protected int m_damage;
 
-        public SingleOnceDamageEffect(int damage) : base(1)
+        public SingleOnceDamageEffect(int damage) : base(-1)
         {
             this.m_damage = damage;
         }
