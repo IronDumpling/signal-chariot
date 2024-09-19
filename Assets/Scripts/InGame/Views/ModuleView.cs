@@ -1,7 +1,9 @@
 ﻿using System;
+using Audios;
 using InGame.Boards.Modules;
 using UI;
 using UnityEngine;
+using Utils;
 using Utils.Common;
 
 namespace InGame.Views
@@ -39,6 +41,7 @@ namespace InGame.Views
 
         public void Rotate()
         {
+            AudioManager.Instance.PlaySound(Constants.AUDIO_MODULE_ROTATE);
             m_module.Rotate();
             var rotation = m_module.GetRotationDegree();
             transform.rotation = Quaternion.Euler(0, 0, rotation);

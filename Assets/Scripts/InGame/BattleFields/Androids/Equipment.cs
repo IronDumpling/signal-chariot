@@ -11,6 +11,7 @@ using InGame.BattleFields.Common;
 
 using Utils;
 using InGame.Boards.Modules.ModuleBuffs;
+using Audios;
 
 namespace InGame.BattleFields.Androids
 {
@@ -96,6 +97,7 @@ namespace InGame.BattleFields.Androids
 
             for(int i = 0; i < shootCount; i++)
             {
+                AudioManager.Instance.PlaySound(Constants.AUDIO_WEAPON_FIRE);
                 GameManager.Instance.GetBulletManager().AddBulletBatch(bulletCount, bulletSetUp, 
                                                                     this.equipmentView.transform);
                 yield return new WaitForSeconds(m_shootInterval.value);

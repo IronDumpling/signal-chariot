@@ -38,6 +38,19 @@ namespace Utils
 
         #endregion
 
+        #region Audio Name
+        public const string AUDIO_BOARD_EXPANSION = "Board Expansion";
+        public const string AUDIO_WEAPON_FIRE = "Weapon Fire";
+        public const string AUDIO_MODULE_SELECT = "Module Select";
+        public const string AUDIO_MODULE_DROP = "Module Drop";
+        public const string AUDIO_MODULE_ROTATE = "Module Rotate";
+        public const string AUDIO_EXPLOSION = "Explosion";
+        public const string AUDIO_ANDROID_DAMAGE = "Android Take Damage";
+        public const string AUDIO_ENEMY_DAMAGE = "Enemy Take Damage";
+        public const string AUDIO_MOD_PICKUP = "Mod Pick Up";
+
+        #endregion
+
         #region Tag and Layer
 
         public const string ANDROID_TAG = "Player";

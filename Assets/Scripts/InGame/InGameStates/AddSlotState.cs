@@ -6,6 +6,7 @@ using UI;
 using UnityEngine;
 using InGame.BattleFields.Common;
 using Utils;
+using Audios;
 
 namespace InGame.InGameStates
 {
@@ -78,6 +79,7 @@ namespace InGame.InGameStates
             if (m_board.GetSlotStatus(x, y) == SlotStatus.Selectable)
             {
                 m_board.SetSlotStatus(x, y, SlotStatus.Empty);
+                AudioManager.Instance.PlaySound(Constants.AUDIO_BOARD_EXPANSION);
                 GameManager.Instance.GetAndroid().Decrease(LimitedPropertyType.Mod, Constants.ADD_SLOT_COST, true);    
                 m_amount--;
                 m_currentSelectableAmount--;

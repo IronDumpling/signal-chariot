@@ -6,6 +6,8 @@ using InGame.Views;
 using SetUps;
 using UnityEngine.Events;
 using Utils.Common;
+using Audios;
+using Utils;
 
 namespace InGame.BattleFields.Enemies
 {
@@ -208,8 +210,8 @@ namespace InGame.BattleFields.Enemies
         #region Action
         public void TakeDamage(float dmg)
         {
+            AudioManager.Instance.PlaySound(Constants.AUDIO_ENEMY_DAMAGE);
             this.m_health.current -= dmg;
-
             if(this.m_health.current <= 0) Die();
         }
 

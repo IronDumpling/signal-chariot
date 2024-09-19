@@ -9,6 +9,7 @@ using InGame.BattleFields.Common;
 using SetUps;
 using Utils;
 using Utils.Common;
+using Audios;
 
 namespace InGame.BattleFields.Androids
 {
@@ -244,6 +245,7 @@ namespace InGame.BattleFields.Androids
 
         public void TakeDamage(float dmg)
         {
+            AudioManager.Instance.PlaySound(Constants.AUDIO_ANDROID_DAMAGE);
             dmg -= m_defense.value;
             dmg = Mathf.Max(dmg, 0);
             DecreaseCurrHealth(dmg);

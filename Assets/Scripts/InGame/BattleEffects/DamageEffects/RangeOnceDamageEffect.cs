@@ -1,3 +1,4 @@
+using Audios;
 using UnityEngine;
 using Utils;
 using Utils.Common;
@@ -23,6 +24,7 @@ namespace InGame.BattleEffects
         {
             if (!IsActive) return;
             
+            AudioManager.Instance.PlaySound(Constants.AUDIO_EXPLOSION);
             Vector3 center = go.transform.position;
             Collider[] colliders = Physics.OverlapSphere(center, m_radius);
             foreach (var collider in colliders)
@@ -31,6 +33,7 @@ namespace InGame.BattleEffects
                 IDamageable damageable = collider.GetComponent<IDamageable>();
                 damageable?.TakeDamage(m_damage);
             }
+
             m_count--;
         }
 

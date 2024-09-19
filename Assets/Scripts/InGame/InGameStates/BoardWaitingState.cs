@@ -81,8 +81,7 @@ namespace InGame.InGameStates
             if (board.GetSlotStatus(x, y) == SlotStatus.Occupied)
             {
                 var module = board.RemoveModule(x, y);
-                Debug.Log("Click!");
-                AudioManager.Instance.PlaySound("Module Select");
+                AudioManager.Instance.PlaySound(Constants.AUDIO_MODULE_SELECT);
                 GameManager.Instance.ChangeToModulePlacingState(module);
             }
         }

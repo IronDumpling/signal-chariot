@@ -1,4 +1,5 @@
-﻿using InGame.Boards;
+﻿using Audios;
+using InGame.Boards;
 using InGame.Boards.Modules;
 using InGame.Cores;
 using InGame.Views;
@@ -83,6 +84,7 @@ namespace InGame.InGameStates
                 pos.z = Constants.MODULE_DEPTH;
                 
                 m_moduleView.SetWorldPos(pos);
+                AudioManager.Instance.PlaySound(Constants.AUDIO_MODULE_DROP);
                 GameManager.Instance.ChangeToBoardWaitingState();
             }
             else

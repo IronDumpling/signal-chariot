@@ -3,6 +3,7 @@ using UnityEngine;
 using Utils;
 using InGame.Views;
 using InGame.Cores;
+using Audios;
 
 namespace InGame.BattleFields.Common
 {
@@ -41,6 +42,7 @@ namespace InGame.BattleFields.Common
             int max = (int)GameManager.Instance.GetAndroid().Get(LimitedPropertyType.Mod, false);
             if(curr >= max) return; 
 
+            AudioManager.Instance.PlaySound(Constants.AUDIO_MOD_PICKUP);
             GameManager.Instance.GetAndroid().Increase(LimitedPropertyType.Mod, m_quality, true);
             this.Die();
         }
