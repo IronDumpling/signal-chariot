@@ -9,12 +9,12 @@ namespace InGame.BattleFields.Common
         Mod,
         Crystal,
         Default,
+        Armor,
     }
 
     public enum UnlimitedPropertyType
     {
         Defense,
-        Armor,
         Speed,
         BulletCount,
         Damage,

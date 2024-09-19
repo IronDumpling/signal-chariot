@@ -15,6 +15,7 @@ namespace SetUps
         #region Shield
         public float defense = 0;
         public int armor = 0;
+        public int maxArmor = 1;
         #endregion
 
         #region Action
@@ -38,9 +39,12 @@ namespace SetUps
             
             initialCrystal = (int)android.Get(LimitedPropertyType.Crystal, true);
             maxCrystal = (int)android.Get(LimitedPropertyType.Crystal, false);
-
+            
+            armor = (int)android.Get(LimitedPropertyType.Armor, true);
+            maxArmor = (int)android.Get(LimitedPropertyType.Armor, false);
+            
             defense = android.Get(UnlimitedPropertyType.Defense);
-            armor = (int)android.Get(UnlimitedPropertyType.Armor);
+            
 
             speed = android.Get(UnlimitedPropertyType.Speed);
         }
@@ -55,9 +59,12 @@ namespace SetUps
 
             android.Set(LimitedPropertyType.Crystal, maxCrystal, false);
             android.Set(LimitedPropertyType.Crystal, initialCrystal, true);
-
+            
+            android.Set(LimitedPropertyType.Armor, maxArmor, false);
+            android.Set(LimitedPropertyType.Armor, armor, true);
+            
             android.Set(UnlimitedPropertyType.Defense, defense);
-            android.Set(UnlimitedPropertyType.Armor, armor);
+            
 
             android.Set(UnlimitedPropertyType.Speed, speed);
         }

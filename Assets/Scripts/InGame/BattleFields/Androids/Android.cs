@@ -22,7 +22,7 @@ namespace InGame.BattleFields.Androids
         private LimitedProperty m_mod;
         private LimitedProperty m_crystal;
         private UnlimitedProperty m_defense;
-        private UnlimitedProperty m_armor;
+        private LimitedProperty m_armor;
         private UnlimitedProperty m_speed;
 
         [Header("Equipment")]
@@ -53,9 +53,10 @@ namespace InGame.BattleFields.Androids
                 UnlimitedPropertyType.Defense
             );
 
-            m_armor = new UnlimitedProperty(
+            m_armor = new LimitedProperty(
+                setUp.maxArmor,
                 setUp.armor,
-                UnlimitedPropertyType.Armor
+                LimitedPropertyType.Armor
             );
 
             m_speed = new UnlimitedProperty(
@@ -105,6 +106,9 @@ namespace InGame.BattleFields.Androids
                 case LimitedPropertyType.Crystal:
                     result = m_crystal;
                     break;
+                case LimitedPropertyType.Armor:
+                    result = m_armor;
+                    break;
             }
             
             if(isCurrentValue) return result.current;
@@ -116,7 +120,6 @@ namespace InGame.BattleFields.Androids
             return type switch
             {
                 UnlimitedPropertyType.Defense => m_defense.value,
-                UnlimitedPropertyType.Armor => m_armor.value,
                 UnlimitedPropertyType.Speed => m_speed.value,
                 _ => throw new NotImplementedException(),
             };
@@ -129,6 +132,7 @@ namespace InGame.BattleFields.Androids
                 LimitedPropertyType.Health => m_health,
                 LimitedPropertyType.Mod => m_mod,
                 LimitedPropertyType.Crystal => m_crystal,
+                LimitedPropertyType.Armor => m_armor,
                 _ => null
             };
         }
@@ -138,7 +142,6 @@ namespace InGame.BattleFields.Androids
             return type switch
             {
                 UnlimitedPropertyType.Defense => m_defense,
-                UnlimitedPropertyType.Armor => m_armor,
                 UnlimitedPropertyType.Speed => m_speed,
                 _ => null
             };
@@ -166,8 +169,10 @@ namespace InGame.BattleFields.Androids
         
         public void Increase(UnlimitedPropertyType type, float delta)
         {
+            
             UnlimitedProperty property = GetUnlimitedProperty(type);
             property.value += delta;
+            Debug.Log($"Increase {type}: {property.value}");
         }
 
         public void Decrease(LimitedPropertyType type, float delta, bool isCurrentValue)
@@ -188,8 +193,10 @@ namespace InGame.BattleFields.Androids
 
         public void Decrease(UnlimitedPropertyType type, float delta)
         {
+            Debug.Log($"Decrease {type}: delta");
             UnlimitedProperty property = GetUnlimitedProperty(type);
             property.value -= delta;
+            Debug.Log($"Increase {type}: {property.value}");
         }
 
         public void RegisterPropertyEvent(LimitedPropertyType type, 
@@ -245,15 +252,15 @@ namespace InGame.BattleFields.Androids
 
         private void DecreaseCurrHealth(float delta)
         {
-            float armor = m_armor.value;
+            float armor = m_armor.current;
             if(armor == 0)
                 m_health.current -= delta;
             else if(armor >= delta)
-                Decrease(UnlimitedPropertyType.Armor, delta);
+                Decrease(LimitedPropertyType.Armor, delta, true);
             else if(armor < delta)
             {
                 m_health.current -= delta - armor;
-                m_armor.value = 0;
+                m_armor.current = 0;
             }                        
         }
 

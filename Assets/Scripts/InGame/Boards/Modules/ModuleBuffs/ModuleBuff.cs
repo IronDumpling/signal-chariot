@@ -9,7 +9,9 @@ namespace InGame.Boards.Modules.ModuleBuffs
         None = 0,
         Weapon = 1 << 0,
         Magazine = 1 << 1,
-        Heat = 1 << 2
+        Heat = 1 << 2,
+        AndroidLimitProperty = 1 << 3,
+        AndroidUnlimitProperty = 1 << 4
         
     }
 
@@ -72,6 +74,8 @@ namespace InGame.Boards.Modules.ModuleBuffs
                 ModuleBuffType.None => null,
                 ModuleBuffType.Weapon => WeaponBuff.CreateBuff(),
                 ModuleBuffType.Magazine => MagazineBuff.CreateBuff(),
+                ModuleBuffType.AndroidLimitProperty => AndroidLimitPropertyBuff.CreateEmptyBuff(),
+                ModuleBuffType.AndroidUnlimitProperty => AndroidUnlimitPropertyBuff.CreateEmptyBuff(),
                 _ => null
             };
         }

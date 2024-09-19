@@ -9,7 +9,7 @@ namespace Editors.Effects
         
         public override Effect CreateEffect()
         {
-            return ChangeShieldEffect.CreateEffect(delta);
+            return ChangeShieldSignalEffect.CreateEffect(delta);
         }
     }
 }

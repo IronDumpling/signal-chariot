@@ -33,7 +33,7 @@ namespace InGame.UI
             Android android = GameManager.Instance.GetAndroid();
             android.RegisterPropertyEvent(LimitedPropertyType.Health, SetHealthUI);
             android.RegisterPropertyEvent(UnlimitedPropertyType.Defense, SetDefenseUI);
-            android.RegisterPropertyEvent(UnlimitedPropertyType.Armor, SetArmorUI);
+            android.RegisterPropertyEvent(LimitedPropertyType.Armor, SetArmorUI);
             android.RegisterPropertyEvent(LimitedPropertyType.Mod, SetModUI);
             android.RegisterPropertyEvent(LimitedPropertyType.Crystal, SetCrystalUI);
         }
@@ -43,7 +43,7 @@ namespace InGame.UI
             Android android = GameManager.Instance.GetAndroid();
             android.UnregisterPropertyEvent(LimitedPropertyType.Health, SetHealthUI);
             android.UnregisterPropertyEvent(UnlimitedPropertyType.Defense, SetDefenseUI);
-            android.UnregisterPropertyEvent(UnlimitedPropertyType.Armor, SetArmorUI);
+            android.UnregisterPropertyEvent(LimitedPropertyType.Armor, SetArmorUI);
             android.UnregisterPropertyEvent(LimitedPropertyType.Mod, SetModUI);
             android.UnregisterPropertyEvent(LimitedPropertyType.Crystal, SetCrystalUI);
         }        
@@ -62,10 +62,10 @@ namespace InGame.UI
             content.text = $"防御: {current}";
         }
 
-        private void SetArmorUI(float current)
+        private void SetArmorUI(float current, float max)
         {
             Label content = m_armor.Q<Label>("content");
-            content.text = $"护甲: {current}";
+            content.text = $"护甲: {current}/{max}";
         }
 
         private void SetModUI(float current, float max)
