@@ -14,6 +14,8 @@ namespace InGame.Views
         private SpriteRenderer m_spriteRenderer;
         private Collider m_collider;
 
+        public CountdownTimer timer { get { return m_timer; } }
+
         #region LifeCycle
         public void Init(Bullet bullet)
         {
@@ -89,6 +91,7 @@ namespace InGame.Views
         #endregion
         
         #region Interaction
+        int times = 0;
         public void OnTriggerEnter(Collider other)
         {
             int layer = other.gameObject.layer;

@@ -12,6 +12,7 @@ using InGame.BattleEffects;
 
 using Utils;
 using Utils.Common;
+using System.Threading;
 
 namespace InGame.BattleFields.Bullets
 {
@@ -122,7 +123,7 @@ namespace InGame.BattleFields.Bullets
                 if (effect is CountEffect countEffect)
                     ableToDie = ableToDie && countEffect.AbleToDie();
             }
-            if(ableToDie) m_bulletView.Die();
+            if(ableToDie || !m_bulletView.timer.IsRunning()) m_bulletView.Die();
         }
 
         public void DealDamage(IDamageable target, float dmg)
