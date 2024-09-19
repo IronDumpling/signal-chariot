@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2357851555678894876, guid: 1736ed262d4c17445b4665d042388a63, type: 3}
       propertyPath: m_Name
-      value: MagazineWeapon
+      value: ChargingCannon
       objectReference: {fileID: 0}
     - target: {fileID: 6567514327051405123, guid: 1736ed262d4c17445b4665d042388a63, type: 3}
       propertyPath: m_LocalPosition.x
@@ -75,7 +75,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1829512687857941510, guid: 5681e789992963c41be1b4fc146325da, type: 3}
       propertyPath: m_Name
-      value: MagazineWeaponVisual
+      value: ChargingWeaponVisual
       objectReference: {fileID: 0}
     - target: {fileID: 2228172573694265831, guid: 5681e789992963c41be1b4fc146325da, type: 3}
       propertyPath: m_LocalPosition.x
