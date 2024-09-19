@@ -185,46 +185,10 @@ MonoBehaviour:
     moduleName: "\u78B3\u5143\u7D20"
     orientation: 0
   - pos:
-      x: 5
-      y: 1
-    moduleID: 8
-    moduleName: "\u94C5\u5143\u7D20"
-    orientation: 0
-  - pos:
-      x: 8
-      y: 1
-    moduleID: 13
-    moduleName: "\u5145\u80FD\u62A4\u7532"
-    orientation: 0
-  - pos:
-      x: 6
-      y: 1
-    moduleID: 15
-    moduleName: "\u4FEE\u590D\u6A21\u5757"
-    orientation: 0
-  - pos:
-      x: 4
-      y: 1
-    moduleID: 16
-    moduleName: "\u78C1\u5438\u5143\u4EF6"
-    orientation: 0
-  - pos:
-      x: 4
-      y: 0
-    moduleID: 5
-    moduleName: "\u5F39\u6027\u7EA4\u7EF4"
-    orientation: 0
-  - pos:
       x: 7
       y: 0
     moduleID: 6
     moduleName: "\u78B3\u5143\u7D20"
-    orientation: 0
-  - pos:
-      x: 1
-      y: 0
-    moduleID: 12
-    moduleName: "\u5145\u80FD\u70AE"
     orientation: 0
   signalPrefab: {fileID: 7786143621109699157, guid: e7f648ad21042b64ca742ba22438c585, type: 3}
   slotPrefab: {fileID: 6622818502655049371, guid: 80c85fcaea6536748bb67591b4fc60b2, type: 3}
@@ -474,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28a801a53cd84509810f985f3b260ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setUp: {fileID: 11400000, guid: 01b1065d17b32e74dace4bbbdf6637cd, type: 2}
+  setUp: {fileID: 11400000, guid: fceed707393814a38b51ea8dd3c7d768, type: 2}
 --- !u!4 &1771886533
 Transform:
   m_ObjectHideFlags: 0

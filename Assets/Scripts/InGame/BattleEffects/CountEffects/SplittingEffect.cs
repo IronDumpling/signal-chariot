@@ -30,10 +30,7 @@ namespace InGame.BattleEffects
             foreach(Effect effect in newBullet.collisionEffects)
             {
                 if(effect is CountEffect count && count is SplittingEffect splitting)
-                {
                     splitting.m_count = (splitting.m_count > 0) ? splitting.m_count - 1 : splitting.m_count;
-                    Debug.Log("bullet splitting effect count " + splitting.m_count);
-                }
             }
 
             newBullet.moveType = MoveType.CircleRound;
