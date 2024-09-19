@@ -496,7 +496,7 @@ MonoBehaviour:
     splittingCountBuff: 0
     splittingSizeBuff: 0
     penetrationBuff: 0
-    numShotsFlatBuff: 2
+    numShotsFlatBuff: 1
     numBulletsPerShotFlatBuff: 0
     damagePercentageBuff: 0
     flatDamageBuff: 0
