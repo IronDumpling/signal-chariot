@@ -12,7 +12,7 @@ namespace InGame.UI
     {
         private VisualElement m_root;
         private VisualElement m_health;
-        private VisualElement m_defense;
+        private VisualElement m_speed;
         private VisualElement m_armor;
         private VisualElement m_mod;
         private VisualElement m_crystal;
@@ -21,7 +21,7 @@ namespace InGame.UI
         {
             m_root = root;
             m_health = m_root.Q("health");
-            m_defense = m_root.Q("defense");
+            m_speed = m_root.Q("speed");
             m_armor = m_root.Q("armor");
             m_mod = m_root.Q("mod");
             m_crystal = m_root.Q("crystal");
@@ -32,7 +32,7 @@ namespace InGame.UI
         {
             Android android = GameManager.Instance.GetAndroid();
             android.RegisterPropertyEvent(LimitedPropertyType.Health, SetHealthUI);
-            android.RegisterPropertyEvent(UnlimitedPropertyType.Defense, SetDefenseUI);
+            android.RegisterPropertyEvent(UnlimitedPropertyType.Speed, SetSpeedUI);
             android.RegisterPropertyEvent(LimitedPropertyType.Armor, SetArmorUI);
             android.RegisterPropertyEvent(LimitedPropertyType.Mod, SetModUI);
             android.RegisterPropertyEvent(LimitedPropertyType.Crystal, SetCrystalUI);
@@ -42,7 +42,7 @@ namespace InGame.UI
         {
             Android android = GameManager.Instance.GetAndroid();
             android.UnregisterPropertyEvent(LimitedPropertyType.Health, SetHealthUI);
-            android.UnregisterPropertyEvent(UnlimitedPropertyType.Defense, SetDefenseUI);
+            android.UnregisterPropertyEvent(UnlimitedPropertyType.Speed, SetSpeedUI);
             android.UnregisterPropertyEvent(LimitedPropertyType.Armor, SetArmorUI);
             android.UnregisterPropertyEvent(LimitedPropertyType.Mod, SetModUI);
             android.UnregisterPropertyEvent(LimitedPropertyType.Crystal, SetCrystalUI);
@@ -56,10 +56,10 @@ namespace InGame.UI
             bar.title = $"{current}/{max}";
         }
 
-        private void SetDefenseUI(float current)
+        private void SetSpeedUI(float current)
         {
-            Label content = m_defense.Q<Label>("content");
-            content.text = $"防御: {current}";
+            Label content = m_speed.Q<Label>("content");
+            content.text = $"速度: {current}";
         }
 
         private void SetArmorUI(float current, float max)
