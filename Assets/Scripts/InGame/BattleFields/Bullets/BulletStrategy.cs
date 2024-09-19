@@ -258,11 +258,13 @@ namespace InGame.BattleFields.Bullets
             int batchSize = m_bulletManager.GetBatchSize(m_batchIdx);
 
             float angleBetween = (batchSize > 0) ? 360f/batchSize : 0;
-            float currentAngle = m_bulletIdx * angleBetween;
-            float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            currentAngle = (targetAngle + currentAngle) * Mathf.Deg2Rad;
+            angleBetween = m_bulletIdx * angleBetween * Mathf.Deg2Rad;
             
-            Vector3 currDirection = new(Mathf.Cos(currentAngle), Mathf.Sin(currentAngle), direction.z);
+            Vector3 currDirection = new(
+                Mathf.Cos(angleBetween) * direction.x - Mathf.Sin(angleBetween) * direction.y,
+                Mathf.Sin(angleBetween) * direction.x + Mathf.Cos(angleBetween) * direction.y,
+                direction.z
+            );
 
             Vector3 upwardDirection = currDirection;
             upwardDirection.z = 0;
@@ -283,23 +285,23 @@ namespace InGame.BattleFields.Bullets
 
         public PlacementMoveStrategy(Bullet bullet) : base(bullet)
         {
-            Collider[] overlappingBullets = Physics.OverlapSphere(m_bulletTransform.position, 
-                                                                m_bullet.size.value, 
-                                                                Constants.BULLET_LAYER);
-            int iteration = 0;
-            while(overlappingBullets.Length > 0 && iteration < m_maxIterations)
-            {
-                foreach(var collider in overlappingBullets)
-                {
-                    if(collider.gameObject == m_bulletTransform.gameObject) continue;
-                    Vector2 directionToMove = (m_bulletTransform.position - collider.transform.position).normalized;
-                    m_bulletTransform.position += (Vector3)(directionToMove * m_separationDistance);
-                }
-                overlappingBullets = Physics.OverlapSphere(m_bulletTransform.position, 
-                                                           m_bullet.size.value, 
-                                                           Constants.BULLET_LAYER);
-                iteration++;
-            }
+            // Collider[] overlappingBullets = Physics.OverlapSphere(m_bulletTransform.position, 
+                                                                // m_bullet.size.value, 
+                                                                // Constants.BULLET_LAYER);
+            // int iteration = 0;
+            // while(overlappingBullets.Length > 0 && iteration < m_maxIterations)
+            // {
+                // foreach(var collider in overlappingBullets)
+                // {
+                    // if(collider.gameObject == m_bulletTransform.gameObject) continue;
+                    // // Vector2 directionToMove = (m_bulletTransform.position - collider.transform.position).normalized;
+                    // m_bulletTransform.position += (Vector3)(directionToMove * m_separationDistance);
+                // }
+                // overlappingBullets = Physics.OverlapSphere(m_bulletTransform.position, 
+                                                        //    m_bullet.size.value, 
+                                                        //    Constants.BULLET_LAYER);
+                // iteration++;
+            // }
         }
 
         public void Move()

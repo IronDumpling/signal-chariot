@@ -7,6 +7,7 @@ using SetUps;
 using InGame.Boards.Modules.ModuleBuffs;
 using InGame.Cores;
 using InGame.BattleEffects;
+using System;
 
 namespace InGame.BattleFields.Bullets
 {
@@ -73,7 +74,7 @@ namespace InGame.BattleFields.Bullets
 
         public List<Bullet> AddBulletBatch(float batchSize, BulletSetUp setup, Transform origin)
         {
-            List<Bullet> batch = new();
+            List<Bullet> batch = new((int)batchSize);
             m_bullets.Add(batch);
             m_targets.Add(Vector3.zero);
 
@@ -100,7 +101,7 @@ namespace InGame.BattleFields.Bullets
 
         public int GetBatchSize(int batchIdx)
         {
-            return m_bullets[batchIdx].Count;
+            return Math.Max(m_bullets[batchIdx].Capacity, m_bullets[batchIdx].Count);
         }
 
         public void ClearBullet()
