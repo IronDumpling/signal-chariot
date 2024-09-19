@@ -9,6 +9,7 @@ using InGame.BattleFields.Common;
 using Spine.Unity;
 using UnityEngine.PlayerLoop;
 using AnimationState = Spine.AnimationState;
+using InGame.Cores;
 
 namespace InGame.Views
 {
@@ -157,6 +158,11 @@ namespace InGame.Views
 
         private void OnTriggerEnter(Collider other)
         {
+            if(!GameManager.Instance.CheckGameState(new []{
+                InGameStates.InGameStateType.BattleState,
+                InGameStates.InGameStateType.BoardTestState
+            })) return;
+        
             int layer = other.gameObject.layer;
             switch (layer)
             {

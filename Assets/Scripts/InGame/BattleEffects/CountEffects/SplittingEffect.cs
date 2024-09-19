@@ -27,18 +27,18 @@ namespace InGame.BattleEffects
             base.Trigger(go);
             
             BulletSetUp newBullet = new(m_bulletSetUp);
-            CountEffect count = null;
             foreach(Effect effect in newBullet.collisionEffects)
             {
-                if(effect is CountEffect)
-                    count = effect as CountEffect;
-                    // splitting.m_count = (splitting.m_count > 0) ? splitting.m_count - 1 : splitting.m_count;
+                if(effect is CountEffect count && count is SplittingEffect splitting)
+                {
+                    splitting.m_count = (splitting.m_count > 0) ? splitting.m_count - 1 : splitting.m_count;
+                    Debug.Log("bullet splitting effect count " + splitting.m_count);
+                }
             }
 
-            newBullet.collisionEffects.Remove(count);
             newBullet.moveType = MoveType.CircleRound;
-            newBullet.damage /= m_batchSize;
-            newBullet.size /= m_batchSize;
+            newBullet.damage /= m_batchSize/1.5f;
+            newBullet.size /= m_batchSize/1.5f;
 
             GameManager.Instance.GetBulletManager().AddBulletBatch(m_batchSize, newBullet, go.transform);
         }
