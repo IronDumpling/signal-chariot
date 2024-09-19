@@ -34,7 +34,7 @@ namespace InGame.UI
             float[] timeLimits = m_enemyController.GetAllWaveDurations(); 
             
             timeLimits = new float[]{
-                30, 30, 30, 45, 45, 60, 45 // TODO: remove this
+                30, 30, 30, 45, 60, 45, 45, 45, 45, 60 // TODO: remove this
             };
             
             float totalLimits = 0;
