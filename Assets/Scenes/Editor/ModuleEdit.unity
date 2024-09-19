@@ -641,8 +641,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: desc
-      value: "Buff\uFF1A\\n  \u6B66\u5668\uFF1A\u5B50\u5F39\u4F53\u79EF+100%,  \u901F\u5EA6-50%
-        \\n \\n  \u673A\u4F53\uFF1A\u751F\u547D\u503C+25% "
+      value: "Buff\uFF1A\\n  \u6B66\u5668\uFF1A\u5B50\u5F39\u4F53\u79EF+100%,  \u901F\u5EA6-50%,\u5B50\u5F39\u4F24\u5BB3+50%\\n
+        \\n  \u673A\u4F53\uFF1A\u751F\u547D\u503C+25% "
       objectReference: {fileID: 0}
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: name
@@ -757,7 +757,7 @@ MonoBehaviour:
     penetrationBuff: 0
     numShotsFlatBuff: 0
     numBulletsPerShotFlatBuff: 0
-    damagePercentageBuff: 0
+    damagePercentageBuff: 50
     flatDamageBuff: 0
     speedPercentageBuff: -25
     bulletSizePercentageBuff: 100
@@ -1474,7 +1474,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: be9fd072f449648d39dd75586393f7da, type: 3}
     seekInterval: 0.5
     shootInterval: 0.05
-    shootCount: 2
+    shootCount: 1
     bulletCount: 1
 --- !u!1 &993809584 stripped
 GameObject:
@@ -2974,7 +2974,7 @@ MonoBehaviour:
     penetrationBuff: 0
     numShotsFlatBuff: 0
     numBulletsPerShotFlatBuff: 0
-    damagePercentageBuff: 50
+    damagePercentageBuff: 0
     flatDamageBuff: 0
     speedPercentageBuff: 0
     bulletSizePercentageBuff: 0

@@ -177,38 +177,52 @@ MonoBehaviour:
     moduleRewards:
     - moduleID: 13
       moduleName: "\u5145\u80FD\u62A4\u7532"
-    - moduleID: 2
-      moduleName: "\u8F6C\u5411\u5668"
   - waveID: 2
     moduleRewards:
-    - moduleID: 7
-      moduleName: "\u5206\u88C2\u67AA\u53E3"
+    - moduleID: 6
+      moduleName: "\u78B3\u5143\u7D20"
+    - moduleID: 15
+      moduleName: "\u4FEE\u590D\u6A21\u5757"
   - waveID: 3
     moduleRewards:
+    - moduleID: 1
+      moduleName: "\u589E\u5E45\u5668"
+    - moduleID: 7
+      moduleName: "\u5206\u88C2\u67AA\u53E3"
+  - waveID: 4
+    moduleRewards:
+    - moduleID: 2
+      moduleName: "\u8F6C\u5411\u5668"
     - moduleID: 9
       moduleName: "\u53CC\u5411\u5206\u6D41\u5668"
     - moduleID: 11
       moduleName: "\u6FC0\u5149\u4FE1\u53F7"
-  - waveID: 4
+  - waveID: 5
+    moduleRewards:
+    - moduleID: 12
+      moduleName: "\u5145\u80FD\u70AE"
+    - moduleID: 14
+      moduleName: "\u5730\u96F7\u4FE1\u53F7"
+  - waveID: 6
+    moduleRewards:
+    - moduleID: 7
+      moduleName: "\u5206\u88C2\u67AA\u53E3"
+    - moduleID: 5
+      moduleName: "\u5F39\u6027\u7EA4\u7EF4"
+  - waveID: 7
     moduleRewards:
     - moduleID: 1
       moduleName: "\u589E\u5E45\u5668"
-    - moduleID: 16
-      moduleName: "\u78C1\u5438\u5143\u4EF6"
-  - waveID: 5
-    moduleRewards:
     - moduleID: 2
       moduleName: "\u8F6C\u5411\u5668"
+    - moduleID: 16
+      moduleName: "\u78C1\u5438\u5143\u4EF6"
+  - waveID: 8
+    moduleRewards:
+    - moduleID: 8
+      moduleName: "\u94C5\u5143\u7D20"
     - moduleID: 17
       moduleName: "\u9AD8\u7206\u5F39\u4FE1\u53F7"
-    - moduleID: 12
-      moduleName: "\u5145\u80FD\u70AE"
-  - waveID: 6
-    moduleRewards:
-    - moduleID: 15
-      moduleName: "\u4FEE\u590D\u6A21\u5757"
-    - moduleID: 14
-      moduleName: "\u5730\u96F7\u4FE1\u53F7"
 --- !u!1001 &226514126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -336,9 +350,9 @@ MonoBehaviour:
     - enemyID: 1
       enemyName: "\u767D\u8840\u7403\u9886\u961F"
     eachSpawnCount: 1
-    spawnInterval: 5
+    spawnInterval: 3
     minEnemies: 1
-    maxEnemies: 5
+    maxEnemies: 7
     locationSpawnLogic: 0
 --- !u!1 &405076119
 GameObject:
@@ -386,14 +400,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wave:
     groups:
-    - range:
-        start: 0
-        end: 45
-      spawnGroupID: 0
-    - range:
-        start: 0
-        end: 45
-      spawnGroupID: 0
     - range:
         start: 0
         end: 45
@@ -452,13 +458,17 @@ MonoBehaviour:
     groups:
     - range:
         start: 0
-        end: 45
-      spawnGroupID: 1
+        end: 60
+      spawnGroupID: 0
     - range:
         start: 0
-        end: 45
-      spawnGroupID: 1
-    duration: 45
+        end: 60
+      spawnGroupID: 2
+    - range:
+        start: 45
+        end: 60
+      spawnGroupID: 2
+    duration: 60
     groupsMustBeat: 
 --- !u!1 &691453384
 GameObject:
@@ -497,6 +507,9 @@ Transform:
   - {fileID: 684936286}
   - {fileID: 1811890523}
   - {fileID: 405076120}
+  - {fileID: 1145540923}
+  - {fileID: 1775139968}
+  - {fileID: 1536364059}
   m_Father: {fileID: 846067237}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &691453386
@@ -609,7 +622,7 @@ MonoBehaviour:
     - range:
         start: 0
         end: 45
-      spawnGroupID: 1
+      spawnGroupID: 2
     duration: 45
     groupsMustBeat: 
 --- !u!1 &846067235
@@ -709,10 +722,10 @@ MonoBehaviour:
     enemiesPool:
     - enemyID: 3
       enemyName: "\u98DE\u884C\u602A"
-    eachSpawnCount: 5
-    spawnInterval: 10
-    minEnemies: 1
-    maxEnemies: 10
+    eachSpawnCount: 4
+    spawnInterval: 5
+    minEnemies: 2
+    maxEnemies: 15
     locationSpawnLogic: 0
 --- !u!1 &892760774
 GameObject:
@@ -764,10 +777,6 @@ MonoBehaviour:
         start: 0
         end: 30
       spawnGroupID: 0
-    - range:
-        start: 0
-        end: 30
-      spawnGroupID: 2
     duration: 30
     groupsMustBeat: 
 --- !u!1 &1029815682
@@ -871,7 +880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 927000611780892879, guid: 9903f5f16753e7c4b9039d43da447af3, type: 3}
       propertyPath: speed
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 927000611780892879, guid: 9903f5f16753e7c4b9039d43da447af3, type: 3}
       propertyPath: attack
@@ -915,6 +924,66 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 328403214609318406, guid: 9903f5f16753e7c4b9039d43da447af3, type: 3}
   m_PrefabInstance: {fileID: 1056678055}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1145540922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1145540923}
+  - component: {fileID: 1145540924}
+  m_Layer: 0
+  m_Name: Wave 7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1145540923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145540922}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 691453385}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1145540924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145540922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4d5695a8e545f7a2c9d766a76b2db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wave:
+    groups:
+    - range:
+        start: 0
+        end: 30
+      spawnGroupID: 0
+    - range:
+        start: 0
+        end: 45
+      spawnGroupID: 1
+    - range:
+        start: 30
+        end: 45
+      spawnGroupID: 2
+    duration: 45
+    groupsMustBeat: 
 --- !u!1 &1432983925
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,6 +1019,70 @@ Transform:
   - {fileID: 1793969675}
   m_Father: {fileID: 846067237}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1536364058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1536364059}
+  - component: {fileID: 1536364060}
+  m_Layer: 0
+  m_Name: Wave 9
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1536364059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536364058}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 691453385}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1536364060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536364058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4d5695a8e545f7a2c9d766a76b2db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wave:
+    groups:
+    - range:
+        start: 0
+        end: 60
+      spawnGroupID: 1
+    - range:
+        start: 0
+        end: 60
+      spawnGroupID: 2
+    - range:
+        start: 30
+        end: 60
+      spawnGroupID: 1
+    - range:
+        start: 30
+        end: 60
+      spawnGroupID: 1
+    duration: 60
+    groupsMustBeat: 
 --- !u!1 &1722628313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,6 +1136,70 @@ MonoBehaviour:
     minEnemies: 1
     maxEnemies: 15
     locationSpawnLogic: 0
+--- !u!1 &1775139967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1775139968}
+  - component: {fileID: 1775139969}
+  m_Layer: 0
+  m_Name: Wave 8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1775139968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775139967}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 691453385}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1775139969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775139967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4d5695a8e545f7a2c9d766a76b2db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wave:
+    groups:
+    - range:
+        start: 0
+        end: 30
+      spawnGroupID: 0
+    - range:
+        start: 0
+        end: 45
+      spawnGroupID: 0
+    - range:
+        start: 0
+        end: 45
+      spawnGroupID: 2
+    - range:
+        start: 30
+        end: 45
+      spawnGroupID: 1
+    duration: 45
+    groupsMustBeat: 
 --- !u!1001 &1793969674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1057,7 +1254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 927000611780892879, guid: 9903f5f16753e7c4b9039d43da447af3, type: 3}
       propertyPath: speed
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 927000611780892879, guid: 9903f5f16753e7c4b9039d43da447af3, type: 3}
       propertyPath: attack
@@ -1205,17 +1402,13 @@ MonoBehaviour:
     groups:
     - range:
         start: 0
-        end: 60
+        end: 45
       spawnGroupID: 0
     - range:
         start: 0
-        end: 60
+        end: 45
       spawnGroupID: 1
-    - range:
-        start: 30
-        end: 60
-      spawnGroupID: 1
-    duration: 60
+    duration: 45
     groupsMustBeat: 
 --- !u!1 &1969174104
 GameObject:
@@ -1266,7 +1459,7 @@ MonoBehaviour:
     - range:
         start: 0
         end: 30
-      spawnGroupID: 1
+      spawnGroupID: 2
     duration: 30
     groupsMustBeat: 
 --- !u!1001 &925897920459497451
