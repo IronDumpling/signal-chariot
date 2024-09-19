@@ -1,6 +1,6 @@
 ﻿using System;
 using InGame.Boards.Modules;
-using InGame.UI;
+using UI;
 using UnityEngine;
 using Utils.Common;
 

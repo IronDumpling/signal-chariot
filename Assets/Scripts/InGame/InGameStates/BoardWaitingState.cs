@@ -1,7 +1,7 @@
 ﻿using InGame.Boards;
 using InGame.Boards.Modules;
 using InGame.Cores;
-using InGame.UI;
+using UI;
 using InGame.Views;
 using UnityEngine;
 using Utils;

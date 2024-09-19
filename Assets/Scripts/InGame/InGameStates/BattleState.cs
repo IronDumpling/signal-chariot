@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using InGame.Cores;
-using InGame.UI;
+using UI;
 using InGame.Views;
 using InGame.BattleFields.Androids;
 using InGame.BattleFields.Enemies;

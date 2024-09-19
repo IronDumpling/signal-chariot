@@ -252,6 +252,7 @@ namespace InGame.BattleFields.Bullets
             direction.z = Constants.BULLET_DEPTH;
             m_bulletManager.SetBatchInfo(direction, m_batchIdx);
         }
+        
         private void SetDirection()
         {
             Vector3 direction = m_bulletManager.GetBatchInfo(m_batchIdx);
@@ -272,6 +273,7 @@ namespace InGame.BattleFields.Bullets
             m_velocity = Constants.SPEED_MULTIPLIER * m_bullet.speed.value * 
                         Time.deltaTime * currDirection.normalized;
         }
+
         public void Move()
         {
             m_bulletTransform.Translate(m_velocity, Space.World);

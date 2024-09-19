@@ -1,7 +1,7 @@
 using UnityEngine;
 
 using InGame.Cores;
-using InGame.UI;
+using UI;
 
 namespace InGame.InGameStates
 {

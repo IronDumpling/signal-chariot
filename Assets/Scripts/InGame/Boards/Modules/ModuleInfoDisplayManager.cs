@@ -1,4 +1,4 @@
-﻿using InGame.UI;
+﻿using UI;
 
 namespace InGame.Boards.Modules
 {

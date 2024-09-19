@@ -1,6 +1,6 @@
 ﻿using InGame.BattleFields.Enemies;
 using InGame.Boards.Signals;
-using InGame.UI;
+using UI;
 using InGame.Cores;
 using SetUps;
 using UnityEngine;

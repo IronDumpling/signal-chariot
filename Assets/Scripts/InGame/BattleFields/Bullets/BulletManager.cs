@@ -101,7 +101,7 @@ namespace InGame.BattleFields.Bullets
 
         public int GetBatchSize(int batchIdx)
         {
-            return Math.Max(m_bullets[batchIdx].Capacity, m_bullets[batchIdx].Count);
+            return m_bullets[batchIdx].Capacity;
         }
 
         public void ClearBullet()

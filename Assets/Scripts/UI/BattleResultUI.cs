@@ -6,7 +6,7 @@ using InGame.InGameStates;
 using Utils.Common;
 using Utils;
 
-namespace InGame.UI
+namespace UI
 {
     public class BattleResultUI : MonoBehaviour, IHidable
     {

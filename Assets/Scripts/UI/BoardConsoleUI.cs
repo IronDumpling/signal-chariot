@@ -6,7 +6,7 @@ using InGame.Cores;
 using Utils.Common;
 using InGame.InGameStates;
 
-namespace InGame.UI
+namespace UI
 {
     public class BoardConsoleUI : MonoBehaviour, IHidable
     {

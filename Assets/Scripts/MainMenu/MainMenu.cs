@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 using InGame;
-using InGame.UI;
+using UI;
 
 using Utils.Common;
 

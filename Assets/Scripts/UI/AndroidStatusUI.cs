@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 using Utils.Common;
 
-namespace InGame.UI
+namespace UI
 {
     public class AndroidStatusUI : IHidable
     {

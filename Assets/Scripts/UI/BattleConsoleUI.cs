@@ -5,7 +5,7 @@ using InGame.Cores;
 using Utils.Common;
 using InGame.BattleFields.Enemies;
 
-namespace InGame.UI
+namespace UI
 {
     public class BattleConsoleUI : MonoBehaviour, IHidable
     {

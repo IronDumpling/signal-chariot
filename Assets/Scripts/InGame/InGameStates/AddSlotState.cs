@@ -2,7 +2,7 @@
 using InGame.Boards;
 using InGame.Cores;
 using InGame.Views;
-using InGame.UI;
+using UI;
 using UnityEngine;
 using InGame.BattleFields.Common;
 using Utils;

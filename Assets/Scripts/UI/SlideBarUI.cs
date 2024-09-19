@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 using Utils.Common;
 
-namespace InGame.UI
+namespace UI
 {
     public class SlideBarUI : IHidable
     {

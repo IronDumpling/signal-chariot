@@ -4,7 +4,7 @@ using UnityEngine;
 using Utils;
 using Utils.Common;
 
-namespace InGame.UI
+namespace UI
 {
     public enum UIElements
     {

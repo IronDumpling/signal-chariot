@@ -3,7 +3,7 @@ using UnityEngine;
 
 using Utils;
 using Utils.Common;
-using InGame.UI;
+using UI;
 using InGame.Cores;
 using InGame.BattleFields.Enemies;
 using InGame.BattleFields.Androids;
