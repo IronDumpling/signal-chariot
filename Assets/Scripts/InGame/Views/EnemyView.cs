@@ -47,13 +47,14 @@ namespace InGame.Views
             }
         }
         private AnimationState animationState => skeletonAnimation?.AnimationState;
-        private const string MoveAnimation = "Move", AttackAnimation = "Attack";
+        [SerializeField]
+        private string MoveAnimation = "Move", AttackAnimation = "Attack";
 
         private float attackAnimationDuration
         {
             get
             {
-                if (skeletonAnimation == null) return 0;
+                if (skeletonAnimation == null || AttackAnimation == "") return 0;
                 else return skeletonAnimation.Skeleton.Data.FindAnimation(AttackAnimation).Duration;
             }
             
@@ -195,14 +196,14 @@ namespace InGame.Views
             
 
             visual.localScale = modifiedScale;
-            animationState?.SetAnimation(0, AttackAnimation, false);
+            if (AttackAnimation != "") animationState?.SetAnimation(0, AttackAnimation, false);
             yield return new WaitForSeconds(attackAnimationDuration);
             
             // Die before attacking
             if (m_enemy == null) yield break;
             
             target.TakeDamage(m_enemy.Get(UnlimitedPropertyType.Damage));
-            animationState?.SetAnimation(0, MoveAnimation, true);
+            if (MoveAnimation != "") animationState?.SetAnimation(0, MoveAnimation, true);
             
             visual.localScale = originalScale;
             yield return new WaitForSeconds(m_enemy.Get(UnlimitedPropertyType.Interval));
@@ -228,7 +229,7 @@ namespace InGame.Views
         public void TurnOn()
         { 
             m_isOn = true;
-            animationState?.SetAnimation(0, MoveAnimation, true);
+            if (MoveAnimation != "") animationState?.SetAnimation(0, MoveAnimation, true);
         } 
 
         public void TurnOff()
