@@ -382,11 +382,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: desc
-      value: "\u6B66\u5668\u989D\u5916\u5F00\u706B\u4E00\u6B21"
+      value: "buff\uFF1A\\n \u6B66\u5668\uFF1A\u6B66\u5668\u53D1\u5C04\u6B21\u6570+1
+        \\n \u673A\u4F53\uFF1A\u589E\u52A0\u96F6\u4EF6\u6570\u91CF+50%"
       objectReference: {fileID: 0}
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: name
       value: "\u5F39\u6027\u7EA4\u7EF4"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
+      propertyPath: tags
+      value: "\u76F8\u90BB\uFF1A\u5F71\u54CD\u5468\u56F4\u56DB\u683C\u5B50\u7684\u6A21\u5757"
       objectReference: {fileID: 0}
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: prefab
@@ -395,6 +400,10 @@ PrefabInstance:
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: category
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
+      propertyPath: function
+      value: "\u7ED9\u5F71\u54CD\u8303\u56F4\u5185\u7684\u88C5\u5907\u6A21\u5757\u52A0\u4E0A\u76F8\u5E94\u7684buff"
       objectReference: {fileID: 0}
     - target: {fileID: 4810080614412965423, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: m_Name
@@ -633,7 +642,7 @@ PrefabInstance:
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: desc
       value: "Buff\uFF1A\\n  \u6B66\u5668\uFF1A\u5B50\u5F39\u4F53\u79EF+100%,  \u901F\u5EA6-50%
-        \\n \u9632\u5FA1\uFF1A\u62A4\u76FE\u4F53\u79EF+100% \\n  \u673A\u4F53\uFF1A\u751F\u547D\u503C+25% "
+        \\n \\n  \u673A\u4F53\uFF1A\u751F\u547D\u503C+25% "
       objectReference: {fileID: 0}
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: name
@@ -2851,7 +2860,7 @@ PrefabInstance:
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: desc
       value: "buff\uFF1A\\n \u6B66\u5668\uFF1A\u5B50\u5F39\u5206\u88C2+3 \\n \u62A4\u7532\uFF1A
-        \\n \u673A\u4F53\uFF1A"
+        \u62A4\u7532\u4E0A\u9650+50%\\n \u673A\u4F53\uFF1A\u73A9\u5BB6\u79FB\u52A8\u901F\u5EA6+50%"
       objectReference: {fileID: 0}
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: name
