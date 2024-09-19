@@ -59,7 +59,7 @@ namespace InGame.UI
 
         private void OnSignalClicked()
         {   
-            if(GameManager.Instance.GetCurrentInGameState() == InGameStateType.BoardTestState){
+            if(GameManager.Instance.CheckGameState(new[]{InGameStateType.BoardTestState})){
                 m_slotButton.text = "扩容";
                 m_testButton.text = "测试";
                 GameManager.Instance.ChangeToBoardWaitingState();
@@ -72,7 +72,7 @@ namespace InGame.UI
 
         private void OnSlotClicked()
         {
-            if(GameManager.Instance.GetCurrentInGameState() == InGameStateType.AddSlotState){
+            if(GameManager.Instance.CheckGameState(new[]{InGameStateType.AddSlotState})){
                 m_slotButton.text = "扩容";
                 m_testButton.text = "测试";
                 GameManager.Instance.ChangeToBoardWaitingState();

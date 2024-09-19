@@ -164,6 +164,11 @@ namespace InGame.Views
 
         public void OnTriggerEnter(Collider other)
         {
+            if(!GameManager.Instance.CheckGameState(new []{
+                InGameStates.InGameStateType.BattleState,
+                InGameStates.InGameStateType.BoardTestState
+            })) return;
+            
             int layer = other.gameObject.layer;
             switch(layer)
             {
@@ -171,9 +176,7 @@ namespace InGame.Views
                     break;
                 default:
                     bool isRight = false;
-                    if (other.gameObject.transform.position.x >= transform.position.x) isRight = true;
-                    else isRight = false;
-                    
+                    if(other.gameObject.transform.position.x >= transform.position.x) isRight = true;
                     m_dmgTarget = other.gameObject.GetComponent<IDamageable>();
                     if(m_dmgTarget != null) StartCoroutine(Attack(isRight));
                     break;

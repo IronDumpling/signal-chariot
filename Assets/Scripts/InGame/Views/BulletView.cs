@@ -2,6 +2,8 @@ using UnityEngine;
 
 using Utils;
 using Utils.Common;
+
+using InGame.Cores;
 using InGame.BattleFields.Bullets;
 
 namespace InGame.Views
@@ -94,6 +96,11 @@ namespace InGame.Views
         int times = 0;
         public void OnTriggerEnter(Collider other)
         {
+            if(!GameManager.Instance.CheckGameState(new []{
+                InGameStates.InGameStateType.BattleState,
+                InGameStates.InGameStateType.BoardTestState
+            })) return;
+
             int layer = other.gameObject.layer;
             switch(layer)
             {

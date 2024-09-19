@@ -206,6 +206,15 @@ namespace InGame.Cores
         {
             WorldState.instance.nextState = null;
         }
+
+        public bool CheckGameState(InGameStateType[] states)
+        {
+            bool isInState = false;
+            foreach(InGameStateType state in states)
+                isInState = isInState || (GetCurrentInGameState() == state);
+            
+            return isInState;
+        }
         #endregion
     }
 }
