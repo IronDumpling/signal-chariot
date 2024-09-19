@@ -74,13 +74,18 @@ namespace InGame.InGameStates
             if (!m_boardView.GetXY(worldPosition, out int x, out int y)) return;
 
             int currMod = (int) GameManager.Instance.GetAndroid().Get(LimitedPropertyType.Mod, true);
-            if(currMod < Constants.ADD_SLOT_COST) return;
+            int addSlotCost = GameManager.Instance.GetModManager().GetAddSlotCost();
+            if(currMod < addSlotCost) return;
             
             if (m_board.GetSlotStatus(x, y) == SlotStatus.Selectable)
             {
                 m_board.SetSlotStatus(x, y, SlotStatus.Empty);
+                
                 AudioManager.Instance.PlaySound(Constants.AUDIO_BOARD_EXPANSION);
-                GameManager.Instance.GetAndroid().Decrease(LimitedPropertyType.Mod, Constants.ADD_SLOT_COST, true);    
+            
+                GameManager.Instance.GetAndroid().Decrease(LimitedPropertyType.Mod, addSlotCost, true);
+                GameManager.Instance.GetModManager().IncrementAddSlotCost();
+                
                 m_amount--;
                 m_currentSelectableAmount--;
                 
