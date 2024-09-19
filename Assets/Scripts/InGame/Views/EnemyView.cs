@@ -30,7 +30,6 @@ namespace InGame.Views
         
         private Vector3 m_target = Vector3.zero;
         private Vector3 m_direction = Vector3.zero;
-        private Vector3 m_obstacleDirection = Vector3.zero;
         private bool m_isOn = false;
         private IDamageable m_dmgTarget = null;
         private RaycastHit[] m_hits;

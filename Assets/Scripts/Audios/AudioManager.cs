@@ -25,7 +25,8 @@ namespace Audios
                 m_source.volume = sound.volume;
                 m_source.pitch = sound.pitch;
                 m_source.clip = sound.clip;
-                m_source.PlayOneShot(sound.clip);
+                // m_source.PlayOneShot(sound.clip);
+                m_source.Play();
             }
             else
                 Debug.LogWarning($"Sound: {soundName} not found!");
