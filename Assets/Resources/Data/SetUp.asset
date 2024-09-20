@@ -978,7 +978,7 @@ MonoBehaviour:
       groupsMustBeat: 
     - groups:
       - range:
-          start: 20
+          start: 0
           end: 30
         spawnGroupID: 3
       - range:
@@ -1004,9 +1004,9 @@ MonoBehaviour:
       groupsMustBeat: 
     - groups:
       - range:
-          start: 0
+          start: 20
           end: 45
-        spawnGroupID: 0
+        spawnGroupID: 3
       - range:
           start: 0
           end: 45
@@ -1078,7 +1078,7 @@ MonoBehaviour:
       - range:
           start: 0
           end: 15
-        spawnGroupID: 10
+        spawnGroupID: 9
       duration: 60
       groupsMustBeat: 03000000
     enemySpawnLevels:

@@ -1763,7 +1763,7 @@ MonoBehaviour:
     - range:
         start: 0
         end: 15
-      spawnGroupID: 10
+      spawnGroupID: 9
     duration: 60
     groupsMustBeat: 03000000
 --- !u!1 &1605518110
