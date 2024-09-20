@@ -278,6 +278,8 @@ MonoBehaviour:
       moduleName: "\u94C5\u5143\u7D20"
     - moduleID: 17
       moduleName: "\u9AD8\u7206\u5F39\u4FE1\u53F7"
+  - waveID: 9
+    moduleRewards: []
 --- !u!1001 &226514126
 PrefabInstance:
   m_ObjectHideFlags: 0

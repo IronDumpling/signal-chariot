@@ -1101,6 +1101,8 @@ MonoBehaviour:
         moduleRewards: 010000001000000002000000
       - waveID: 8
         moduleRewards: 0800000011000000
+      - waveID: 9
+        moduleRewards: 
   audioLibrary:
   - soundName: Board Expansion
     group: 0
