@@ -171,7 +171,7 @@ MonoBehaviour:
     - enemyID: 10
       enemyName: "\u6D1B\u514B\u5E0C\u5FB7"
     eachSpawnCount: 1
-    spawnInterval: 10
+    spawnInterval: 5
     minEnemies: 1
     maxEnemies: 1
     locationSpawnLogic: 0

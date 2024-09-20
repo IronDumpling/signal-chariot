@@ -3036,7 +3036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: desc
-      value: Add 1 defense when it places at edge slots.
+      value: "\u52A01\u70B9\u9632\u5FA1 when it places at edge slots."
       objectReference: {fileID: 0}
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: name
