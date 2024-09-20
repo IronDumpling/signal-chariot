@@ -47,7 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc5ada9333a24734b3365fb746d765b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_source: {fileID: 93406597772663537}
+  m_androidSource: {fileID: 93406597772663537}
+  m_enemySource: {fileID: 7363015608307043859}
+  m_bulletSource: {fileID: 325879894277651594}
   m_setUp: {fileID: 11400000, guid: fceed707393814a38b51ea8dd3c7d768, type: 2}
 --- !u!82 &93406597772663537
 AudioSource:

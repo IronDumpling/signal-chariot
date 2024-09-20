@@ -18,7 +18,7 @@ MonoBehaviour:
     defense: 0
     armor: 0
     maxArmor: 0
-    speed: 28
+    speed: 25
     initialMod: 0
     maxMod: 500
     initialCrystal: 0
