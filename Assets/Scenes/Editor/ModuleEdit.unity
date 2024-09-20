@@ -1742,7 +1742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   propertyType: 0
-  delta: 15
+  delta: 5
   isCurrent: 1
 --- !u!114 &1026114595
 MonoBehaviour:
