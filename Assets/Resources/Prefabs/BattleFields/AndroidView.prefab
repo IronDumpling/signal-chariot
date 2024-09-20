@@ -132,6 +132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 801c89118a6c34143810792436c08534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_moveAnimationTimeScale: 1
+  m_idleAnimationTimeScale: 1
+  m_takeDamageAnimationTimeScale: 1
 --- !u!65 &365710731080578806
 BoxCollider:
   m_ObjectHideFlags: 0

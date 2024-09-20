@@ -49,14 +49,28 @@ namespace InGame.Views
         [SerializeField]
         private string MoveAnimation = "Move", AttackAnimation = "Attack";
 
+        [SerializeField] private float m_moveAnimationTimeScale = 1f, m_attackAnimationTimeScale = 1f;
+        
+         
         private float attackAnimationDuration
         {
             get
             {
                 if (skeletonAnimation == null || AttackAnimation == "") return 0;
-                else return skeletonAnimation.Skeleton.Data.FindAnimation(AttackAnimation).Duration;
+                else return skeletonAnimation.Skeleton.Data.FindAnimation(AttackAnimation).Duration / m_attackAnimationTimeScale;
             }
             
+        }
+
+        private void PlayAnimation(int trackIdx, string animationName, bool isLoop=false)
+        {
+            if (skeletonAnimation == null) return;
+
+            if (animationName == "") animationState.SetEmptyAnimation(trackIdx, 0f);
+            else animationState.SetAnimation(trackIdx, animationName, isLoop);
+
+            if (animationName == AttackAnimation) skeletonAnimation.timeScale = m_attackAnimationTimeScale;
+            else if (animationName == MoveAnimation) skeletonAnimation.timeScale = m_moveAnimationTimeScale;
         }
 
         #region Life Cycle
@@ -177,7 +191,7 @@ namespace InGame.Views
                     bool isRight = false;
                     if(other.gameObject.transform.position.x >= transform.position.x) isRight = true;
                     m_dmgTarget = other.gameObject.GetComponent<IDamageable>();
-                    if(m_dmgTarget != null) StartCoroutine(Attack(isRight));
+                    if(m_dmgTarget != null && m_isOn) StartCoroutine(Attack(isRight));
                     break;
             }
         }
@@ -198,14 +212,14 @@ namespace InGame.Views
             
 
             visual.localScale = modifiedScale;
-            if (AttackAnimation != "") animationState?.SetAnimation(0, AttackAnimation, false);
+            if (AttackAnimation != "") PlayAnimation(0, AttackAnimation, false);
             yield return new WaitForSeconds(attackAnimationDuration);
             
             // Die before attacking
             if (m_enemy == null) yield break;
             
             target.TakeDamage(m_enemy.Get(UnlimitedPropertyType.Damage));
-            if (MoveAnimation != "") animationState?.SetAnimation(0, MoveAnimation, true);
+            if (MoveAnimation != "") PlayAnimation(0, MoveAnimation, true);
             
             visual.localScale = originalScale;
             yield return new WaitForSeconds(m_enemy.Get(UnlimitedPropertyType.Interval));
@@ -231,13 +245,13 @@ namespace InGame.Views
         public void TurnOn()
         { 
             m_isOn = true;
-            if (MoveAnimation != "") animationState?.SetAnimation(0, MoveAnimation, true);
+            if (MoveAnimation != "") PlayAnimation(0, MoveAnimation, true);
         } 
 
         public void TurnOff()
         { 
             m_isOn = false;
-            animationState?.SetEmptyAnimation(0, 0f);
+            PlayAnimation(0, "");
         }
     }
 }

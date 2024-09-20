@@ -10,6 +10,7 @@ using Spine.Unity;
 using UnityEngine.PlayerLoop;
 using AnimationState = Spine.AnimationState;
 using InGame.Cores;
+using Spine;
 
 namespace InGame.Views
 {
@@ -26,12 +27,20 @@ namespace InGame.Views
         {
             get
             {
-                if (m_skeletonAnimation == null) m_skeletonAnimation = GetComponentInChildren<SkeletonAnimation>();
+                if (m_skeletonAnimation == null)
+                {
+                    m_skeletonAnimation = GetComponentInChildren<SkeletonAnimation>();
+                    if (m_skeletonAnimation != null) m_skeletonAnimation.state.Complete += CompleteAnimation;
+                }
                 return m_skeletonAnimation;
             }
         }
         private AnimationState animationState => skeletonAnimation.AnimationState;
         private const string MoveAnimation = "Walk", IdleAnimation = "Stay", TakeDamageAnimation = "BeAttacked";
+
+        [SerializeField]
+        private float m_moveAnimationTimeScale=1f, m_idleAnimationTimeScale=1f, m_takeDamageAnimationTimeScale=1f;
+        
         private float GetAnimationDuration(string animationName) => 
             skeletonAnimation.Skeleton.Data.FindAnimation(animationName).Duration;
         
@@ -39,14 +48,51 @@ namespace InGame.Views
 
         #region Animation
 
+        private void CompleteAnimation(TrackEntry trackEntry)
+        {
+            if (!trackEntry.Loop)
+            {
+                m_currentAnimations[trackEntry.TrackIndex] = "";
+                UpdateTimeScale();
+            }
+        }
+        
         private void PlayAnimation(int trackIdx, string animationName, bool loop)
         {   
             while(m_currentAnimations.Count - 1 < trackIdx) m_currentAnimations.Add("");
-            if (m_currentAnimations[trackIdx] == animationName) return;
             
-            if (loop)
-                m_currentAnimations[trackIdx] = animationName;
+            if (m_currentAnimations[trackIdx] == animationName) return;
+
+            m_currentAnimations[trackIdx] = animationName;
             animationState.SetAnimation(trackIdx, animationName, loop);
+
+            UpdateTimeScale();
+        }
+
+        private void UpdateTimeScale()
+        {
+            if (skeletonAnimation == null) return;
+
+            int trackIdx = m_currentAnimations.Count - 1;
+            while (trackIdx >= 0)
+            {
+
+                if (m_currentAnimations[trackIdx] != "")
+                {
+                    m_skeletonAnimation.timeScale = m_currentAnimations[trackIdx] switch
+                    {
+                        // ToDo: Get the base Speed from the android 
+                        MoveAnimation => m_moveAnimationTimeScale * m_android.Get(UnlimitedPropertyType.Speed) / 25f,
+                        IdleAnimation => m_idleAnimationTimeScale,
+                        TakeDamageAnimation => m_takeDamageAnimationTimeScale, 
+                        _ => m_skeletonAnimation.timeScale
+                    };
+                    return;
+                    
+                    
+                }
+                trackIdx--;
+            }
         }
 
         private void UpdateMoveAnimation()

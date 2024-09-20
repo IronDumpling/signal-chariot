@@ -47,6 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ba85364e3f24ccb912b4247d479a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveAnimation: Move
+  AttackAnimation: Attack
+  m_moveAnimationTimeScale: 1
+  m_attackAnimationTimeScale: 1
 --- !u!54 &364563103112933093
 Rigidbody:
   m_ObjectHideFlags: 0
