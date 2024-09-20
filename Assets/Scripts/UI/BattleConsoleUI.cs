@@ -11,6 +11,7 @@ namespace UI
     {
         [SerializeField] private UIDocument m_doc;
         private VisualElement m_root;
+        private Button m_exit;
         private AndroidStatusUI m_status;
         private VisualElement m_progress;
         private ProgressBar[] m_timeline;
@@ -18,7 +19,11 @@ namespace UI
 
         private void Awake()
         {
-            m_root = m_doc.rootVisualElement;   
+            m_root = m_doc.rootVisualElement;
+            m_exit = m_root.Q<Button>("exit");
+            m_exit.clicked += () => {
+                GameManager.Instance.ChangeToInitState();
+            };
         }
 
         private void Start()

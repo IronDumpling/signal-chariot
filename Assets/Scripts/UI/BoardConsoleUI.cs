@@ -16,7 +16,7 @@ namespace UI
         private Button m_slotButton;
         private Button m_exitButton;
         private Button m_marchButton;
-        private VisualElement m_log;
+        private Label m_modCost;
         private ModuleInfoUI m_moduleInfoUI;
         public ModuleInfoUI moduleInfoUI { get { return m_moduleInfoUI;}}
 
@@ -28,9 +28,11 @@ namespace UI
 
         private void Start()
         {
-            m_log = m_root.Q("log");
             m_moduleInfoUI = new ModuleInfoUI(m_root.Q("module"));
             new AndroidStatusUI(m_root.Q("status")); // stay in start
+
+            m_modCost = m_root.Q<Label>("modCost");
+            GameManager.Instance.GetModManager().RegisterModCostEvent(SetModCostUI);
         }
 
         private void Register()
@@ -55,6 +57,11 @@ namespace UI
             m_marchButton.clicked += () => {
                 GameManager.Instance.ChangeToBattleState();
             };
+        }
+
+        private void SetModCostUI(float current)
+        {
+            m_modCost.text = $"扩容消耗: -{current}";
         }
 
         private void OnSignalClicked()

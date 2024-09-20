@@ -12,7 +12,7 @@ namespace InGame
 
         public static WorldState instance => _instance;
 
-        private StateMachine<InGameState> m_gameStateMachine = new StateMachine<InGameState>();
+        private StateMachine<InGameState> m_gameStateMachine = new();
 
         public InGameState currentState => m_gameStateMachine.current;
 
@@ -24,7 +24,6 @@ namespace InGame
         public override void Enter(GameState last)
         {
             _instance = this;
-            //SceneManager.LoadScene(Constants.LEVEL1);
             SceneManager.LoadScene(Constants.LEVEL0);
         }
 
@@ -57,11 +56,5 @@ namespace InGame
                 m_gameStateMachine.isLocked = false;
             }
         }
-
-        // public void NotifySceneFinished(int nodeIdx)
-        // {
-        //     //m_gameStateMachine.next = new NodeState(nodeIdx);
-        //     
-        // }
     }
 }

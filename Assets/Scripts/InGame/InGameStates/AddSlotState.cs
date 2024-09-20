@@ -99,9 +99,8 @@ namespace InGame.InGameStates
                 }
                 
                 if (m_amount <= 0 || m_currentSelectableAmount <= 0)
-                {
                     GameManager.Instance.ChangeToNullState();
-                }
+                
             }
         }
 

@@ -25,12 +25,12 @@ namespace InGame.BattleFields.Enemies
         private EnemySpawnLib m_spawnLib;
         private EnemyLib m_enemyLib;
         private int m_currentWaveIdx;
-        private List<EnemySpawnWaveBlk> m_waves = new List<EnemySpawnWaveBlk>();
+        private List<EnemySpawnWaveBlk> m_waves = new();
         private EnemyWaveSpawnController m_currentWaveController;
         private bool m_isOn = false;
 
         private readonly UnityEvent<bool, List<int>> m_waveFinishCallBack = new();
-        private readonly List<EnemyBlk> m_enemies = new List<EnemyBlk>();
+        private readonly List<EnemyBlk> m_enemies = new();
 
         public EnemySpawnController(EnemySpawnLib spawnLib, EnemyLib enemyLib)
         {
@@ -47,15 +47,17 @@ namespace InGame.BattleFields.Enemies
             }
             
             m_waves.Clear();
+            Debug.Log("set up wave length " + setUp.waves.Count);
             foreach (var blk in setUp.waves)
             {
-                
                 m_waves.Add(blk.CreateCopy());
+                Debug.Log("current total wave " + m_waves.Count);
             }
 
             m_currentWaveIdx = -1;
             m_currentWaveController = null;
         }
+
         /// <summary>
         /// Go to the next wave
         /// </summary>
@@ -124,7 +126,7 @@ namespace InGame.BattleFields.Enemies
             m_waveFinishCallBack.Invoke(IsLastWave(), new List<int>(m_waves[m_currentWaveIdx].moduleRewards));
         }
         
-        //To Do: Maybe have another enmymanager that respond for enemy movement
+        /// TODO: Maybe have another enmymanager that respond for enemy movement
         /// <summary>
         /// Create an enemy
         /// </summary>

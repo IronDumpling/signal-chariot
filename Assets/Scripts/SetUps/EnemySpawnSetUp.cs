@@ -29,7 +29,6 @@ namespace SetUps
     [System.Serializable]
     public struct EnemySpawnWaveBlk
     {
-        
         public int waveID;
         public List<int> moduleRewards;
 
@@ -54,8 +53,6 @@ namespace SetUps
                  "int是groups的index")] 
         public List<int> groupsMustBeat;
         
-        
-        
         public EnemyPlainWaveBlk CreateCopy()
         {
             var newBlk = this;
@@ -63,8 +60,6 @@ namespace SetUps
             newBlk.groupsMustBeat = new List<int>(this.groupsMustBeat);
             return newBlk;
         }
-        
-        
     }
     
     [System.Serializable]
@@ -119,8 +114,6 @@ namespace SetUps
             enemyID = other.enemyID;
             enemyName = other.enemyName;
         }
-
-        
     }
 
     [System.Serializable]

@@ -55,7 +55,6 @@ namespace InGame.InGameStates
             m_firstEnemy.SetPosition(new Vector2(32, 32));
             m_secondEnemy.SetPosition(new Vector2(28, 32));
         
-            // TODO store android snapshot
             m_androidSnapshot = new AndroidSetUp(android);
         }
 
@@ -75,15 +74,14 @@ namespace InGame.InGameStates
             
             GameManager.Instance.GetAndroid().SetPosition(m_androidPos);
 
-            // TODO set android from snapshot
-            
             m_firstEnemy.Die();
             m_secondEnemy.Die();
             m_androidSnapshot.SetAndroid(GameManager.Instance.GetAndroid());
         }
         
 
-        public static BoardTestState CreateState(TimeEffectManager timeEffectManager, GeneralSignalController signalController)
+        public static BoardTestState CreateState(TimeEffectManager timeEffectManager, 
+                                                GeneralSignalController signalController)
         {
             return new BoardTestState
             {
