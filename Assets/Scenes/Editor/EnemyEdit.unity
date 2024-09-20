@@ -1762,7 +1762,7 @@ MonoBehaviour:
       spawnGroupID: 8
     - range:
         start: 0
-        end: 9
+        end: 10
       spawnGroupID: 10
     duration: 60
     groupsMustBeat: 03000000
