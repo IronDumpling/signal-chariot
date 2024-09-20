@@ -677,7 +677,7 @@ MonoBehaviour:
   wave:
     groups:
     - range:
-        start: 20
+        start: 0
         end: 30
       spawnGroupID: 3
     - range:
@@ -1762,7 +1762,7 @@ MonoBehaviour:
       spawnGroupID: 8
     - range:
         start: 0
-        end: 10
+        end: 15
       spawnGroupID: 10
     duration: 60
     groupsMustBeat: 03000000
@@ -2239,9 +2239,9 @@ MonoBehaviour:
   wave:
     groups:
     - range:
-        start: 0
+        start: 20
         end: 45
-      spawnGroupID: 0
+      spawnGroupID: 3
     - range:
         start: 0
         end: 45
@@ -2295,7 +2295,7 @@ MonoBehaviour:
   wave:
     groups:
     - range:
-        start: 0
+        start: 10
         end: 30
       spawnGroupID: 2
     duration: 30

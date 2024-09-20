@@ -100,19 +100,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1219789429617701935, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.8
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 3323181764700470746, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
       propertyPath: m_Size.x
-      value: 1
+      value: 1.35
       objectReference: {fileID: 0}
     - target: {fileID: 3323181764700470746, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
       propertyPath: m_Size.y
-      value: 0.8
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3323181764700470746, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3323181764700470746, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
+      propertyPath: m_Center.y
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3323181764700470746, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286201707689372785, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
+      propertyPath: MoveAnimation
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286201707689372785, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
+      propertyPath: AttackAnimation
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5585643236584868594, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
       propertyPath: m_Name

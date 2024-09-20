@@ -39,7 +39,8 @@ namespace UI
             float[] timeLimits = m_enemyController.GetAllWaveDurations(); 
             
             timeLimits = new float[]{
-                30, 30, 30, 45, 60, 45, 45, 45, 45, 60 // TODO: remove this
+                30, 30, 30, 30, 45, 
+                45, 45, 45, 45, 60 // TODO: remove this
             };
             
             float totalLimits = 0;
@@ -73,7 +74,10 @@ namespace UI
             
             m_timeline[currWave].highValue = m_enemyController.GetCurrentWaveTotalDuration(); // TODO: remove this
             m_timeline[currWave].value = m_enemyController.GetCurrentWaveTimer();
-            m_timeline[currWave].title = $"{m_timeline[currWave].value}/{m_timeline[currWave].highValue}";
+            if(m_timeline[currWave].value > m_timeline[currWave].highValue * 0.9f)
+                m_timeline[currWave].title = $"{m_timeline[currWave].value}/{m_timeline[currWave].highValue}";
+            else
+                m_timeline[currWave].title = $"{(int)m_timeline[currWave].value}/{m_timeline[currWave].highValue}";
         }
 
         public void Hide()

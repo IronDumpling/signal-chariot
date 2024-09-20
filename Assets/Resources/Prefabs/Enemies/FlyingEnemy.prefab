@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5585643236584868594, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
       propertyPath: m_Name
-      value: FlyingEnemy Variant
+      value: FlyingEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 9032931514692866929, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
       propertyPath: m_LocalScale.x

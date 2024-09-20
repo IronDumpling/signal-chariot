@@ -391,7 +391,7 @@ PrefabInstance:
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: desc
       value: "buff\uFF1A\\n \u6B66\u5668\uFF1A\u6B66\u5668\u53D1\u5C04\u6B21\u6570+1
-        \\n \u673A\u4F53\uFF1A\u589E\u52A0\u96F6\u4EF6\u6570\u91CF+50%"
+        \\n \u673A\u4F53\uFF1A\u589E\u52A0\u96F6\u4EF6\u6570\u91CF+150"
       objectReference: {fileID: 0}
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: name
@@ -520,7 +520,7 @@ MonoBehaviour:
   - type: 1
     blk:
       currentValueBuff: 0
-      maxValueBuff: 50
+      maxValueBuff: 150
 --- !u!1001 &535214244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -650,7 +650,7 @@ PrefabInstance:
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: desc
       value: "Buff\uFF1A\\n  \u6B66\u5668\uFF1A\u5B50\u5F39\u4F53\u79EF+100%,  \u901F\u5EA6-50%,\u5B50\u5F39\u4F24\u5BB3+50%\\n
-        \\n  \u673A\u4F53\uFF1A\u751F\u547D\u503C+25% "
+        \\n  \u9632\u5177\uFF1A\u62A4\u7532\u503C+2\\n \\n \u673A\u4F53\uFF1A\u751F\u547D\u503C+10 "
       objectReference: {fileID: 0}
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: name
@@ -1604,7 +1604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: desc
-      value: "\u751F\u547D\u4E0A\u9650\uFF1A+5"
+      value: "\u751F\u547D\u4E0A\u9650\uFF1A+15"
       objectReference: {fileID: 0}
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: name
@@ -1727,7 +1727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   propertyType: 0
-  delta: 5
+  delta: 15
   isCurrent: 0
 --- !u!114 &1026114594
 MonoBehaviour:
@@ -1742,7 +1742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   propertyType: 0
-  delta: 5
+  delta: 15
   isCurrent: 1
 --- !u!114 &1026114595
 MonoBehaviour:
@@ -1972,7 +1972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: desc
-      value: "\u96F6\u4EF6\u5B58\u50A8\uFF1A+100"
+      value: "\u96F6\u4EF6\u5B58\u50A8\uFF1A+200"
       objectReference: {fileID: 0}
     - target: {fileID: 3762337055685843865, guid: 71e9ad517f1e3e848a4cc0f0b380fad5, type: 3}
       propertyPath: name
@@ -2087,7 +2087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   propertyType: 1
-  delta: 100
+  delta: 300
   isCurrent: 0
 --- !u!114 &1220688454
 MonoBehaviour:
