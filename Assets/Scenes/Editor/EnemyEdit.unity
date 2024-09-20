@@ -169,14 +169,14 @@ MonoBehaviour:
   waves:
   - waveID: 0
     moduleRewards:
-    - moduleID: 1
-      moduleName: "\u589E\u5E45\u5668"
+    - moduleID: 13
+      moduleName: "\u5145\u80FD\u62A4\u7532"
     - moduleID: 2
       moduleName: "\u8F6C\u5411\u5668"
   - waveID: 1
     moduleRewards:
-    - moduleID: 13
-      moduleName: "\u5145\u80FD\u62A4\u7532"
+    - moduleID: 1
+      moduleName: "\u589E\u5E45\u5668"
   - waveID: 2
     moduleRewards:
     - moduleID: 6

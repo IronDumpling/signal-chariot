@@ -89,7 +89,7 @@ namespace InGame.Cores
         public void SetRedMaskIntensity(float intensity)
         {
             if(!m_redMask.profile.TryGet(out Vignette vignette)) return;
-            const float maxIntensity = 0.9f;
+            const float maxIntensity = 1f;
             vignette.intensity.value = Mathf.Lerp(0, maxIntensity, intensity);
         }
         #endregion

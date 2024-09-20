@@ -94,8 +94,8 @@ namespace Utils
         public const float SEPERATION_DISTANCE = 1f;
         public const float SEPERATION_FORCE = 1f;
         public const float SELECT_THRESHOLD = 0.2f;
-        public const int ADD_SLOT_COST_BASE = 25;
-        public const int ADD_SLOT_COST_INCRE = 25;
+        public const int ADD_SLOT_COST_BASE = 20;
+        public const int ADD_SLOT_COST_INCRE = 10;
         public const int MAX_ENEMY_POS_FIND_TIMES = 100;
 
         #endregion
