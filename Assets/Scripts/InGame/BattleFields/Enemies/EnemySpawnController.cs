@@ -47,11 +47,9 @@ namespace InGame.BattleFields.Enemies
             }
             
             m_waves.Clear();
-            Debug.Log("set up wave length " + setUp.waves.Count);
             foreach (var blk in setUp.waves)
             {
                 m_waves.Add(blk.CreateCopy());
-                Debug.Log("current total wave " + m_waves.Count);
             }
 
             m_currentWaveIdx = -1;
