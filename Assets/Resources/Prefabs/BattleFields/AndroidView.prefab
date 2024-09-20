@@ -132,9 +132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 801c89118a6c34143810792436c08534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_moveAnimationTimeScale: 1
+  m_moveAnimationTimeScale: 2
   m_idleAnimationTimeScale: 1
-  m_takeDamageAnimationTimeScale: 1
+  m_takeDamageAnimationTimeScale: 0.6
 --- !u!65 &365710731080578806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -154,7 +154,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8, y: 1.5, z: 2}
+  m_Size: {x: 0.5, y: 1.2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5428504223972722182
 Rigidbody:
