@@ -49,8 +49,8 @@ namespace InGame.InGameStates
             var enemySpawnController = GameManager.Instance.GetEnemySpawnController();
             
             var enemyLib = GameManager.Instance.GetEnemyLib();
-            m_firstEnemy = enemySpawnController.GenerateEnemy(2);;
-            m_secondEnemy = enemySpawnController.GenerateEnemy(2);;
+            m_firstEnemy = enemySpawnController.GenerateEnemy(0); // generate 木桩
+            m_secondEnemy = enemySpawnController.GenerateEnemy(0);
             
             m_firstEnemy.SetPosition(new Vector2(32, 32));
             m_secondEnemy.SetPosition(new Vector2(28, 32));

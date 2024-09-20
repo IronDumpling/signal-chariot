@@ -758,6 +758,16 @@ MonoBehaviour:
       rid: -2
     customEffects: []
   enemyLibrary:
+  - name: "\u6728\u6869"
+    maxHealth: 1e+10
+    defense: 0
+    attack: 0
+    attackDuration: 1e+22
+    attackRadius: 0
+    speed: 0
+    modQuantity: 0
+    modQuality: 0
+    enemyPrefab: {fileID: 384623106758148936, guid: 30739d031fe43c04d8e7bdb9fcad132d, type: 3}
   - name: "\u767D\u8840\u7403"
     maxHealth: 4
     defense: 0
@@ -767,6 +777,26 @@ MonoBehaviour:
     speed: 15
     modQuantity: 2
     modQuality: 2
+    enemyPrefab: {fileID: 384623106758148936, guid: 30739d031fe43c04d8e7bdb9fcad132d, type: 3}
+  - name: "\u767D\u8840\u7403pro"
+    maxHealth: 8
+    defense: 0
+    attack: 2
+    attackDuration: 2
+    attackRadius: 0.2
+    speed: 15
+    modQuantity: 2
+    modQuality: 4
+    enemyPrefab: {fileID: 384623106758148936, guid: 30739d031fe43c04d8e7bdb9fcad132d, type: 3}
+  - name: "\u767D\u8840\u7403promax"
+    maxHealth: 20
+    defense: 1
+    attack: 2
+    attackDuration: 2
+    attackRadius: 0.2
+    speed: 20
+    modQuantity: 2
+    modQuality: 4
     enemyPrefab: {fileID: 384623106758148936, guid: 30739d031fe43c04d8e7bdb9fcad132d, type: 3}
   - name: "\u767D\u8840\u7403\u9886\u961F"
     maxHealth: 10
@@ -778,16 +808,26 @@ MonoBehaviour:
     modQuantity: 2
     modQuality: 2
     enemyPrefab: {fileID: 384623106758148936, guid: 23794c94f5ade450f94aa9e53cefa3e3, type: 3}
-  - name: "\u6728\u6869"
-    maxHealth: 1e+10
-    defense: 0
-    attack: 0
-    attackDuration: 1e+22
-    attackRadius: 0
-    speed: 0
-    modQuantity: 0
-    modQuality: 0
-    enemyPrefab: {fileID: 384623106758148936, guid: 30739d031fe43c04d8e7bdb9fcad132d, type: 3}
+  - name: "\u767D\u8840\u7403\u9886\u961Fpro"
+    maxHealth: 25
+    defense: 1
+    attack: 4
+    attackDuration: 1.3
+    attackRadius: 0.2
+    speed: 12
+    modQuantity: 4
+    modQuality: 4
+    enemyPrefab: {fileID: 384623106758148936, guid: 23794c94f5ade450f94aa9e53cefa3e3, type: 3}
+  - name: "\u767D\u8840\u7403\u9886\u961Fpromax"
+    maxHealth: 50
+    defense: 2
+    attack: 4
+    attackDuration: 1
+    attackRadius: 0.2
+    speed: 14
+    modQuantity: 4
+    modQuality: 5
+    enemyPrefab: {fileID: 384623106758148936, guid: 23794c94f5ade450f94aa9e53cefa3e3, type: 3}
   - name: "\u98DE\u884C\u602A"
     maxHealth: 2
     defense: 0
@@ -798,26 +838,6 @@ MonoBehaviour:
     modQuantity: 1
     modQuality: 2
     enemyPrefab: {fileID: 5104043474086354549, guid: 25719e8c70554794393e64695b034e5e, type: 3}
-  - name: "\u767D\u8840\u7403pro"
-    maxHealth: 8
-    defense: 0
-    attack: 2
-    attackDuration: 2
-    attackRadius: 0.2
-    speed: 15
-    modQuantity: 2
-    modQuality: 4
-    enemyPrefab: {fileID: 384623106758148936, guid: 30739d031fe43c04d8e7bdb9fcad132d, type: 3}
-  - name: "\u767D\u8840\u7403\u9886\u961Fpro"
-    maxHealth: 25
-    defense: 0
-    attack: 4
-    attackDuration: 1.5
-    attackRadius: 0.2
-    speed: 12
-    modQuantity: 4
-    modQuality: 4
-    enemyPrefab: {fileID: 384623106758148936, guid: 23794c94f5ade450f94aa9e53cefa3e3, type: 3}
   - name: "\u98DE\u884C\u602Apro"
     maxHealth: 4
     defense: 0
@@ -827,6 +847,16 @@ MonoBehaviour:
     speed: 30
     modQuantity: 1
     modQuality: 2
+    enemyPrefab: {fileID: 5104043474086354549, guid: 25719e8c70554794393e64695b034e5e, type: 3}
+  - name: "\u98DE\u884C\u602Apromax"
+    maxHealth: 10
+    defense: 0
+    attack: 1
+    attackDuration: 2
+    attackRadius: 0.2
+    speed: 50
+    modQuantity: 1
+    modQuality: 4
     enemyPrefab: {fileID: 5104043474086354549, guid: 25719e8c70554794393e64695b034e5e, type: 3}
   enemySpawnSetUp:
     enemySpawnGroups:
@@ -878,6 +908,30 @@ MonoBehaviour:
       minEnemies: 2
       maxEnemies: 15
       locationSpawnLogic: 0
+    - enemiesPool:
+      - enemyID: 3
+        enemyName: "\u767D\u8840\u7403promax"
+      eachSpawnCount: 5
+      spawnInterval: 5
+      minEnemies: 2
+      maxEnemies: 15
+      locationSpawnLogic: 0
+    - enemiesPool:
+      - enemyID: 6
+        enemyName: "\u767D\u8840\u7403\u9886\u961Fpromax"
+      eachSpawnCount: 4
+      spawnInterval: 5
+      minEnemies: 2
+      maxEnemies: 10
+      locationSpawnLogic: 0
+    - enemiesPool:
+      - enemyID: 9
+        enemyName: "\u98DE\u884C\u602Apromax"
+      eachSpawnCount: 5
+      spawnInterval: 5
+      minEnemies: 2
+      maxEnemies: 15
+      locationSpawnLogic: 0
     enemySpawnWaves:
     - groups:
       - range:
@@ -892,7 +946,7 @@ MonoBehaviour:
           end: 30
         spawnGroupID: 0
       - range:
-          start: 0
+          start: 15
           end: 30
         spawnGroupID: 0
       duration: 30
@@ -906,9 +960,9 @@ MonoBehaviour:
       groupsMustBeat: 
     - groups:
       - range:
-          start: 0
+          start: 20
           end: 30
-        spawnGroupID: 0
+        spawnGroupID: 3
       - range:
           start: 0
           end: 30
@@ -949,7 +1003,11 @@ MonoBehaviour:
       - range:
           start: 0
           end: 45
-        spawnGroupID: 1
+        spawnGroupID: 5
+      - range:
+          start: 0
+          end: 45
+        spawnGroupID: 6
       duration: 45
       groupsMustBeat: 
     - groups:
@@ -960,11 +1018,11 @@ MonoBehaviour:
       - range:
           start: 0
           end: 45
-        spawnGroupID: 4
+        spawnGroupID: 3
       - range:
           start: 30
           end: 45
-        spawnGroupID: 2
+        spawnGroupID: 7
       duration: 45
       groupsMustBeat: 
     - groups:
@@ -979,7 +1037,7 @@ MonoBehaviour:
       - range:
           start: 0
           end: 45
-        spawnGroupID: 5
+        spawnGroupID: 8
       - range:
           start: 30
           end: 45
@@ -990,15 +1048,15 @@ MonoBehaviour:
       - range:
           start: 0
           end: 60
-        spawnGroupID: 4
+        spawnGroupID: 6
       - range:
           start: 0
           end: 60
-        spawnGroupID: 5
+        spawnGroupID: 7
       - range:
           start: 30
           end: 60
-        spawnGroupID: 4
+        spawnGroupID: 8
       - range:
           start: 30
           end: 60
@@ -1008,9 +1066,9 @@ MonoBehaviour:
     enemySpawnLevels:
     - waves:
       - waveID: 0
-        moduleRewards: 0100000002000000
+        moduleRewards: 0d00000002000000
       - waveID: 1
-        moduleRewards: 0d000000
+        moduleRewards: 01000000
       - waveID: 2
         moduleRewards: 060000000f000000
       - waveID: 3
