@@ -20,9 +20,9 @@ MonoBehaviour:
     maxArmor: 0
     speed: 25
     initialMod: 0
-    maxMod: 500
+    maxMod: 1000
     initialCrystal: 0
-    maxCrystal: 50
+    maxCrystal: 100
   equipmentLibrary: []
   bulletLibrary:
   - name: Basic1
@@ -775,7 +775,7 @@ MonoBehaviour:
     attackDuration: 2
     attackRadius: 0.2
     speed: 15
-    modQuantity: 2
+    modQuantity: 1
     modQuality: 2
     enemyPrefab: {fileID: 384623106758148936, guid: 30739d031fe43c04d8e7bdb9fcad132d, type: 3}
   - name: "\u767D\u8840\u7403pro"
@@ -786,7 +786,7 @@ MonoBehaviour:
     attackRadius: 0.2
     speed: 15
     modQuantity: 2
-    modQuality: 4
+    modQuality: 3
     enemyPrefab: {fileID: 384623106758148936, guid: 30739d031fe43c04d8e7bdb9fcad132d, type: 3}
   - name: "\u767D\u8840\u7403promax"
     maxHealth: 20
@@ -811,12 +811,12 @@ MonoBehaviour:
   - name: "\u767D\u8840\u7403\u9886\u961Fpro"
     maxHealth: 25
     defense: 1
-    attack: 4
+    attack: 3
     attackDuration: 1.3
     attackRadius: 0.2
     speed: 12
-    modQuantity: 4
-    modQuality: 4
+    modQuantity: 3
+    modQuality: 3
     enemyPrefab: {fileID: 384623106758148936, guid: 23794c94f5ade450f94aa9e53cefa3e3, type: 3}
   - name: "\u767D\u8840\u7403\u9886\u961Fpromax"
     maxHealth: 50
@@ -826,7 +826,7 @@ MonoBehaviour:
     attackRadius: 0.2
     speed: 14
     modQuantity: 4
-    modQuality: 5
+    modQuality: 4
     enemyPrefab: {fileID: 384623106758148936, guid: 23794c94f5ade450f94aa9e53cefa3e3, type: 3}
   - name: "\u98DE\u884C\u602A"
     maxHealth: 2
@@ -846,12 +846,12 @@ MonoBehaviour:
     attackRadius: 0.2
     speed: 30
     modQuantity: 1
-    modQuality: 2
+    modQuality: 3
     enemyPrefab: {fileID: 5104043474086354549, guid: 25719e8c70554794393e64695b034e5e, type: 3}
   - name: "\u98DE\u884C\u602Apromax"
     maxHealth: 10
     defense: 0
-    attack: 1
+    attack: 2
     attackDuration: 2
     attackRadius: 0.2
     speed: 50
@@ -859,13 +859,13 @@ MonoBehaviour:
     modQuality: 4
     enemyPrefab: {fileID: 5104043474086354549, guid: 25719e8c70554794393e64695b034e5e, type: 3}
   - name: "\u6D1B\u514B\u5E0C\u5FB7"
-    maxHealth: 100
-    defense: 3
+    maxHealth: 500
+    defense: 4
     attack: 10
     attackDuration: 2
     attackRadius: 0.2
-    speed: 20
-    modQuantity: 10
+    speed: 23
+    modQuantity: 20
     modQuality: 5
     enemyPrefab: {fileID: 384623106758148936, guid: 0802033c084504582b8fc066da0151ad, type: 3}
   enemySpawnSetUp:
@@ -897,10 +897,10 @@ MonoBehaviour:
     - enemiesPool:
       - enemyID: 2
         enemyName: "\u767D\u8840\u7403pro"
-      eachSpawnCount: 5
+      eachSpawnCount: 7
       spawnInterval: 5
       minEnemies: 2
-      maxEnemies: 15
+      maxEnemies: 20
       locationSpawnLogic: 0
     - enemiesPool:
       - enemyID: 5
@@ -921,18 +921,18 @@ MonoBehaviour:
     - enemiesPool:
       - enemyID: 3
         enemyName: "\u767D\u8840\u7403promax"
-      eachSpawnCount: 5
+      eachSpawnCount: 10
       spawnInterval: 5
       minEnemies: 2
-      maxEnemies: 15
+      maxEnemies: 25
       locationSpawnLogic: 0
     - enemiesPool:
       - enemyID: 6
         enemyName: "\u767D\u8840\u7403\u9886\u961Fpromax"
-      eachSpawnCount: 4
+      eachSpawnCount: 6
       spawnInterval: 5
       minEnemies: 2
-      maxEnemies: 10
+      maxEnemies: 20
       locationSpawnLogic: 0
     - enemiesPool:
       - enemyID: 9
@@ -940,7 +940,7 @@ MonoBehaviour:
       eachSpawnCount: 5
       spawnInterval: 5
       minEnemies: 2
-      maxEnemies: 15
+      maxEnemies: 20
       locationSpawnLogic: 0
     - enemiesPool:
       - enemyID: 10
@@ -948,7 +948,7 @@ MonoBehaviour:
       eachSpawnCount: 1
       spawnInterval: 5
       minEnemies: 1
-      maxEnemies: 1
+      maxEnemies: 2
       locationSpawnLogic: 0
     enemySpawnWaves:
     - groups:
@@ -1004,7 +1004,7 @@ MonoBehaviour:
       groupsMustBeat: 
     - groups:
       - range:
-          start: 20
+          start: 10
           end: 45
         spawnGroupID: 3
       - range:
@@ -1077,7 +1077,7 @@ MonoBehaviour:
         spawnGroupID: 8
       - range:
           start: 0
-          end: 15
+          end: 20
         spawnGroupID: 9
       duration: 60
       groupsMustBeat: 03000000

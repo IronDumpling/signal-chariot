@@ -3,6 +3,7 @@
 using Cinemachine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using InGame.BattleFields.Common;
 
 namespace InGame.Cores
 {
@@ -41,6 +42,11 @@ namespace InGame.Cores
             m_boardThumbnail = new CameraInfo(m_cameras[1]);
             m_battle = new CameraInfo(m_cameras[2]);
             m_battleTest = new CameraInfo(m_cameras[3]);
+        }
+
+        public void Start()
+        {
+            GameManager.Instance.GetAndroid().RegisterPropertyEvent(LimitedPropertyType.Health, SetRedMaskIntensity);
         }
 
         #region Getter
@@ -86,10 +92,11 @@ namespace InGame.Cores
             confiner.InvalidatePathCache();
         }
 
-        public void SetRedMaskIntensity(float intensity)
+        public void SetRedMaskIntensity(float curr, float max)
         {
             if(!m_redMask.profile.TryGet(out Vignette vignette)) return;
             const float maxIntensity = 1f;
+            float intensity = (max - curr)/max;
             vignette.intensity.value = Mathf.Lerp(0, maxIntensity, intensity);
         }
         #endregion
