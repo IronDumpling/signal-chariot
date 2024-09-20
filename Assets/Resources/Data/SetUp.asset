@@ -18,7 +18,7 @@ MonoBehaviour:
     defense: 0
     armor: 0
     maxArmor: 0
-    speed: 20
+    speed: 28
     initialMod: 0
     maxMod: 500
     initialCrystal: 0
@@ -1055,7 +1055,7 @@ MonoBehaviour:
     volume: 0.8
     pitch: 1
   - soundName: Enemy Take Damage
-    clip: {fileID: 8300000, guid: 6b1986c64bef84830868120c7c146423, type: 3}
+    clip: {fileID: 8300000, guid: c5f882b44785b4e5c9472fb05f025965, type: 3}
     volume: 0.8
     pitch: 1
   - soundName: Mod Pick Up
