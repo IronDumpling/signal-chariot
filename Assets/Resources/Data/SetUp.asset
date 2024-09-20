@@ -1027,38 +1027,47 @@ MonoBehaviour:
         moduleRewards: 0800000011000000
   audioLibrary:
   - soundName: Board Expansion
+    group: 0
     clip: {fileID: 8300000, guid: 260f6db3b6a884c95b9300f3a99111b9, type: 3}
     volume: 0.8
     pitch: 1
   - soundName: Weapon Fire
+    group: 2
     clip: {fileID: 8300000, guid: 0df3fc5abe6ee464c9fcf481e1df5b95, type: 3}
     volume: 0.8
     pitch: 1
   - soundName: Module Select
+    group: 0
     clip: {fileID: 8300000, guid: ee9fac2c4c59e4cbcbcac24575ce86ae, type: 3}
     volume: 0.8
     pitch: 1
   - soundName: Module Drop
+    group: 0
     clip: {fileID: 8300000, guid: 24e561083e800475088f1329e3c5d7d1, type: 3}
     volume: 0.8
     pitch: 1
   - soundName: Module Rotate
+    group: 0
     clip: {fileID: 8300000, guid: e1344bd76c430403cb33bc4e5596dbee, type: 3}
     volume: 0.8
     pitch: 1
   - soundName: Explosion
+    group: 2
     clip: {fileID: 8300000, guid: 62197f3b5bc904f5582ca73bfc9ab0a1, type: 3}
     volume: 0.8
     pitch: 1
   - soundName: Android Take Damage
+    group: 0
     clip: {fileID: 8300000, guid: 9fd2b6735ae054a438ee005aa152e214, type: 3}
     volume: 0.8
     pitch: 1
   - soundName: Enemy Take Damage
+    group: 1
     clip: {fileID: 8300000, guid: c5f882b44785b4e5c9472fb05f025965, type: 3}
     volume: 0.8
     pitch: 1
   - soundName: Mod Pick Up
+    group: 0
     clip: {fileID: 8300000, guid: 39a149923699841bfab4a0fa2ac2bcfa, type: 3}
     volume: 0.8
     pitch: 1
