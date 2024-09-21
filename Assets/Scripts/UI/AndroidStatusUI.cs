@@ -1,7 +1,8 @@
+using System.Linq;
 using InGame.BattleFields.Androids;
 using InGame.BattleFields.Common;
 using InGame.Cores;
-
+using UnityEngine;
 using UnityEngine.UIElements;
 
 using Utils.Common;
@@ -12,6 +13,7 @@ namespace UI
     {
         private VisualElement m_root;
         private VisualElement m_health;
+        private ProgressBar m_healthBar;
         private VisualElement m_speed;
         private VisualElement m_armor;
         private VisualElement m_mod;
@@ -20,11 +22,15 @@ namespace UI
         public AndroidStatusUI(VisualElement root)
         {
             m_root = root;
+            
             m_health = m_root.Q("health");
+            m_healthBar = m_health.Q<ProgressBar>("bar");
+
             m_speed = m_root.Q("speed");
             m_armor = m_root.Q("armor");
             m_mod = m_root.Q("mod");
             m_crystal = m_root.Q("crystal");
+
             Register();
         }
 
@@ -46,14 +52,31 @@ namespace UI
             android.UnregisterPropertyEvent(LimitedPropertyType.Armor, SetArmorUI);
             android.UnregisterPropertyEvent(LimitedPropertyType.Mod, SetModUI);
             android.UnregisterPropertyEvent(LimitedPropertyType.Crystal, SetCrystalUI);
-        }        
+        }    
 
         private void SetHealthUI(float current, float max)
         {
-            ProgressBar bar = m_health.Q<ProgressBar>("bar");
-            bar.highValue = max;
-            bar.value = current;
-            bar.title = $"{current}/{max}";
+            m_healthBar.highValue = max;
+            m_healthBar.value = current;
+            m_healthBar.title = $"{current}/{max}";
+            
+            var hp = m_healthBar.Q(className: ProgressBar.progressUssClassName);
+            
+            if(current/max < .2f)
+            {
+                hp.style.backgroundColor = Color.red;
+                m_healthBar.style.color = Color.red;
+            }
+            else if(current/max < .6f)
+            {
+                hp.style.backgroundColor = Color.yellow;
+                m_healthBar.style.color = Color.black;
+            }
+            else
+            {
+                hp.style.backgroundColor = Color.green;
+                m_healthBar.style.color = Color.white;
+            }
         }
 
         private void SetSpeedUI(float current)
