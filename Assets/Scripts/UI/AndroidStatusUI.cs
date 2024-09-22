@@ -16,6 +16,7 @@ namespace UI
         private ProgressBar m_healthBar;
         private VisualElement m_speed;
         private VisualElement m_armor;
+        private ProgressBar m_armorBar;
         private VisualElement m_mod;
         private VisualElement m_crystal;
         
@@ -26,8 +27,10 @@ namespace UI
             m_health = m_root.Q("health");
             m_healthBar = m_health.Q<ProgressBar>("bar");
 
-            m_speed = m_root.Q("speed");
             m_armor = m_root.Q("armor");
+            m_armorBar = m_armor.Q<ProgressBar>("bar");
+
+            m_speed = m_root.Q("speed");
             m_mod = m_root.Q("mod");
             m_crystal = m_root.Q("crystal");
 
@@ -38,8 +41,8 @@ namespace UI
         {
             Android android = GameManager.Instance.GetAndroid();
             android.RegisterPropertyEvent(LimitedPropertyType.Health, SetHealthUI);
-            android.RegisterPropertyEvent(UnlimitedPropertyType.Speed, SetSpeedUI);
             android.RegisterPropertyEvent(LimitedPropertyType.Armor, SetArmorUI);
+            android.RegisterPropertyEvent(UnlimitedPropertyType.Speed, SetSpeedUI);
             android.RegisterPropertyEvent(LimitedPropertyType.Mod, SetModUI);
             android.RegisterPropertyEvent(LimitedPropertyType.Crystal, SetCrystalUI);
         }
@@ -48,8 +51,8 @@ namespace UI
         {
             Android android = GameManager.Instance.GetAndroid();
             android.UnregisterPropertyEvent(LimitedPropertyType.Health, SetHealthUI);
-            android.UnregisterPropertyEvent(UnlimitedPropertyType.Speed, SetSpeedUI);
             android.UnregisterPropertyEvent(LimitedPropertyType.Armor, SetArmorUI);
+            android.UnregisterPropertyEvent(UnlimitedPropertyType.Speed, SetSpeedUI);
             android.UnregisterPropertyEvent(LimitedPropertyType.Mod, SetModUI);
             android.UnregisterPropertyEvent(LimitedPropertyType.Crystal, SetCrystalUI);
         }    
@@ -79,16 +82,21 @@ namespace UI
             }
         }
 
+        private void SetArmorUI(float current, float max)
+        {
+            m_armorBar.highValue = max;
+            m_armorBar.value = current;
+            m_armorBar.title = $"{current}/{max}";
+
+            var armor = m_armorBar.Q(className: ProgressBar.progressUssClassName);
+            armor.style.backgroundColor = Color.blue;
+            m_armorBar.style.color = Color.white;
+        }
+
         private void SetSpeedUI(float current)
         {
             Label content = m_speed.Q<Label>("content");
             content.text = $"速度: {current}";
-        }
-
-        private void SetArmorUI(float current, float max)
-        {
-            Label content = m_armor.Q<Label>("content");
-            content.text = $"护甲: {current}/{max}";
         }
 
         private void SetModUI(float current, float max)
