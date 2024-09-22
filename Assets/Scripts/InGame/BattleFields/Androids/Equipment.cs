@@ -73,7 +73,7 @@ namespace InGame.BattleFields.Androids
             
             float x = equipmentGO.transform.parent.position.x + Constants.EQUIPMENT_RADIUS;
             float y = equipmentGO.transform.parent.position.y;
-            equipmentGO.transform.position = new(x, y, Constants.TOWER_DEPTH); 
+            equipmentGO.transform.position = new(x, y, Constants.EQUIPMENT_DEPTH); 
 
             m_equipmentView = equipmentGO.GetComponent<EquipmentView>();
             m_equipmentView.Init(this);

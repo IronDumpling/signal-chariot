@@ -77,11 +77,11 @@ namespace Utils
 
         // Battlefield
         public const float SCENE_DEPTH = 1f;
-        public const float ANDROID_DEPTH = 0;
+        public const float MOD_DEPTH = 0.1f;
         public const float ENEMY_DEPTH = 0;
-        public const float MOD_DEPTH = 0;
         public const float BULLET_DEPTH = -0.5f;
-        public const float TOWER_DEPTH = -1f;
+        public const float ANDROID_DEPTH = -1f;
+        public const float EQUIPMENT_DEPTH = -1.1f;
 
         public const float EQUIPMENT_RADIUS = 1f;
         public const int MAX_BULLET_LEVEL = 3;
