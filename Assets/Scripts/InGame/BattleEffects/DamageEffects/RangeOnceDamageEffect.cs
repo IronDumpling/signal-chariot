@@ -34,7 +34,7 @@ namespace InGame.BattleEffects
                 damageable?.TakeDamage(m_damage);
             }
 
-            GameObject explosion = Resources.Load<GameObject>("Prefabs/Explosion");
+            GameObject explosion = Resources.Load<GameObject>("Prefabs/VFX/Explosion2");
             var explosionGO = GameObject.Instantiate(explosion);
             explosionGO.transform.position = go.transform.position;
             m_count--;
