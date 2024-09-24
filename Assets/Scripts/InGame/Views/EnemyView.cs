@@ -1,14 +1,16 @@
-using System;
 using UnityEngine;
 
 using Utils;
 using Utils.Common;
 using UI;
+
+using InGame.VFX;
 using InGame.Cores;
 using InGame.BattleFields.Enemies;
 using InGame.BattleFields.Androids;
 using InGame.BattleFields.Common;
 using System.Collections;
+
 using Spine.Unity;
 using AnimationState = Spine.AnimationState;
 
@@ -78,9 +80,6 @@ namespace InGame.Views
                 track.TimeScale = GetTimeScale(animationName);
                 animationState.AddEmptyAnimation(trackIdx, 0f, 0f);
             }
-
-            //skeletonAnimation.timeScale = GetTimeScale(animationName);
-
         }
 
         #region Life Cycle
@@ -111,6 +110,10 @@ namespace InGame.Views
         public void Die()
         {
             m_enemy = null;
+            GameObject vfx = Resources.Load<GameObject>(Constants.VFX_DEATH_PATH);
+            var vfxGO = GameObject.Instantiate(vfx);
+            vfxGO.GetComponent<Explosion>().SetExplosionMultiplier(m_colliderSizes[0]);
+            vfxGO.transform.position = this.transform.position;
             Destroy(gameObject);
         }
         #endregion

@@ -35,7 +35,8 @@ namespace Utils
         public const string SPRITE_SELECTABLE_SLOT_PATH = "Arts/Boards/SelectableSlot";
         public const string SPRITE_EMPTY_SLOT_PATH = "Arts/Boards/EmptySlot";
 
-        public const string VFX_EXPLOSION_PATH = "Prefabs/VFX/Explosion";
+        public const string VFX_EXPLOSION_PATH = "Prefabs/VFX/Explosions/Explosion_01";
+        public const string VFX_DEATH_PATH = "Prefabs/VFX/Death";
         public const string VFX_HIT_PATH = "Prefabs/VFX/Hits/Hit_02";
 
         #endregion

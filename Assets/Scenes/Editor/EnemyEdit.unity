@@ -238,16 +238,16 @@ MonoBehaviour:
       moduleName: "\u4FEE\u590D\u6A21\u5757"
   - waveID: 3
     moduleRewards:
-    - moduleID: 1
-      moduleName: "\u589E\u5E45\u5668"
+    - moduleID: 9
+      moduleName: "\u53CC\u5411\u5206\u6D41\u5668"
     - moduleID: 7
       moduleName: "\u5206\u88C2\u67AA\u53E3"
   - waveID: 4
     moduleRewards:
     - moduleID: 2
       moduleName: "\u8F6C\u5411\u5668"
-    - moduleID: 9
-      moduleName: "\u53CC\u5411\u5206\u6D41\u5668"
+    - moduleID: 1
+      moduleName: "\u589E\u5E45\u5668"
     - moduleID: 11
       moduleName: "\u6FC0\u5149\u4FE1\u53F7"
   - waveID: 5
