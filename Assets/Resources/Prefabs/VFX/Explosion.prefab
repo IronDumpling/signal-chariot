@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8711753259494006810}
-  - component: {fileID: 3489500767987016968}
+  - component: {fileID: 520860478965504998}
   m_Layer: 7
   m_Name: Explosion
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 5527853287189394938}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3489500767987016968
+--- !u!114 &520860478965504998
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,7 +42,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5727576567355618477}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34dbec0a90680a4499ee418f5e9b4f32, type: 3}
+  m_Script: {fileID: 11500000, guid: 14527d21070e4bf49e43a6a85d14ebd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_dieTime: 2
@@ -936,7 +936,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 15
+        scalar: 3
         minScalar: 15
         maxCurve:
           serializedVersion: 2

@@ -47,19 +47,24 @@ namespace InGame.Views
         }
         private AnimationState animationState => skeletonAnimation?.AnimationState;
         [SerializeField]
-        private string MoveAnimation = "Move", AttackAnimation = "Attack";
+        private string MoveAnimation = "Move", AttackAnimation = "Attack", BeAttackedAnimation = "";
 
-        [SerializeField] private float m_moveAnimationTimeScale = 1f, m_attackAnimationTimeScale = 1f;
-        
+        [SerializeField] private float m_moveAnimationTimeScale = 1f, m_attackAnimationTimeScale = 1f, m_beAttackedAnimationTimeScale = 1f;
+
+        private Coroutine m_animationCoroutine;
          
-        private float attackAnimationDuration
+        private float GetAnimationDuration(string animationName)
         {
-            get
-            {
-                if (skeletonAnimation == null || AttackAnimation == "") return 0;
-                else return skeletonAnimation.Skeleton.Data.FindAnimation(AttackAnimation).Duration / m_attackAnimationTimeScale;
-            }
-            
+            if (skeletonAnimation == null || AttackAnimation == "") return 0;
+            else return skeletonAnimation.Skeleton.Data.FindAnimation(animationName).Duration / GetTimeScale(animationName);
+        }
+
+        private float GetTimeScale(string animationName)
+        {
+            if (animationName == AttackAnimation) return m_attackAnimationTimeScale;
+            else if (animationName == MoveAnimation) return m_moveAnimationTimeScale;
+            else if (animationName == BeAttackedAnimation) return m_beAttackedAnimationTimeScale;
+            return 0f;
         }
 
         private void PlayAnimation(int trackIdx, string animationName, bool isLoop=false)
@@ -67,10 +72,15 @@ namespace InGame.Views
             if (skeletonAnimation == null) return;
 
             if (animationName == "") animationState.SetEmptyAnimation(trackIdx, 0f);
-            else animationState.SetAnimation(trackIdx, animationName, isLoop);
+            else
+            {
+                var track = animationState.SetAnimation(trackIdx, animationName, isLoop);
+                track.TimeScale = GetTimeScale(animationName);
+                animationState.AddEmptyAnimation(trackIdx, 0f, 0f);
+            }
 
-            if (animationName == AttackAnimation) skeletonAnimation.timeScale = m_attackAnimationTimeScale;
-            else if (animationName == MoveAnimation) skeletonAnimation.timeScale = m_moveAnimationTimeScale;
+            //skeletonAnimation.timeScale = GetTimeScale(animationName);
+
         }
 
         #region Life Cycle
@@ -199,6 +209,7 @@ namespace InGame.Views
         public void TakeDamage(float dmg)
         {
             m_enemy?.TakeDamage(dmg);
+            if (BeAttackedAnimation != "") PlayAnimation(1, BeAttackedAnimation, false);
         }
 
         public IEnumerator Attack(bool isRight)
@@ -213,7 +224,7 @@ namespace InGame.Views
 
             visual.localScale = modifiedScale;
             if (AttackAnimation != "") PlayAnimation(0, AttackAnimation, false);
-            yield return new WaitForSeconds(attackAnimationDuration);
+            yield return new WaitForSeconds(GetAnimationDuration(AttackAnimation));
             
             // Die before attacking
             if (m_enemy == null) yield break;

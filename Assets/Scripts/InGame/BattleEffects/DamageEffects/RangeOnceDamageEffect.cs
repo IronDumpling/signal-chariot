@@ -1,4 +1,5 @@
 using Audios;
+using InGame.VFX;
 using UnityEngine;
 using Utils;
 using Utils.Common;
@@ -29,6 +30,7 @@ namespace InGame.BattleEffects
             AudioManager.Instance.PlaySound(Constants.AUDIO_EXPLOSION);
 
             var vfxGO = GameObject.Instantiate(m_vfx);
+            vfxGO.GetComponent<Explosion>().SetExplosionMultiplier(m_radius);
             vfxGO.transform.position = go.transform.position;
 
             Vector3 center = go.transform.position;

@@ -1,20 +1,27 @@
 
 skeleton.png
-size: 1024,1024
+size: 2048,1024
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 微信图片_20240918175624
-  rotate: false
-  xy: 2, 115
+  rotate: true
+  xy: 916, 5
   size: 535, 907
   orig: 1080, 1920
   offset: 284, 647
   index: -1
 微信图片_20240918175702
-  rotate: false
-  xy: 2, 2
+  rotate: true
+  xy: 1825, 219
   size: 321, 111
   orig: 1080, 1920
   offset: 380, 519
+  index: -1
+微信图片_20240923194246
+  rotate: true
+  xy: 2, 2
+  size: 538, 912
+  orig: 1080, 1920
+  offset: 284, 646
   index: -1

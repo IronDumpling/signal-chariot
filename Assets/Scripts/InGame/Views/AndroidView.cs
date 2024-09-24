@@ -48,12 +48,22 @@ namespace InGame.Views
 
         #region Animation
 
+        private float GetTimeScale(string animationName)
+        {
+            return animationName switch
+            {
+                MoveAnimation => m_moveAnimationTimeScale * m_android.Get(UnlimitedPropertyType.Speed) / 25f,
+                IdleAnimation => m_idleAnimationTimeScale,
+                TakeDamageAnimation => m_takeDamageAnimationTimeScale, 
+                _=> 0f
+            };
+        }
         private void CompleteAnimation(TrackEntry trackEntry)
         {
             if (!trackEntry.Loop)
             {
                 m_currentAnimations[trackEntry.TrackIndex] = "";
-                UpdateTimeScale();
+                //UpdateTimeScale();
             }
         }
         
@@ -64,9 +74,13 @@ namespace InGame.Views
             if (m_currentAnimations[trackIdx] == animationName) return;
 
             m_currentAnimations[trackIdx] = animationName;
-            animationState.SetAnimation(trackIdx, animationName, loop);
+            
+            
+            var trackEntry = animationState.SetAnimation(trackIdx, animationName, loop);
+            trackEntry.TimeScale = GetTimeScale(animationName);
+            //if (!loop) animationState.AddEmptyAnimation(trackIdx, 0f, 0f);
 
-            UpdateTimeScale();
+            //UpdateTimeScale();
         }
 
         private void UpdateTimeScale()

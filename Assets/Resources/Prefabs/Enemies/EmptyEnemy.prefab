@@ -49,8 +49,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveAnimation: Move
   AttackAnimation: Attack
+  BeAttackedAnimation: Beattacked
   m_moveAnimationTimeScale: 1
   m_attackAnimationTimeScale: 1
+  m_beAttackedAnimationTimeScale: 0.5
 --- !u!54 &364563103112933093
 Rigidbody:
   m_ObjectHideFlags: 0

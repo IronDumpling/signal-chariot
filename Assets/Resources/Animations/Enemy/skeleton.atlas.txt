@@ -1,62 +1,125 @@
 
 skeleton.png
-size: 2048,512
+size: 4096,1024
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 微信图片_20240912184929-modified
   rotate: true
-  xy: 764, 32
+  xy: 1136, 40
   size: 444, 384
   orig: 646, 443
   offset: 97, 40
   index: -1
 微信图片_20240912184933-modified
   rotate: true
-  xy: 452, 3
+  xy: 452, 11
   size: 139, 224
   orig: 212, 322
   offset: 33, 56
   index: -1
 微信图片_20240912184936-modified
   rotate: false
-  xy: 573, 166
+  xy: 573, 170
   size: 124, 84
   orig: 167, 121
   offset: 20, 30
   index: -1
 微信图片_20240912184941-modified
   rotate: true
-  xy: 227, 2
+  xy: 2, 10
   size: 140, 223
   orig: 218, 289
   offset: 49, 37
   index: -1
 微信图片_20240912184945-modified
   rotate: false
-  xy: 573, 252
+  xy: 909, 260
   size: 139, 224
   orig: 249, 334
   offset: 65, 40
   index: -1
 微信图片_20240912184948-modified
-  rotate: true
-  xy: 678, 40
+  rotate: false
+  xy: 699, 170
   size: 124, 84
   orig: 231, 216
   offset: 55, 57
   index: -1
 微信图片_20240912184954-modified
   rotate: false
-  xy: 2, 144
+  xy: 2, 152
   size: 569, 332
   orig: 569, 332
   offset: 0, 0
   index: -1
 微信图片_20240912185041-modified
   rotate: true
-  xy: 2, 2
+  xy: 227, 10
   size: 140, 223
   orig: 299, 311
   offset: 72, 39
+  index: -1
+微信图片_20240923200304
+  rotate: false
+  xy: 2, 486
+  size: 1156, 526
+  orig: 1920, 1080
+  offset: 378, 313
+  index: -1
+微信图片_20240923201722
+  rotate: false
+  xy: 1160, 486
+  size: 1156, 526
+  orig: 1920, 1080
+  offset: 378, 313
+  index: -1
+微信图片_20240923202434
+  rotate: true
+  xy: 1522, 40
+  size: 444, 384
+  orig: 1920, 1080
+  offset: 738, 445
+  index: -1
+微信图片_20240923202437
+  rotate: false
+  xy: 741, 258
+  size: 166, 226
+  orig: 1920, 1080
+  offset: 1173, 357
+  index: -1
+微信图片_20240923202440
+  rotate: false
+  xy: 825, 172
+  size: 124, 84
+  orig: 1920, 1080
+  offset: 1090, 461
+  index: -1
+微信图片_20240923202450
+  rotate: true
+  xy: 678, 2
+  size: 166, 228
+  orig: 1920, 1080
+  offset: 1129, 387
+  index: -1
+微信图片_20240923202453
+  rotate: true
+  xy: 908, 4
+  size: 166, 226
+  orig: 1920, 1080
+  offset: 577, 362
+  index: -1
+微信图片_20240923202457
+  rotate: false
+  xy: 951, 174
+  size: 124, 84
+  orig: 1920, 1080
+  offset: 702, 466
+  index: -1
+微信图片_20240923202500
+  rotate: false
+  xy: 573, 256
+  size: 166, 228
+  orig: 1920, 1080
+  offset: 621, 392
   index: -1

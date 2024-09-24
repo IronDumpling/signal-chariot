@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3200615329008417877, guid: 3900bda5bb621cb438db10041a8343a6, type: 3}
+      propertyPath: initialSkinName
+      value: normal
+      objectReference: {fileID: 0}
     - target: {fileID: 3942024114059930481, guid: 3900bda5bb621cb438db10041a8343a6, type: 3}
       propertyPath: m_Layer
       value: 8

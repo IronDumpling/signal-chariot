@@ -1,16 +1,25 @@
+﻿using UnityEditor;
 using UnityEngine;
 
 namespace InGame.VFX
 {
-    public class Explosion : MonoBehaviour
+    public class Explosion: ParticleController
     {
-        [SerializeField] private float m_dieTime = 2f;
-        // Start is called before the first frame update
-        void Start()
+        public void SetExplosionMultiplier(float multiplier = 1)
         {
-            Destroy(gameObject, m_dieTime);
+            var shape = particleSystem.shape;
+            shape.radius = shape.radius * multiplier;
+
+            var emission = particleSystem.emission;
+            var bursts = new ParticleSystem.Burst[emission.burstCount];
+            emission.GetBursts(bursts);
+
+            if (bursts.Length >= 1)
+            {
+                bursts[0].count = new ParticleSystem.MinMaxCurve(bursts[0].count.constant * (multiplier * multiplier));
+                
+            }
+            emission.SetBursts(bursts);
         }
-
-
     }
 }

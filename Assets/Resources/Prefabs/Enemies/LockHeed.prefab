@@ -36,6 +36,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3942024114059930481, guid: 465542c001f964cef8a91c3cb3548f02, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4520249560863534462, guid: 465542c001f964cef8a91c3cb3548f02, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -77,7 +81,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1544307615320639226, guid: 465542c001f964cef8a91c3cb3548f02, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 465542c001f964cef8a91c3cb3548f02, type: 3}
@@ -128,6 +133,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5286201707689372785, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
       propertyPath: AttackAnimation
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286201707689372785, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
+      propertyPath: BeAttackedAnimation
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5585643236584868594, guid: 3381a5981402cb841aa85ff7aa10aac7, type: 3}
