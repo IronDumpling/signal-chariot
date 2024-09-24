@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="panel" style="flex-grow: 1; background-image: resource(&apos;Arts/UI/menu&apos;); -unity-font-definition: resource(&apos;Fonts/shanhaijijiacuhei SDF&apos;); -unity-font: resource(&apos;Fonts &amp; Materials/msyhl&apos;); -unity-text-outline-width: 1px;">
+        <ui:VisualElement name="spacer" style="flex-grow: 1; max-height: 60%;" />
+        <ui:VisualElement name="buttons" style="flex-grow: 1; flex-direction: row; -unity-text-align: upper-left; justify-content: center; align-self: center; align-items: center; color: rgb(255, 255, 255); height: 40%; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px;">
+            <ui:VisualElement name="QRCode" style="flex-grow: 1; background-image: resource(&apos;Arts/UI/QRCode&apos;); min-height: auto; min-width: auto; height: 100%; width: 10%;" />
+            <ui:VisualElement name="spacer" style="flex-grow: 1; width: 15%;" />
+            <ui:VisualElement name="buttons" style="flex-grow: 1; justify-content: center; right: 0; width: 5%;">
+                <ui:Button text="新游戏" parse-escape-sequences="false" display-tooltip-when-elided="true" name="start" style="font-size: 35px; -unity-font-style: normal; min-width: 15%; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px; background-color: rgb(147, 176, 102);" />
+                <ui:Button text="教程" parse-escape-sequences="true" display-tooltip-when-elided="true" name="tutorial" style="font-size: 35px; -unity-font-style: normal; min-width: 15%; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px; background-color: rgb(102, 168, 176); -unity-font: resource(&apos;Fonts/shanhaijijiacuhei&apos;); -unity-text-outline-width: 1px;" />
+                <ui:Button text="退出" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quit" style="font-size: 35px; -unity-font-style: normal; min-width: 15%; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px; background-color: rgb(176, 123, 123); -unity-font: resource(&apos;Fonts/shanhaijijiacuhei&apos;);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="spacer" style="flex-grow: 1; width: 10%;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
